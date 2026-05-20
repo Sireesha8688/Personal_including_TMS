@@ -1,0 +1,7 @@
+spring.application.name=customerclaimsqueries
+
+
+#Local Mongo Config
+spring.data.mongodb.uri=mongodb://localhost:27017/CPS
+
+server.port=9090

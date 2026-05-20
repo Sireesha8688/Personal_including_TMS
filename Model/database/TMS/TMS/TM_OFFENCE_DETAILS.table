@@ -1,0 +1,796 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<table xmlns="http://xmlns.oracle.com/jdeveloper/1111/offlinedb">
+  <ID class="oracle.javatools.db.IdentifierBasedID">
+    <identifier class="java.lang.String">7f0e3032-27f3-4ccc-880e-6d10c1a986fb</identifier>
+  </ID>
+  <name>TM_OFFENCE_DETAILS</name>
+  <columns>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">031b67e0-06ea-47df-9912-0a6a10e86ae7</identifier>
+      </ID>
+      <name>VEH_NO</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">338029b5-e806-4569-bac8-4e3bee04c507</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">20</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">BYTE</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>VEH_NO</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>TM_OFFENCE_DETAILS</name>
+                  <identifier class="java.math.BigDecimal">21398</identifier>
+                  <schemaName>TMS</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>VEH_NO</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>TM_OFFENCE_DETAILS</name>
+              <identifier class="java.math.BigDecimal">21398</identifier>
+              <schemaName>TMS</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">a3e7b1ac-f777-4de2-b948-44df4407d05b</identifier>
+      </ID>
+      <name>IMAGE</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">2d4047f4-12c7-4ff4-ab79-363602b27873</identifier>
+        </ID>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.Oracle8</providerClass>
+          <typeName>BLOB</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>IMAGE</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>TM_OFFENCE_DETAILS</name>
+                  <identifier class="java.math.BigDecimal">21398</identifier>
+                  <schemaName>TMS</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>false</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>IMAGE</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>TM_OFFENCE_DETAILS</name>
+              <identifier class="java.math.BigDecimal">21398</identifier>
+              <schemaName>TMS</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+        <entry>
+          <key>OracleColumnProperties</key>
+          <value class="oracle.javatools.db.ora.OracleColumnProperties">
+            <ID class="oracle.javatools.db.IdentifierBasedID">
+              <identifier class="java.lang.String">48669480-9314-4d19-a034-0e40b6411b13</identifier>
+            </ID>
+            <LOBProperties>
+              <ID class="oracle.javatools.db.IdentifierBasedID">
+                <identifier class="java.lang.String">42992aac-3fe3-40af-bbf0-015b8b01655a</identifier>
+              </ID>
+              <name></name>
+              <LOBSegName>SYS_LOB0000021398C00002$$</LOBSegName>
+              <cache>NOCACHE</cache>
+              <chunk>8192</chunk>
+              <properties>
+                <entry>
+                  <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+                  <value class="oracle.javatools.db.ReferenceID">
+                    <parent class="oracle.javatools.db.ReferenceID">
+                      <parent class="oracle.javatools.db.ReferenceID">
+                        <name>IMAGE</name>
+                        <parent class="oracle.javatools.db.ReferenceID">
+                          <name>TM_OFFENCE_DETAILS</name>
+                          <identifier class="java.math.BigDecimal">21398</identifier>
+                          <schemaName>TMS</schemaName>
+                          <type>TABLE</type>
+                        </parent>
+                        <type>COLUMN</type>
+                      </parent>
+                      <type>OracleColumnProperties</type>
+                    </parent>
+                    <type>LOB DESCRIPTOR</type>
+                  </value>
+                </entry>
+              </properties>
+              <retention>true</retention>
+              <storage>
+                <ID class="oracle.javatools.db.IdentifierBasedID">
+                  <identifier class="java.lang.String">33e7c337-bfc1-4bff-b190-4fab4b328956</identifier>
+                </ID>
+                <bufferMode>DEFAULT</bufferMode>
+                <freelistGroups>1</freelistGroups>
+                <freelists>1</freelists>
+                <initialExtent>65536</initialExtent>
+                <logging>true</logging>
+                <maxExtent>2147483645</maxExtent>
+                <minExtent>1</minExtent>
+                <nextExtent>1048576</nextExtent>
+                <properties>
+                  <entry>
+                    <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+                    <value class="oracle.javatools.db.ReferenceID">
+                      <parent class="oracle.javatools.db.ReferenceID">
+                        <parent class="oracle.javatools.db.ReferenceID">
+                          <parent class="oracle.javatools.db.ReferenceID">
+                            <name>IMAGE</name>
+                            <parent class="oracle.javatools.db.ReferenceID">
+                              <name>TM_OFFENCE_DETAILS</name>
+                              <identifier class="java.math.BigDecimal">21398</identifier>
+                              <schemaName>TMS</schemaName>
+                              <type>TABLE</type>
+                            </parent>
+                            <type>COLUMN</type>
+                          </parent>
+                          <type>OracleColumnProperties</type>
+                        </parent>
+                        <type>LOB DESCRIPTOR</type>
+                      </parent>
+                      <type>OracleStorageProperties</type>
+                    </value>
+                  </entry>
+                </properties>
+                <tablespaceID class="oracle.javatools.db.ReferenceID">
+                  <name>SYSTEM</name>
+                  <type>TABLESPACE</type>
+                </tablespaceID>
+              </storage>
+              <storageEnabledInRow>true</storageEnabledInRow>
+            </LOBProperties>
+            <properties>
+              <entry>
+                <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+                <value class="oracle.javatools.db.ReferenceID">
+                  <parent class="oracle.javatools.db.ReferenceID">
+                    <name>IMAGE</name>
+                    <parent class="oracle.javatools.db.ReferenceID">
+                      <name>TM_OFFENCE_DETAILS</name>
+                      <identifier class="java.math.BigDecimal">21398</identifier>
+                      <schemaName>TMS</schemaName>
+                      <type>TABLE</type>
+                    </parent>
+                    <type>COLUMN</type>
+                  </parent>
+                  <type>OracleColumnProperties</type>
+                </value>
+              </entry>
+            </properties>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">21d9109d-2155-4d79-9fc8-561ba14beeed</identifier>
+      </ID>
+      <name>OFFENCE_DETAIL_ID</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">7b4048b1-d74a-4c72-9f6e-cdf0f046791f</identifier>
+        </ID>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.OracleDatabaseImpl</providerClass>
+          <typeName>NUMBER</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>OFFENCE_DETAIL_ID</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>TM_OFFENCE_DETAILS</name>
+                  <identifier class="java.math.BigDecimal">21398</identifier>
+                  <schemaName>TMS</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>OFFENCE_DETAIL_ID</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>TM_OFFENCE_DETAILS</name>
+              <identifier class="java.math.BigDecimal">21398</identifier>
+              <schemaName>TMS</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">cc038d16-6867-4346-b637-7fbd2af8469e</identifier>
+      </ID>
+      <name>OFFENCE_STATUS</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">3e7d3178-390d-4789-ba99-55bcf8352cfe</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">20</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">BYTE</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>OFFENCE_STATUS</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>TM_OFFENCE_DETAILS</name>
+                  <identifier class="java.math.BigDecimal">21398</identifier>
+                  <schemaName>TMS</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>false</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>OFFENCE_STATUS</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>TM_OFFENCE_DETAILS</name>
+              <identifier class="java.math.BigDecimal">21398</identifier>
+              <schemaName>TMS</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">e47bbd45-0752-463f-aed3-884a197ab117</identifier>
+      </ID>
+      <name>OFFENCE_ID</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">3b575a10-2750-41ef-8b3f-dc86404ec6b5</identifier>
+        </ID>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.OracleDatabaseImpl</providerClass>
+          <typeName>NUMBER</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>OFFENCE_ID</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>TM_OFFENCE_DETAILS</name>
+                  <identifier class="java.math.BigDecimal">21398</identifier>
+                  <schemaName>TMS</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>OFFENCE_ID</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>TM_OFFENCE_DETAILS</name>
+              <identifier class="java.math.BigDecimal">21398</identifier>
+              <schemaName>TMS</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">79b02c83-6cae-4018-8547-849f91f1ed38</identifier>
+      </ID>
+      <name>TIME</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">fafa13cd-45b8-4c3c-9bc0-0ca6930dbb93</identifier>
+        </ID>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.OracleDatabaseImpl</providerClass>
+          <typeName>DATE</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>TIME</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>TM_OFFENCE_DETAILS</name>
+                  <identifier class="java.math.BigDecimal">21398</identifier>
+                  <schemaName>TMS</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>TIME</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>TM_OFFENCE_DETAILS</name>
+              <identifier class="java.math.BigDecimal">21398</identifier>
+              <schemaName>TMS</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">64424339-cfaf-43ed-a830-cb4c898ffab0</identifier>
+      </ID>
+      <name>PLACE</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">c607530e-1e59-4830-a9bb-d03dea5d67bc</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">200</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">BYTE</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>PLACE</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>TM_OFFENCE_DETAILS</name>
+                  <identifier class="java.math.BigDecimal">21398</identifier>
+                  <schemaName>TMS</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>PLACE</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>TM_OFFENCE_DETAILS</name>
+              <identifier class="java.math.BigDecimal">21398</identifier>
+              <schemaName>TMS</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">84965128-760a-4463-9a5f-f2ba681a1370</identifier>
+      </ID>
+      <name>REPORTED_BY</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">925fa22f-f19f-4730-8ecd-40da76e9454f</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">20</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">BYTE</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>REPORTED_BY</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>TM_OFFENCE_DETAILS</name>
+                  <identifier class="java.math.BigDecimal">21398</identifier>
+                  <schemaName>TMS</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>REPORTED_BY</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>TM_OFFENCE_DETAILS</name>
+              <identifier class="java.math.BigDecimal">21398</identifier>
+              <schemaName>TMS</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+  </columns>
+  <constraints>
+    <constraint class="oracle.javatools.db.FKConstraint">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">5f46f31a-7943-47ff-9e1e-9fc1a79ead81</identifier>
+      </ID>
+      <name>OFFENCE_DETAILS_TM_OFFENC_FK1</name>
+      <columnIDs>
+        <columnID class="oracle.javatools.db.IdentifierBasedID">
+          <name>OFFENCE_ID</name>
+          <identifier class="java.lang.String">e47bbd45-0752-463f-aed3-884a197ab117</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>TM_OFFENCE_DETAILS</name>
+            <identifier class="java.lang.String">7f0e3032-27f3-4ccc-880e-6d10c1a986fb</identifier>
+            <schemaName>TMS</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <schemaName>TMS</schemaName>
+          <type>COLUMN</type>
+        </columnID>
+      </columnIDs>
+      <deleteMode>1</deleteMode>
+      <enabled>true</enabled>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>OFFENCE_DETAILS_TM_OFFENC_FK1</name>
+            <childObjectNames>
+              <childObjectName>OFFENCE_ID</childObjectName>
+            </childObjectNames>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>TM_OFFENCE_DETAILS</name>
+              <identifier class="java.math.BigDecimal">21398</identifier>
+              <schemaName>TMS</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <subType>FKConstraint</subType>
+            <type>CONSTRAINT</type>
+          </value>
+        </entry>
+      </properties>
+      <referenceID class="oracle.javatools.db.IdentifierBasedID">
+        <name>TM_OFFENCE_PK</name>
+        <identifier class="java.lang.String">5a5cbb60-5e0d-4c50-80b5-17f86274027e</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>TM_OFFENCE</name>
+          <identifier class="java.lang.String">6aabe03c-bd61-4709-ae3e-4022f9ae257f</identifier>
+          <schemaName>TMS</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <schemaName>TMS</schemaName>
+        <type>CONSTRAINT</type>
+      </referenceID>
+    </constraint>
+    <constraint class="oracle.javatools.db.FKConstraint">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">5f932b3b-ca0e-436d-8459-6c9504261201</identifier>
+      </ID>
+      <name>TM_OFFENCE_DETAILS_TM_REG_FK1</name>
+      <columnIDs>
+        <columnID class="oracle.javatools.db.IdentifierBasedID">
+          <name>VEH_NO</name>
+          <identifier class="java.lang.String">031b67e0-06ea-47df-9912-0a6a10e86ae7</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>TM_OFFENCE_DETAILS</name>
+            <identifier class="java.lang.String">7f0e3032-27f3-4ccc-880e-6d10c1a986fb</identifier>
+            <schemaName>TMS</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <schemaName>TMS</schemaName>
+          <type>COLUMN</type>
+        </columnID>
+      </columnIDs>
+      <deleteMode>1</deleteMode>
+      <enabled>true</enabled>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>TM_OFFENCE_DETAILS_TM_REG_FK1</name>
+            <childObjectNames>
+              <childObjectName>VEH_NO</childObjectName>
+            </childObjectNames>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>TM_OFFENCE_DETAILS</name>
+              <identifier class="java.math.BigDecimal">21398</identifier>
+              <schemaName>TMS</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <subType>FKConstraint</subType>
+            <type>CONSTRAINT</type>
+          </value>
+        </entry>
+      </properties>
+      <referenceID class="oracle.javatools.db.IdentifierBasedID">
+        <name>TM_REGDETAILS_PK</name>
+        <identifier class="java.lang.String">aeef0395-5baa-4d3c-afd4-1ab12a9082bf</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>TM_REGDETAILS</name>
+          <identifier class="java.lang.String">66091f91-688c-45c3-8c9b-f52b479c8bca</identifier>
+          <schemaName>TMS</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <schemaName>TMS</schemaName>
+        <type>CONSTRAINT</type>
+      </referenceID>
+    </constraint>
+    <constraint class="oracle.javatools.db.FKConstraint">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">da8a6837-6ce4-46b1-ab6f-7fd3b27b27a7</identifier>
+      </ID>
+      <name>TM_OFFENCE_DETAILS_TM_USER_FK1</name>
+      <columnIDs>
+        <columnID class="oracle.javatools.db.IdentifierBasedID">
+          <name>REPORTED_BY</name>
+          <identifier class="java.lang.String">84965128-760a-4463-9a5f-f2ba681a1370</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>TM_OFFENCE_DETAILS</name>
+            <identifier class="java.lang.String">7f0e3032-27f3-4ccc-880e-6d10c1a986fb</identifier>
+            <schemaName>TMS</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <schemaName>TMS</schemaName>
+          <type>COLUMN</type>
+        </columnID>
+      </columnIDs>
+      <deleteMode>0</deleteMode>
+      <enabled>true</enabled>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>TM_OFFENCE_DETAILS_TM_USER_FK1</name>
+            <childObjectNames>
+              <childObjectName>REPORTED_BY</childObjectName>
+            </childObjectNames>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>TM_OFFENCE_DETAILS</name>
+              <identifier class="java.math.BigDecimal">21398</identifier>
+              <schemaName>TMS</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <subType>FKConstraint</subType>
+            <type>CONSTRAINT</type>
+          </value>
+        </entry>
+      </properties>
+      <referenceID class="oracle.javatools.db.IdentifierBasedID">
+        <name>TM_USERMASTER_PK</name>
+        <identifier class="java.lang.String">77cf298b-da97-4e15-ac19-88ddb971fa86</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>TM_USERMASTER</name>
+          <identifier class="java.lang.String">8ef18c91-aedd-4dec-8c07-a3706a868fa0</identifier>
+          <schemaName>TMS</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <schemaName>TMS</schemaName>
+        <type>CONSTRAINT</type>
+      </referenceID>
+    </constraint>
+    <constraint class="oracle.javatools.db.PKConstraint">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">4de9c759-2667-4b9b-8b3b-16020af97712</identifier>
+      </ID>
+      <name>TM_OFFENCE_DETAILS_PK</name>
+      <columnIDs>
+        <columnID class="oracle.javatools.db.IdentifierBasedID">
+          <name>OFFENCE_DETAIL_ID</name>
+          <identifier class="java.lang.String">21d9109d-2155-4d79-9fc8-561ba14beeed</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>TM_OFFENCE_DETAILS</name>
+            <identifier class="java.lang.String">7f0e3032-27f3-4ccc-880e-6d10c1a986fb</identifier>
+            <schemaName>TMS</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <schemaName>TMS</schemaName>
+          <type>COLUMN</type>
+        </columnID>
+      </columnIDs>
+      <enabled>true</enabled>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>TM_OFFENCE_DETAILS_PK</name>
+            <childObjectNames>
+              <childObjectName>OFFENCE_DETAIL_ID</childObjectName>
+            </childObjectNames>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>TM_OFFENCE_DETAILS</name>
+              <identifier class="java.math.BigDecimal">21398</identifier>
+              <schemaName>TMS</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <subType>PKConstraint</subType>
+            <type>CONSTRAINT</type>
+          </value>
+        </entry>
+      </properties>
+    </constraint>
+  </constraints>
+  <properties>
+    <entry>
+      <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+      <value class="oracle.javatools.db.ReferenceID">
+        <name>TM_OFFENCE_DETAILS</name>
+        <identifier class="java.math.BigDecimal">21398</identifier>
+        <schemaName>TMS</schemaName>
+        <type>TABLE</type>
+      </value>
+    </entry>
+    <entry>
+      <key>OracleStorageProperties</key>
+      <value class="oracle.javatools.db.ora.OracleStorageProperties">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">8e3bc9d2-4368-4ea2-bf45-0c374d056c5f</identifier>
+        </ID>
+        <bufferMode>DEFAULT</bufferMode>
+        <freelistGroups>1</freelistGroups>
+        <freelists>1</freelists>
+        <initialExtent>65536</initialExtent>
+        <initrans>1</initrans>
+        <logging>true</logging>
+        <maxExtent>2147483645</maxExtent>
+        <minExtent>1</minExtent>
+        <nextExtent>1048576</nextExtent>
+        <percentFree>10</percentFree>
+        <percentUsed>40</percentUsed>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>TM_OFFENCE_DETAILS</name>
+                <identifier class="java.math.BigDecimal">21398</identifier>
+                <schemaName>TMS</schemaName>
+                <type>TABLE</type>
+              </parent>
+              <type>OracleStorageProperties</type>
+            </value>
+          </entry>
+        </properties>
+        <tablespaceID class="oracle.javatools.db.ReferenceID">
+          <name>SYSTEM</name>
+          <type>TABLESPACE</type>
+        </tablespaceID>
+      </value>
+    </entry>
+    <entry>
+      <key>TableType</key>
+      <value class="oracle.javatools.db.Table$TableType">NORMAL</value>
+    </entry>
+  </properties>
+  <schema>
+    <name>TMS</name>
+  </schema>
+</table>

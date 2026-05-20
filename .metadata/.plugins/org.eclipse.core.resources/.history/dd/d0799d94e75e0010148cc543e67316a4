@@ -1,0 +1,40 @@
+package training.iqgateway.service.impl;
+
+import java.util.List;
+
+import training.iqgateway.entities.TmRoleMaster;
+import training.iqgateway.service.RoleMasterService;
+
+public class RoleMasterServiceImpl implements RoleMasterService {
+
+	@Override
+	public List<TmRoleMaster> getAllRoles() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void addRole(TmRoleMaster roleRef) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public TmRoleMaster getByRolename(String rolename) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void deleteRole(String rolename) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void updateRole(TmRoleMaster updatedRole) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

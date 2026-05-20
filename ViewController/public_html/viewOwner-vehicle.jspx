@@ -1,0 +1,169 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html">
+  <jsp:output omit-xml-declaration="true" 
+              doctype-root-element="HTML"
+              doctype-system="http://www.w3.org/TR/html4/loose.dtd"
+              doctype-public="-//W3C//DTD HTML 4.01 Transitional//EN"/>
+  <jsp:directive.page contentType="text/html;charset=windows-1252"/>
+  <f:view>
+    <html>
+      <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=windows-1252"/>
+        <title>View Owner and Vehicle Details</title>
+        <style>
+          body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+          }
+          .form-container {
+            background-color: white;
+            padding: 25px 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            width: 450px;
+            max-width: 100%;
+          }
+          h1, h3 {
+            color: #2e7d32; /* Green shade */
+            text-align: center;
+            margin-bottom: 20px;
+          }
+          .panelGrid {
+            width: 100%;
+          }
+          .panelGrid td {
+            padding: 8px 0;
+          }
+          .outputLabel {
+            font-weight: bold;
+            color: #2e7d32;
+          }
+          .inputText {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #a5d6a7;
+            border-radius: 4px;
+            box-sizing: border-box;
+          }
+          .commandButton {
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+            margin-right: 10px;
+            transition: background-color 0.3s ease;
+          }
+          .commandButton:hover {
+            background-color: #388e3c;
+          }
+          .message {
+            margin-top: 15px;
+            padding: 10px;
+            background-color: #d0f0c0;
+            color: #2e7d32;
+            border-radius: 4px;
+            text-align: center;
+            font-weight: bold;
+          }
+          .details-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+          }
+          .details-table td {
+            padding: 8px;
+            border-bottom: 1px solid #e0e0e0;
+          }
+          .details-table td:first-child {
+            font-weight: bold;
+            color: #2e7d32;
+            width: 45%;
+          }
+          /* Dashboard button style */
+          .dashboard-button {
+            background-color: #FFC107;
+            color: #212529;
+            border: none;
+            padding: 10px 24px;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            display: block;
+            margin: 20px auto 0 auto;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: background-color 0.2s, transform 0.2s;
+          }
+          .dashboard-button:hover {
+            background-color: #FFB300;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+          }
+        </style>
+      </head>
+      <body>
+        <div class="form-container">
+          <h1>View Owner & Vehicle Details</h1>
+          <h:form id="vehicleForm">
+            <h:panelGrid columns="2" styleClass="panelGrid" columnClasses="outputLabel,inputText">
+              <h:outputLabel for="vehNo" value="Enter Vehicle Number:" styleClass="outputLabel" />
+              <h:inputText id="vehNo" value="#{ownerVehicleBean.vehicleNo}" required="true" styleClass="inputText" />
+            </h:panelGrid>
+
+            <div style="margin-top: 15px; text-align: center;">
+              <h:commandButton value="View Owner Details" action="#{ownerVehicleBean.viewOwnerDetails}" styleClass="commandButton" />
+              <h:commandButton value="View Vehicle Details" action="#{ownerVehicleBean.viewVehicleDetails}" styleClass="commandButton" />
+            </div>
+
+            <h:panelGroup rendered="#{not empty ownerVehicleBean.message}">
+              <div class="message">
+                <h:outputText value="#{ownerVehicleBean.message}" />
+              </div>
+            </h:panelGroup>
+
+            <h:panelGroup rendered="#{not empty ownerVehicleBean.ownerDetails}">
+              <h3>Owner Details</h3>
+              <table class="details-table">
+                <tr><td>First Name:</td><td><h:outputText value="#{ownerVehicleBean.ownerDetails.fname}" /></td></tr>
+                <tr><td>Last Name:</td><td><h:outputText value="#{ownerVehicleBean.ownerDetails.lname}" /></td></tr>
+                <tr><td>Date of Birth:</td><td><h:outputText value="#{ownerVehicleBean.ownerDetails.dateofbirth}" /></td></tr>
+                <tr><td>Gender:</td><td><h:outputText value="#{ownerVehicleBean.ownerDetails.gender}" /></td></tr>
+                <tr><td>Mobile No:</td><td><h:outputText value="#{ownerVehicleBean.ownerDetails.mobileNo}" /></td></tr>
+                <tr><td>Permanent Address:</td><td><h:outputText value="#{ownerVehicleBean.ownerDetails.permAddr}" /></td></tr>
+                <tr><td>Occupation:</td><td><h:outputText value="#{ownerVehicleBean.ownerDetails.occupation}" /></td></tr>
+              </table>
+               </h:panelGroup>
+
+            <h:panelGroup rendered="#{not empty ownerVehicleBean.vehicleDetails}">
+              <h3>Vehicle Details</h3>
+              <table class="details-table">
+                <tr><td>Vehicle Name:</td><td><h:outputText value="#{ownerVehicleBean.vehicleDetails.vehName}" /></td></tr>
+                <tr><td>Vehicle Type:</td><td><h:outputText value="#{ownerVehicleBean.vehicleDetails.vehType}" /></td></tr>
+                <tr><td>Manufacturer Name:</td><td><h:outputText value="#{ownerVehicleBean.vehicleDetails.manufacturerName}" /></td></tr>
+                <tr><td>Model No:</td><td><h:outputText value="#{ownerVehicleBean.vehicleDetails.modelNo}" /></td></tr>
+                <tr><td>Engine No:</td><td><h:outputText value="#{ownerVehicleBean.vehicleDetails.engineNo}" /></td></tr>
+                <tr><td>Fuel Used:</td><td><h:outputText value="#{ownerVehicleBean.vehicleDetails.fuelUsed}" /></td></tr>
+                <tr><td>Vehicle Color:</td><td><h:outputText value="#{ownerVehicleBean.vehicleDetails.vehColor}" /></td></tr>
+                <tr><td>Date of Manufacture:</td><td><h:outputText value="#{ownerVehicleBean.vehicleDetails.dateOfManufacture}" /></td></tr>
+              </table>
+            </h:panelGroup>
+            <!-- Add the dashboard button -->
+            <h:commandButton value="Go to Dashboard" action="dashboard" immediate="true" styleClass="dashboard-button" />
+          </h:form>
+        </div>
+      </body>
+    </html>
+  </f:view>
+</jsp:root>

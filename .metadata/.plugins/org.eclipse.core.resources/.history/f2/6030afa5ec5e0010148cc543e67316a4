@@ -1,0 +1,35 @@
+package training.iqgateway.entities;
+
+import jakarta.persistence.*;
+import lombok.*;
+
+import java.io.Serializable;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "TM_ROLEMASTER")
+                 // Lombok: getters, setters, toString, equals, hashCode
+@Getter
+@Setter
+@ToString
+@NoArgsConstructor      // Lombok: no-args constructor
+@AllArgsConstructor     // Lombok: all-args constructor
+@Builder                // Lombok: builder pattern
+public class TmRoleMaster implements Serializable {
+
+    private static final long serialVersionUID = 1L;
+
+    @Id
+    @Column(name = "ROLENAME", nullable = false, unique = true, length = 50)
+    private String rolename;
+
+    @Column(name = "ROLE_DESC", length = 255)
+    private String roleDesc;
+
+    // Optional: single-argument constructor for convenience
+    public TmRoleMaster(String rolename) {
+        this.rolename = rolename;
+    }
+}

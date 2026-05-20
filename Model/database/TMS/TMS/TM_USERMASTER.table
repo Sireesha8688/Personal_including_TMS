@@ -1,0 +1,336 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<table xmlns="http://xmlns.oracle.com/jdeveloper/1111/offlinedb">
+  <ID class="oracle.javatools.db.IdentifierBasedID">
+    <identifier class="java.lang.String">8ef18c91-aedd-4dec-8c07-a3706a868fa0</identifier>
+  </ID>
+  <name>TM_USERMASTER</name>
+  <columns>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">01718001-2fee-4bae-b4ec-462d718f1bd7</identifier>
+      </ID>
+      <name>USERNAME</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">c92baf3b-f67a-476e-a2af-0cc53b7e0bda</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">20</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">BYTE</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>USERNAME</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>TM_USERMASTER</name>
+                  <identifier class="java.math.BigDecimal">21287</identifier>
+                  <schemaName>TMS</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>USERNAME</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>TM_USERMASTER</name>
+              <identifier class="java.math.BigDecimal">21287</identifier>
+              <schemaName>TMS</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">f0de3ca6-1aa2-4da0-ab10-3a7b1e3d8221</identifier>
+      </ID>
+      <name>PASSWORD</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">3fef1cad-652c-4fe1-913e-bdde8b7bd081</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">20</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">BYTE</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>PASSWORD</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>TM_USERMASTER</name>
+                  <identifier class="java.math.BigDecimal">21287</identifier>
+                  <schemaName>TMS</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>PASSWORD</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>TM_USERMASTER</name>
+              <identifier class="java.math.BigDecimal">21287</identifier>
+              <schemaName>TMS</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">a2b5129a-a23b-40ac-9b56-f2daeca76477</identifier>
+      </ID>
+      <name>ROLENAME</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">17241f12-90c9-408d-b012-f66ee0f1525d</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">20</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">BYTE</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>ROLENAME</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>TM_USERMASTER</name>
+                  <identifier class="java.math.BigDecimal">21287</identifier>
+                  <schemaName>TMS</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>ROLENAME</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>TM_USERMASTER</name>
+              <identifier class="java.math.BigDecimal">21287</identifier>
+              <schemaName>TMS</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+  </columns>
+  <constraints>
+    <constraint class="oracle.javatools.db.FKConstraint">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">92a8713d-9d67-43da-a739-26c167f1eacc</identifier>
+      </ID>
+      <name>TM_USERMASTER_TM_ROLEMAST_FK1</name>
+      <columnIDs>
+        <columnID class="oracle.javatools.db.IdentifierBasedID">
+          <name>ROLENAME</name>
+          <identifier class="java.lang.String">a2b5129a-a23b-40ac-9b56-f2daeca76477</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>TM_USERMASTER</name>
+            <identifier class="java.lang.String">8ef18c91-aedd-4dec-8c07-a3706a868fa0</identifier>
+            <schemaName>TMS</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <schemaName>TMS</schemaName>
+          <type>COLUMN</type>
+        </columnID>
+      </columnIDs>
+      <deleteMode>1</deleteMode>
+      <enabled>true</enabled>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>TM_USERMASTER_TM_ROLEMAST_FK1</name>
+            <childObjectNames>
+              <childObjectName>ROLENAME</childObjectName>
+            </childObjectNames>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>TM_USERMASTER</name>
+              <identifier class="java.math.BigDecimal">21287</identifier>
+              <schemaName>TMS</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <subType>FKConstraint</subType>
+            <type>CONSTRAINT</type>
+          </value>
+        </entry>
+      </properties>
+      <referenceID class="oracle.javatools.db.IdentifierBasedID">
+        <name>TM_ROLEMASTER_PK</name>
+        <identifier class="java.lang.String">437799e7-3cc1-4cf9-a25e-73030c0dec5c</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>TM_ROLEMASTER</name>
+          <identifier class="java.lang.String">8ca9ea88-0d0b-4967-aa70-936c0236b514</identifier>
+          <schemaName>TMS</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <schemaName>TMS</schemaName>
+        <type>CONSTRAINT</type>
+      </referenceID>
+    </constraint>
+    <constraint class="oracle.javatools.db.PKConstraint">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">77cf298b-da97-4e15-ac19-88ddb971fa86</identifier>
+      </ID>
+      <name>TM_USERMASTER_PK</name>
+      <columnIDs>
+        <columnID class="oracle.javatools.db.IdentifierBasedID">
+          <name>USERNAME</name>
+          <identifier class="java.lang.String">01718001-2fee-4bae-b4ec-462d718f1bd7</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>TM_USERMASTER</name>
+            <identifier class="java.lang.String">8ef18c91-aedd-4dec-8c07-a3706a868fa0</identifier>
+            <schemaName>TMS</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <schemaName>TMS</schemaName>
+          <type>COLUMN</type>
+        </columnID>
+      </columnIDs>
+      <enabled>true</enabled>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>TM_USERMASTER_PK</name>
+            <childObjectNames>
+              <childObjectName>USERNAME</childObjectName>
+            </childObjectNames>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>TM_USERMASTER</name>
+              <identifier class="java.math.BigDecimal">21287</identifier>
+              <schemaName>TMS</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <subType>PKConstraint</subType>
+            <type>CONSTRAINT</type>
+          </value>
+        </entry>
+      </properties>
+    </constraint>
+  </constraints>
+  <properties>
+    <entry>
+      <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+      <value class="oracle.javatools.db.ReferenceID">
+        <name>TM_USERMASTER</name>
+        <identifier class="java.math.BigDecimal">21287</identifier>
+        <schemaName>TMS</schemaName>
+        <type>TABLE</type>
+      </value>
+    </entry>
+    <entry>
+      <key>OracleStorageProperties</key>
+      <value class="oracle.javatools.db.ora.OracleStorageProperties">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">ac1457d6-048d-4594-b8bb-5fd3bb7af3e9</identifier>
+        </ID>
+        <bufferMode>DEFAULT</bufferMode>
+        <freelistGroups>1</freelistGroups>
+        <freelists>1</freelists>
+        <initialExtent>65536</initialExtent>
+        <initrans>1</initrans>
+        <logging>true</logging>
+        <maxExtent>2147483645</maxExtent>
+        <minExtent>1</minExtent>
+        <nextExtent>1048576</nextExtent>
+        <percentFree>10</percentFree>
+        <percentUsed>40</percentUsed>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>TM_USERMASTER</name>
+                <identifier class="java.math.BigDecimal">21287</identifier>
+                <schemaName>TMS</schemaName>
+                <type>TABLE</type>
+              </parent>
+              <type>OracleStorageProperties</type>
+            </value>
+          </entry>
+        </properties>
+        <tablespaceID class="oracle.javatools.db.ReferenceID">
+          <name>SYSTEM</name>
+          <type>TABLESPACE</type>
+        </tablespaceID>
+      </value>
+    </entry>
+    <entry>
+      <key>TableType</key>
+      <value class="oracle.javatools.db.Table$TableType">NORMAL</value>
+    </entry>
+  </properties>
+  <schema>
+    <name>TMS</name>
+  </schema>
+</table>

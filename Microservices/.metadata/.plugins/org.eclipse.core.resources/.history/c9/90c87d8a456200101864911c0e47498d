@@ -1,0 +1,51 @@
+package cps.controller;
+
+import org.bson.types.ObjectId;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+import com.mongodb.client.result.UpdateResult;
+import cps.entities.CustomerClaimsQueriesEO;
+import cps.services.CustomerClaimsQueriesServices;
+import reactor.core.publisher.Mono;
+
+
+@CrossOrigin(origins = "http://localhost:5173")
+@RestController
+@RequestMapping("/api/customer/queries")
+public class CustomerClaimsQueriesController {
+	
+	
+	@Autowired
+	private CustomerClaimsQueriesServices customerClaimsQueriesServicesRef;
+	
+	
+	@GetMapping("/{customerClaimId}")
+	public Mono<ResponseEntity<CustomerClaimsQueriesEO>> getQueryByClaimId(@PathVariable String customerClaimId) {
+		return customerClaimsQueriesServicesRef.getQueryByClaimId(customerClaimId)
+		        .map(ResponseEntity::ok)
+		        .defaultIfEmpty(ResponseEntity.notFound().build());
+	}
+	
+	@PostMapping
+    public Mono<ResponseEntity<CustomerClaimsQueriesEO>> addNewQuery(@RequestBody CustomerClaimsQueriesEO customerClaimsQueriesEO) {
+        return customerClaimsQueriesServicesRef.addNewQuery(customerClaimsQueriesEO)
+                .map(savedQuery -> ResponseEntity.ok(savedQuery))
+                .defaultIfEmpty(ResponseEntity.badRequest().build());
+    }
+	
+	@PutMapping("/{id}")
+	public Mono<ResponseEntity<UpdateResult>> updateCustomerStatus(@PathVariable ObjectId id, @RequestBody CustomerClaimsQueriesEO customerClaimsQueriesEO) {
+	    return customerClaimsQueriesServicesRef.updateQuery(id, customerClaimsQueriesEO)
+	        .map(ResponseEntity::ok)
+	        .defaultIfEmpty(ResponseEntity.notFound().build());
+	}
+
+}

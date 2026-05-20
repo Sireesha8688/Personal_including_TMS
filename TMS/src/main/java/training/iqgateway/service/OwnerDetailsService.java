@@ -1,0 +1,12 @@
+package training.iqgateway.service;
+
+import java.util.List;
+import training.iqgateway.entities.TmOwnerDetails;
+
+public interface OwnerDetailsService {
+    void insert(TmOwnerDetails ownerdetails);
+    TmOwnerDetails getByOwnerId(Long ownerId);
+    List<TmOwnerDetails> getAll();
+    void update(TmOwnerDetails ownerdetails);
+    void delete(Long ownerId);
+}

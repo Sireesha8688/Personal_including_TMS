@@ -1,0 +1,154 @@
+package cps.serviceImpl;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.bson.types.ObjectId;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import cps.entities.HospitalClaim;
+import cps.repository.HospitalClaimRepository;
+import cps.service.HospitalClaimService;
+
+@Service
+public class HospitalClaimServiceImpl implements HospitalClaimService {
+
+    @Autowired
+    private HospitalClaimRepository repo;
+
+    @Override
+    public List<HospitalClaim> getAllClaims() {
+        return repo.findAll();
+    }
+
+    @Override
+    public Optional<HospitalClaim> getClaimById(String id) {
+        if (!ObjectId.isValid(id)) {
+            return Optional.empty();
+        }
+        return repo.findById(new ObjectId(id));
+    }
+
+    @Override
+    public HospitalClaim createClaim(HospitalClaim claim) {
+        claim.set_id(null);
+        return repo.save(claim);
+    }
+
+    @Override
+    public Optional<HospitalClaim> updateClaim(String id, HospitalClaim claimDetails) {
+        if (!ObjectId.isValid(id)) {
+            return Optional.empty();
+        }
+
+        Optional<HospitalClaim> optionalClaim = repo.findById(new ObjectId(id));
+        if (optionalClaim.isPresent()) {
+            HospitalClaim existingClaim = optionalClaim.get();
+
+            existingClaim.setCustomerName(claimDetails.getCustomerName());
+            existingClaim.setCustomerAadharNumber(claimDetails.getCustomerAadharNumber());
+            existingClaim.setCustomerId(claimDetails.getCustomerId());
+            existingClaim.setTreatmentOffered(claimDetails.getTreatmentOffered());
+            existingClaim.setClaimTypeId(claimDetails.getClaimTypeId());
+            existingClaim.setEstimatedCostToHospital(claimDetails.getEstimatedCostToHospital());
+            existingClaim.setHospitalStatus(claimDetails.getHospitalStatus());
+            existingClaim.setInsurerId(claimDetails.getInsurerId());
+            existingClaim.setInsurerStatus(claimDetails.getInsurerStatus());
+            existingClaim.setPreAuthorization(claimDetails.getPreAuthorization());
+            existingClaim.setTreatmentDetails(claimDetails.getTreatmentDetails());
+            existingClaim.setVerifierAssigned(claimDetails.getVerifierAssigned());
+            existingClaim.setVerifierId(claimDetails.getVerifierId());
+            existingClaim.setVerifierComments(claimDetails.getVerifierComments());
+            existingClaim.setVerifierStatus(claimDetails.getVerifierStatus());
+            existingClaim.setFinalClaimSettlement(claimDetails.getFinalClaimSettlement());
+            existingClaim.setHospitalReRaiseClaimMessage(claimDetails.getHospitalReRaiseClaimMessage());
+            existingClaim.setCreatedAt(claimDetails.getCreatedAt());
+            existingClaim.setUpdatedAt(claimDetails.getUpdatedAt());
+            existingClaim.setVerifierDocuments(claimDetails.getVerifierDocuments());
+
+            HospitalClaim updatedClaim = repo.save(existingClaim);
+            return Optional.of(updatedClaim);
+        }
+
+        return Optional.empty();
+    }
+
+    @Override
+    public boolean deleteClaim(String id) {
+        if (!ObjectId.isValid(id)) {
+            return false;
+        }
+        if (repo.existsById(new ObjectId(id))) {
+            repo.deleteById(new ObjectId(id));
+            return true;
+        }
+        return false;
+    }
+    
+    @Override
+    public List<HospitalClaim> getClaimsWhereInsurerIdIsNull() {
+        return repo.findByInsurerIdIsNull();
+    }
+    
+    @Override
+    public Optional<HospitalClaim> partialUpdateClaim(String id, Map<String, Object> updates) {
+
+        if (!ObjectId.isValid(id)) {
+            return Optional.empty();
+        }
+
+        Optional<HospitalClaim> optionalClaim = repo.findById(new ObjectId(id));
+        if (optionalClaim.isEmpty()) {
+            return Optional.empty();
+        }
+
+        HospitalClaim claim = optionalClaim.get();
+
+        // UPDATE hospitalStatus if present
+        if (updates.containsKey("hospitalStatus")) {
+            claim.setHospitalStatus((String) updates.get("hospitalStatus"));
+        }
+
+        // UPDATE updatedAt if present
+        if (updates.containsKey("updatedAt")) {
+            Object updatedAtVal = updates.get("updatedAt");
+            if (updatedAtVal instanceof String) {
+                // Parse to Date if ISO string (or store as string if your mapping allows)
+                claim.setUpdatedAt(javax.xml.bind.DatatypeConverter.parseDateTime((String) updatedAtVal).getTime());
+            } 
+            // else handle other formats as needed
+        } else {
+            claim.setUpdatedAt(new java.util.Date()); // set now if client did not send
+        }
+
+        // UPDATE treatmentDetails partially
+        if (updates.containsKey("treatmentDetails")) {
+            Map<String, Object> tdUpdates = (Map<String, Object>) updates.get("treatmentDetails");
+
+            var existingTD = claim.getTreatmentDetails();
+            if (existingTD == null) {
+                existingTD = new cps.entities.TreatmentDetails();
+            }
+
+            if (tdUpdates.containsKey("isAdmitted")) {
+                existingTD.setIsAdmitted((Boolean) tdUpdates.get("isAdmitted"));
+            }
+            if (tdUpdates.containsKey("dateOfAdmission")) {
+                existingTD.setDateOfAdmission((String) tdUpdates.get("dateOfAdmission"));
+            }
+            if (tdUpdates.containsKey("admissionNotes")) {
+                existingTD.setAdmissionNotes((String) tdUpdates.get("admissionNotes"));
+            }
+
+            claim.setTreatmentDetails(existingTD);
+        }
+
+        // You can also update other fields similarly if needed.
+
+        HospitalClaim saved = repo.save(claim);
+        return Optional.of(saved);
+    }
+
+
+}

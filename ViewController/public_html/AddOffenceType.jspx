@@ -1,0 +1,147 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html">
+  <jsp:output omit-xml-declaration="true"
+              doctype-root-element="HTML"
+              doctype-system="http://www.w3.org/TR/html4/loose.dtd"
+              doctype-public="-//W3C//DTD HTML 4.01 Transitional//EN"/>
+  <jsp:directive.page contentType="text/html;charset=windows-1252"/>
+  <f:view>
+    <html>
+      <head>
+        <title>Add Offence Type</title>
+        <style>
+          /* Reset and base styles */
+          body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+          }
+          .container {
+            background: #fff;
+            padding: 30px 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            max-width: 420px;
+            width: 100%;
+            box-sizing: border-box;
+            text-align: center;
+          }
+          h1 {
+            margin-bottom: 25px;
+            color: #2c3e50;
+            font-weight: 700;
+            font-size: 1.8rem;
+          }
+          label {
+            display: block;
+            text-align: left;
+            margin-top: 15px;
+            font-weight: 600;
+            color: #34495e;
+            font-size: 1rem;
+          }
+          input {
+            width: 100%;
+            padding: 10px 12px;
+            margin-top: 6px;
+            border: 1.5px solid #bdc3c7;
+            border-radius: 6px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+          }
+          input:focus {
+            border-color: #3498db;
+            outline: none;
+            box-shadow: 0 0 6px rgba(52, 152, 219, 0.4);
+          }
+          .btn-submit, .btn-dashboard {
+            margin-top: 25px;
+            padding: 12px 0;
+            width: 100%;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            display: inline-block;
+          }
+          .btn-submit {
+            background-color: #27ae60;
+            color: white;
+          }
+          .btn-submit:hover {
+            background-color: #1e8449;
+            transform: translateY(-2px);
+          }
+          .btn-dashboard {
+            background-color: #f39c12;
+            color: #2c3e50;
+            margin-top: 15px;
+          }
+          .btn-dashboard:hover {
+            background-color: #d68910;
+            transform: translateY(-2px);
+          }
+          .message {
+            margin-top: 20px;
+            font-weight: 700;
+            font-size: 1rem;
+          }
+          .success {
+            color: #27ae60;
+          }
+          .error {
+            color: #e74c3c;
+          }
+          @media (max-width: 480px) {
+            .container {
+              padding: 25px 20px;
+              max-width: 100%;
+            }
+            h1 {
+              font-size: 1.5rem;
+            }
+            .btn-submit, .btn-dashboard {
+              font-size: 1rem;
+              padding: 10px 0;
+            }
+          }
+        </style>
+      </head>
+      <body>
+        <div class="container">
+          <h1>Add Offence Type</h1>
+          <h:form>
+            <h:messages globalOnly="true" styleClass="message error" />
+
+            <label for="offenceType">Offence Type:</label>
+            <h:inputText id="offenceType" value="#{offenceTypeBean.selectedOffence.offenceType}" required="true" />
+
+            <label for="penalty">Penalty:</label>
+            <h:inputText id="penalty" value="#{offenceTypeBean.selectedOffence.penalty}" required="true">
+              <f:convertNumber integerOnly="true" />
+            </h:inputText>
+
+            <label for="vehType">Vehicle Type:</label>
+            <h:inputText id="vehType" value="#{offenceTypeBean.selectedOffence.vehType}" required="true" />
+
+            <h:commandButton value="Add Offence Type" action="#{offenceTypeBean.addOffence}" styleClass="btn-submit" />
+
+            <h:outputText value="#{offenceTypeBean.message}" styleClass="message #{offenceTypeBean.messageClass}" />
+
+            <h:commandButton value="Go to Dashboard" action="dashboard" styleClass="btn-dashboard" immediate="true" />
+          </h:form>
+        </div>
+      </body>
+    </html>
+  </f:view>
+</jsp:root>

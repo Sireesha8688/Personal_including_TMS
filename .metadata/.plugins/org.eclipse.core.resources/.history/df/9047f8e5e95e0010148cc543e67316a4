@@ -1,0 +1,52 @@
+package training.iqgateway.services.impl;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import training.iqgateway.entities.TmRoleMaster;
+import training.iqgateway.repositories.RoleMasterRepository;
+import training.iqgateway.services.RoleMasterService;
+
+import java.util.List;
+import java.util.Optional;
+
+@Service
+public class RoleMasterServiceImpl implements RoleMasterService {
+
+    private final RoleMasterRepository roleRepository;
+
+    @Autowired
+    public RoleMasterServiceImpl(RoleMasterRepository roleRepository) {
+        this.roleRepository = roleRepository;
+    }
+
+    @Override
+    public List<TmRoleMaster> getAllRoles() {
+        return roleRepository.findAll();
+    }
+
+    @Override
+    public void addRole(TmRoleMaster roleRef) {
+        roleRepository.save(roleRef);
+    }
+
+    @Override
+    public TmRoleMaster getByRolename(String rolename) {
+        Optional<TmRoleMaster> roleOpt = roleRepository.findById(rolename);
+        return roleOpt.orElse(null); // Or throw a custom exception if preferred
+    }
+
+    @Override
+    public void deleteRole(String rolename) {
+        roleRepository.deleteById(rolename);
+    }
+
+    @Override
+    public void updateRole(TmRoleMaster updatedRole) {
+        if (roleRepository.existsById(updatedRole.getRolename())) {
+            roleRepository.save(updatedRole);
+        } else {
+            throw new RuntimeException("Role not found with rolename: " + updatedRole.getRolename());
+        }
+    }
+}

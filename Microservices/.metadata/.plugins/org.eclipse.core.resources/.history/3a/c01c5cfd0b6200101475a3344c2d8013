@@ -1,0 +1,33 @@
+package cps.services.impl;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import cps.CustomerClaimsServices;
+import cps.entities.CustomerClaimsEO;
+import cps.repository.CustomerClaimsRepository;
+
+@Service
+public class CustomerClaimsServicesImpl implements CustomerClaimsServices {
+	
+	private final CustomerClaimsRepository customerClaimsRepositoryRef;
+
+    
+    @Autowired
+    public CustomerClaimsServicesImpl(CustomerClaimsRepository customerClaimsRepositoryRef) {
+        this.customerClaimsRepositoryRef = customerClaimsRepositoryRef;
+    }
+
+	@Override
+	public CustomerClaimsEO addNewCustomerClaim(CustomerClaimsEO customerClaimsEO) {
+		// TODO Auto-generated method stub
+		return customerClaimsRepositoryRef.save(customerClaimsEO);
+	}
+
+	@Override
+	public void updateCustomerStatus(CustomerClaimsEO customerClaimsEO) {
+		// TODO Auto-generated method stub
+		customerClaimsRepositoryRef.save(customerClaimsEO);
+	}
+
+}

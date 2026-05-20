@@ -1,0 +1,205 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:c="http://java.sun.com/jsp/jstl/core">
+    <jsp:output omit-xml-declaration="true"
+                doctype-root-element="HTML"
+                doctype-system="http://www.w3.org/TR/html4/loose.dtd"
+                doctype-public="-//W3C//DTD HTML 4.01 Transitional//EN"/>
+    <jsp:directive.page contentType="text/html;charset=windows-1252"/>
+    <f:view>
+        <html>
+            <head>
+                <title>Update/Delete Offence Type</title>
+                <style>
+                    body {
+                        font-family: Arial, sans-serif;
+                        padding: 20px;
+                        background: #f9f9f9;
+                        margin: 0;
+                        display: flex;
+                        justify-content: center;
+                        align-items: flex-start;
+                        min-height: 100vh;
+                    }
+                    .container {
+                        width: 90%;
+                        max-width: 900px;
+                        background: white;
+                        padding: 30px 40px;
+                        border-radius: 10px;
+                        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+                    }
+                    h1 {
+                        text-align: center;
+                        color: #4CAF50;
+                        margin-bottom: 25px;
+                        font-weight: 700;
+                        font-size: 2rem;
+                    }
+                    table {
+                        width: 100%;
+                        border-collapse: collapse;
+                        margin-bottom: 25px;
+                    }
+                    th, td {
+                        border: 1px solid #ccc;
+                        padding: 10px 12px;
+                        text-align: left;
+                    }
+                    th {
+                        background-color: #4CAF50;
+                        color: white;
+                        font-weight: bold;
+                        text-align: center;
+                    }
+                    tr:nth-child(even) {
+                        background-color: #f2f2f2;
+                    }
+                    tr:hover {
+                        background-color: #e0f2f1;
+                    }
+                    .btn {
+                        padding: 6px 14px;
+                        margin-right: 8px;
+                        border: none;
+                        border-radius: 4px;
+                        cursor: pointer;
+                        font-weight: 600;
+                        font-size: 0.9rem;
+                        box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+                        transition: background-color 0.3s ease, transform 0.2s ease;
+                    }
+                    .btn-update {
+                        background-color: #2196F3;
+                        color: white;
+                    }
+                    .btn-update:hover {
+                        background-color: #1976D2;
+                        transform: translateY(-2px);
+                    }
+                    .btn-delete {
+                        background-color: #f44336;
+                        color: white;
+                    }
+                    .btn-delete:hover {
+                        background-color: #d32f2f;
+                        transform: translateY(-2px);
+                    }
+                    .btn-submit {
+                        background-color: Lime;
+                        color: black;
+                        padding: 10px 20px;
+                        margin-top: 15px;
+                        border-radius: 6px;
+                        font-weight: 700;
+                        display: inline-block;
+                        cursor: pointer;
+                        box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+                        transition: background-color 0.3s ease, transform 0.2s ease;
+                    }
+                    .btn-submit:hover {
+                        background-color: #7cfc00;
+                        transform: translateY(-2px);
+                    }
+                    .btn-dashboard {
+                        background-color: #FFC107;
+                        color: #212529;
+                        border: none;
+                        padding: 12px 28px;
+                        border-radius: 8px;
+                        font-size: 1rem;
+                        font-weight: 600;
+                        cursor: pointer;
+                        display: block;
+                        margin: 30px auto 0 auto;
+                        box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+                        transition: background-color 0.3s ease, transform 0.2s ease;
+                        max-width: 220px;
+                        text-align: center;
+                    }
+                    .btn-dashboard:hover {
+                        background-color: #FFB300;
+                        transform: translateY(-3px);
+                        box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+                    }
+                    .message {
+                        margin: 15px 0 0 0;
+                        font-weight: 700;
+                        text-align: center;
+                        font-size: 1rem;
+                        padding: 12px;
+                        border-radius: 6px;
+                    }
+                    .message.info {
+                        color: #155724;
+                        background-color: #d4edda;
+                        border: 1px solid #c3e6cb;
+                    }
+                    .message.error {
+                        color: #721c24;
+                        background-color: #f8d7da;
+                        border: 1px solid #f5c6cb;
+                    }
+                </style>
+            </head>
+            <body>
+                <div class="container">
+                    <h1>Update/Delete Offence Type</h1>
+                    <h:form id="offenceForm">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Offence Type</th>
+                                    <th>Penalty</th>
+                                    <th>Vehicle Type</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <c:forEach items="#{offenceTypeBean.offenceList}" var="offence">
+                                    <tr>
+                                        <td><h:outputText value="#{offence.offenceType}" /></td>
+                                        <td><h:outputText value="#{offence.penalty}" /></td>
+                                        <td><h:outputText value="#{offence.vehType}" /></td>
+                                        <td>
+                                            <h:commandButton value="Edit" action="#{offenceTypeBean.prepareUpdate}" styleClass="btn btn-update">
+                                                <f:setPropertyActionListener target="#{offenceTypeBean.selectedOffence}" value="#{offence}" />
+                                            </h:commandButton>
+                                            <h:commandButton value="Delete" action="#{offenceTypeBean.deleteOffence}" styleClass="btn btn-delete"
+                                                             onclick="return confirm('Are you sure you want to delete this offence?');">
+                                                <f:setPropertyActionListener target="#{offenceTypeBean.selectedOffence}" value="#{offence}" />
+                                            </h:commandButton>
+                                        </td>
+                                    </tr>
+                                </c:forEach>
+                            </tbody>
+                        </table>
+
+                        <h:panelGroup rendered="#{offenceTypeBean.editing}">
+                            <h3>Edit Offence Type</h3>
+                            <h:outputLabel for="offenceType" value="Offence Type:" />
+                            <h:inputText id="offenceType" value="#{offenceTypeBean.selectedOffence.offenceType}" required="true" />
+                            <h:outputLabel for="penalty" value="Penalty:" />
+                            <h:inputText id="penalty" value="#{offenceTypeBean.selectedOffence.penalty}" required="true">
+                                <f:convertNumber integerOnly="true" />
+                            </h:inputText>
+                            <h:outputLabel for="vehType" value="Vehicle Type:" />
+                            <h:inputText id="vehType" value="#{offenceTypeBean.selectedOffence.vehType}" required="true" />
+                            <h:commandButton value="Update" action="#{offenceTypeBean.saveOffence}" styleClass="btn-submit" />
+                            <h:commandButton value="Cancel" action="#{offenceTypeBean.cancelEdit}" styleClass="btn btn-delete" />
+                        </h:panelGroup>
+                        
+                        <div class="message #{offenceTypeBean.messageClass}">
+                            <h:outputText value="#{offenceTypeBean.message}" />
+                        </div>
+                        
+                        <!-- Dashboard button -->
+                        <h:commandButton value="Go to Dashboard" action="dashboard" immediate="true" styleClass="btn-dashboard" />
+                    </h:form>
+                </div>
+            </body>
+        </html>
+    </f:view>
+</jsp:root>

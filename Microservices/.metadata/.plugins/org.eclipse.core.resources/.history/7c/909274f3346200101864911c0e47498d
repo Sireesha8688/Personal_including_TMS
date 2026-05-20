@@ -1,0 +1,16 @@
+package cps.repository;
+
+import org.bson.types.ObjectId;
+import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.data.mongodb.repository.Update;
+import org.springframework.stereotype.Repository;
+
+import cps.entities.CustomerClaimsEO;
+
+@Repository
+public interface CustomerClaimsRepository extends MongoRepository<CustomerClaimsEO, ObjectId> {
+
+	@Update("{ '$set' : { 'customerStatus' : ?1 } }")
+    void findAndChangeCustomerStatusBy_id(ObjectId id, String customerStatus); 
+
+}

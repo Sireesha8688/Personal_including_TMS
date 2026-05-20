@@ -1,0 +1,8 @@
+package cps.services.impl;
+
+
+@Service
+public class VerifierServiceImpl implements VerifierService {
+
+   
+}

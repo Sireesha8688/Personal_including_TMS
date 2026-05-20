@@ -1,0 +1,14 @@
+{
+  "insuranceData": [
+    {
+      "aadhaarNumber": "123456789012",
+      "insuranceId": "INS-1001",
+      "policyId": "POL-5001"
+    },
+    {
+      "aadhaarNumber": "987654321098",
+      "insuranceId": "INS-1002",
+      "policyId": "POL-5002"
+    }
+  ]
+}

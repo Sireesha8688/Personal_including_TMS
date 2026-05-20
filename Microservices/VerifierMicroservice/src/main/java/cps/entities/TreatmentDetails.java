@@ -1,0 +1,17 @@
+package cps.entities;
+
+
+import lombok.Data;
+
+@Data
+public class TreatmentDetails {
+    private Boolean isAdmitted;
+    private String dateOfAdmission;
+    private String admissionNotes;
+    private Boolean isDischarged;
+    private String dateOfDischarge;
+    private Integer patientPaidNonMedicalExpenses;
+    private String hospitalFinalBill; // base64
+    private Integer hospitalFinalBillAmount;
+    private String dischargeSummaryUrl;
+}

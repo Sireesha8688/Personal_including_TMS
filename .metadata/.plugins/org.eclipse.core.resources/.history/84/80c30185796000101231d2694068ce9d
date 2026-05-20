@@ -1,0 +1,13 @@
+spring.application.name=TMS
+
+server.port=9999
+
+#Oracle DB Settings
+spring.datasource.url=jdbc:oracle:thin:@localhost:1521:XE
+spring.datasource.username=TMS
+spring.datasource.password=TMS
+spring.datasource.driver-class-name=oracle.jdbc.driver.OracleDriver
+spring.jpa.show-sql=true
+
+#Logging Settings
+logging.level.org.org.hibernate.sql=debug

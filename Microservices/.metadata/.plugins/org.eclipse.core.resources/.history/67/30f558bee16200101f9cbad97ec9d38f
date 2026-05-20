@@ -1,0 +1,18 @@
+package cps.services.impl;
+
+
+
+public class CustomerServicesImpl implements CustomerServices {
+	
+	@Autowired
+	private ReactiveMongoTemplate reactiveMongoTemplate;
+
+	
+	
+	@Override
+	public Mono<CustomerEO> getCustomerByAadharNumber(String aadharCardNumber) {
+		Query query = new Query(Criteria.where("aadharCardNumber").is(aadharCardNumber));
+	    return reactiveMongoTemplate.findOne(query,CustomerEO.class);
+	}
+
+}

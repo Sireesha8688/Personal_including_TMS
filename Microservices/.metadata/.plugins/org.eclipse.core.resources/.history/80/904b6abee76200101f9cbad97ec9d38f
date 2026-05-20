@@ -1,0 +1,25 @@
+package cps.services.impl;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.mongodb.core.ReactiveMongoTemplate;
+import org.springframework.data.mongodb.core.query.Criteria;
+import org.springframework.data.mongodb.core.query.Query;
+import org.springframework.stereotype.Service;
+
+import cps.entities.LoginEO;
+import cps.services.AdminService;
+import reactor.core.publisher.Mono;
+
+@Service
+public class AdminServiceImpl implements AdminService {
+	
+	@Autowired
+	private ReactiveMongoTemplate reactiveMongoTemplate;
+
+	@Override
+	public Mono<LoginEO> getAdminByEmail(String email) {
+		Query query = new Query(Criteria.where("email").is(email));
+	    return reactiveMongoTemplate.findOne(query,LoginEO.class);
+	}
+
+}

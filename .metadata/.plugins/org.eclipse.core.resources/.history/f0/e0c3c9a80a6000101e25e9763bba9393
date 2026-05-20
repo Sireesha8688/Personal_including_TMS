@@ -1,0 +1,17 @@
+package training.iqgateway.service;
+
+import java.util.List;
+import training.iqgateway.entities.TmOffence;
+import training.iqgateway.entities.TmOffenceDetails;
+import training.iqgateway.entities.TmOwnerDetails;
+import training.iqgateway.entities.TmRegDetails;
+import training.iqgateway.entities.TmVehicleDetails;
+
+public interface COPOperationService {
+    String reportOffence(TmOffenceDetails offence);
+    List<TmOffenceDetails> fetchUnclearedOffenceDetails();
+    TmOwnerDetails fetchOwnerDetails(Long ownerId);
+    TmRegDetails fetchVehicleDetails(String vehNo);
+    TmVehicleDetails fetchVehicleDetailsByVehNo(String vehNo);
+    List<TmOffence> fetchOffenceTypes();
+}

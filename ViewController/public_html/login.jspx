@@ -1,0 +1,122 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html">
+  <jsp:output omit-xml-declaration="true" doctype-root-element="HTML"
+              doctype-system="http://www.w3.org/TR/html4/loose.dtd"
+              doctype-public="-//W3C//DTD HTML 4.01 Transitional//EN"/>
+  <jsp:directive.page contentType="text/html;charset=windows-1252"/>
+  <f:view>
+    <html>
+      <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=windows-1252"/>
+        <title>Login - Traffic Management System</title>
+        <style>
+          body {
+            background-image: url('images/highway-7213206_1280.jpg');
+            background-size: cover;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+          }
+          .login-container {
+            width: 320px;
+            background-color: rgba(0, 0, 0, 0.75);
+            padding: 30px 25px;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+            text-align: center;
+            margin-top: 20px;
+          }
+          h1 {
+            margin-bottom: 10px;
+            font-weight: 700;
+            font-size: 1.8rem;
+            letter-spacing: 1.2px;
+            text-shadow: 2px 2px 4px #000;
+          }
+          .form-row {
+            margin-bottom: 20px;
+            text-align: left;
+          }
+          label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 6px;
+            font-size: 0.95rem;
+          }
+          input[type="text"], input[type="password"], select {
+            width: 100%;
+            padding: 10px 12px;
+            border-radius: 6px;
+            border: none;
+            font-size: 1rem;
+            outline: none;
+          }
+          input[type="text"]:focus, input[type="password"]:focus, select:focus {
+            box-shadow: 0 0 4px 2px #4CAF50;
+          }
+          .submit-btn {
+            width: 100%;
+            padding: 12px 0;
+            background-color: #4CAF50;
+            font-weight: 700;
+            font-size: 1.1rem;
+            border-radius: 8px;
+            border: none;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+          }
+          .submit-btn:hover {
+            background-color: #45a049;
+          }
+          .error-message {
+            color: #ff6961;
+            font-weight: 600;
+            margin-top: 14px;
+            font-size: 0.95rem;
+            min-height: 20px;
+            text-shadow: 1px 1px 2px #000;
+          }
+        </style>
+      </head>
+      <body>
+        <h1>Welcome to Traffic Management System</h1>
+        <div class="login-container">
+          <h:form>
+            <div class="form-row">
+              <h:outputLabel for="username" value="Username:" />
+              <h:inputText id="username" value="#{loginBean.username}" required="true" requiredMessage="Username is required" />
+              <h:message for="username" style="color:#ff6961; font-size:0.85rem;" />
+            </div>
+            <div class="form-row">
+              <h:outputLabel for="password" value="Password:" />
+              <h:inputSecret id="password" value="#{loginBean.password}" required="true" requiredMessage="Password is required" />
+              <h:message for="password" style="color:#ff6961; font-size:0.85rem;" />
+            </div>
+            <div class="form-row">
+              <h:outputLabel for="role" value="Role:" />
+              <h:selectOneMenu id="role" value="#{loginBean.role}" required="true" requiredMessage="Role selection is required">
+                <f:selectItem itemValue="" itemLabel="-- Select Role --" />
+                <f:selectItem itemValue="USER" itemLabel="User" />
+                <f:selectItem itemValue="RTO" itemLabel="RTO" />
+                <f:selectItem itemValue="CLERK" itemLabel="Clerk" />
+                <f:selectItem itemValue="ADMIN" itemLabel="Admin" />
+                <f:selectItem itemValue="COP" itemLabel="COP" />
+              </h:selectOneMenu>
+              <h:message for="role" style="color:#ff6961; font-size:0.85rem;" />
+            </div>
+            <h:commandButton value="Login" action="#{loginBean.login}" styleClass="submit-btn" />
+            <h:outputText value="#{loginBean.message}" rendered="#{not empty loginBean.message}" styleClass="error-message" />
+          </h:form>
+        </div>
+      </body>
+    </html>
+  </f:view>
+</jsp:root>

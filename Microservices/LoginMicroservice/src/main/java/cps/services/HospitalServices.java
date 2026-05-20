@@ -1,0 +1,10 @@
+package cps.services;
+
+import cps.entities.HospitalEO;
+import reactor.core.publisher.Mono;
+
+public interface HospitalServices {
+
+	public Mono<HospitalEO> getHospitalByEmail(String email);
+
+}

@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root 
+    xmlns:jsp="http://java.sun.com/JSP/Page" 
+    version="2.1"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:c="http://java.sun.com/jsp/jstl/core">
+  <jsp:output omit-xml-declaration="true"
+              doctype-root-element="html"
+              doctype-public="-//W3C//DTD HTML 4.01 Transitional//EN"
+              doctype-system="http://www.w3.org/TR/html4/loose.dtd"/>
+  <jsp:directive.page contentType="text/html;charset=windows-1252"/>
+  <f:view>
+    <html>
+      <head>
+        <title>Pending Offence Details</title>
+        <style>
+          table { border-collapse: collapse; width: 80%; margin: 20px auto; }
+          th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+          th { background-color: #4CAF50; color: white; }
+          tr:nth-child(even) { background-color: #f2f2f2; }
+          h1 { text-align: center; font-family: Arial, sans-serif; color: #4CAF50; margin-top: 30px; }
+          /* Add dashboard button style */
+          .btn-dashboard {
+            background-color: #FFC107;
+            color: #212529;
+            border: none;
+            padding: 10px 24px;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            display: block;
+            margin: 20px auto;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: background-color 0.2s, transform 0.2s;
+          }
+          .btn-dashboard:hover {
+            background-color: #FFB300;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+          }
+        </style>
+      </head>
+      <body>
+        <h1>Pending Offence Details</h1>
+
+        <h:form id="offenceForm">
+          <table>
+            <thead>
+              <tr>
+                <th>Offence Detail ID</th>
+                <th>Offence Type</th>
+                <th>Place</th>
+                <th>Time</th>
+                <th>Vehicle Number</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <c:forEach items="#{unclearedOffenceBean.pendingOffences}" var="offence">
+                <tr>
+                  <td><h:outputText value="#{offence.offenceDetailId}" /></td>
+                  <td><h:outputText value="#{offence.tmOffence.offenceType}" /></td>
+                  <td><h:outputText value="#{offence.place}" /></td>
+                  <td>
+                    <h:outputText value="#{offence.time}">
+                      <f:convertDateTime pattern="yyyy-MM-dd HH:mm:ss" />
+                    </h:outputText>
+                  </td>
+                  <td><h:outputText value="#{offence.tmRegdetails.vehNo}" /></td>
+                  <td><h:outputText value="#{offence.offenceStatus}" /></td>
+                </tr>
+              </c:forEach>
+            </tbody>
+          </table>
+          <!-- Add the dashboard button -->
+          <h:commandButton value="Go to Dashboard" action="dashboard" immediate="true" styleClass="btn-dashboard"/>
+        </h:form>
+      </body>
+    </html>
+  </f:view>
+</jsp:root>

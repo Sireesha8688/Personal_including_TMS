@@ -1,0 +1,70 @@
+package cps.services.impl;
+
+import java.util.Map;
+
+import org.bson.types.ObjectId;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.mongodb.core.ReactiveMongoTemplate;
+import org.springframework.data.mongodb.core.query.Criteria;
+import org.springframework.data.mongodb.core.query.Query;
+import org.springframework.data.mongodb.core.query.Update;
+import org.springframework.stereotype.Service;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.mongodb.client.result.UpdateResult;
+
+import cps.entities.CustomerEO;
+import cps.services.CustomerServices;
+import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
+
+@Service
+public class CustomerServicesImpl implements CustomerServices {
+    
+    @Autowired
+    private ReactiveMongoTemplate reactiveMongoTemplate;
+
+    @Override
+    public Mono<CustomerEO> addNewCustomer(CustomerEO customerEO) {
+        return reactiveMongoTemplate.save(customerEO);
+    }
+    
+    @Override
+    public Flux<CustomerEO> getAllCustomers() {
+        return reactiveMongoTemplate.findAll(CustomerEO.class);
+    }
+    
+    @Override
+    public Mono<CustomerEO> getCustomerById(ObjectId id) {
+        Query query = new Query(Criteria.where("_id").is(id));
+        return reactiveMongoTemplate.findOne(query, CustomerEO.class);
+    }
+    
+    @Override
+    public Mono<CustomerEO> getCustomerByAadharNumber(String aadharCardNumber) {
+        Query query = new Query(Criteria.where("aadharCardNumber").is(aadharCardNumber));
+        return reactiveMongoTemplate.findOne(query, CustomerEO.class);
+    }
+
+    @Override
+    public Mono<UpdateResult> updateCustomer(ObjectId id, CustomerEO customerEO) {
+        Query query = new Query(Criteria.where("_id").is(id));
+        Update update = new Update();
+
+        @SuppressWarnings("unchecked")
+        Map<String, Object> map = new ObjectMapper().convertValue(customerEO, Map.class);
+        map.forEach((key, value) -> {
+            if (value != null && !key.equals("_id")) {
+                update.set(key, value);
+            }
+        });
+
+        return reactiveMongoTemplate.update(CustomerEO.class).matching(query).apply(update).upsert();
+    }
+
+    @Override
+    public Mono<CustomerEO> deleteCustomer(ObjectId id) {
+        Query query = new Query(Criteria.where("_id").is(id));
+        return reactiveMongoTemplate.findAndRemove(query, CustomerEO.class);
+    }
+}

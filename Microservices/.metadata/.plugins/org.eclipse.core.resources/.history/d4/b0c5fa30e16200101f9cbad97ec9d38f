@@ -1,0 +1,18 @@
+package cps.services;
+
+import java.util.List;
+
+import org.bson.types.ObjectId;
+
+import cps.entities.AdminsEO;
+
+public interface AdminService {
+
+    List<AdminsEO> getAllAdmins();
+
+    AdminsEO addAdmin(AdminsEO admin);
+
+    AdminsEO updateAdmin(ObjectId id, AdminsEO admin);
+
+    void deleteAdmin(ObjectId id);
+}

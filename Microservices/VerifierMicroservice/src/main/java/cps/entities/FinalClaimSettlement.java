@@ -1,0 +1,10 @@
+package cps.entities;
+
+import lombok.Data;
+
+@Data
+public class FinalClaimSettlement {
+    private Integer insurerApprovedAmount;
+    private String insurerFinalBill;
+    private String insurerMessage;
+}

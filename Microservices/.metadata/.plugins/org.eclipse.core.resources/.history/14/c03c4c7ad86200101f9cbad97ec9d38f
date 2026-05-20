@@ -1,0 +1,15 @@
+package cps.service;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.bson.types.ObjectId;
+import training.iqgateway.entities.VerifierEO;
+
+public interface VerifierService {
+    VerifierEO addVerifier(VerifierEO verifier);
+    List<VerifierEO> getAllVerifiers();
+    Optional<VerifierEO> getVerifierById(ObjectId id);
+    VerifierEO updateVerifier(ObjectId id, VerifierEO verifier);
+    void deleteVerifier(ObjectId id);
+}

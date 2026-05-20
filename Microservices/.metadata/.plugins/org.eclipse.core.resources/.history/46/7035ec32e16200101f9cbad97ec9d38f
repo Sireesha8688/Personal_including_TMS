@@ -1,0 +1,12 @@
+package cps.services;
+
+import java.util.List;
+
+import org.bson.types.ObjectId;
+
+import cps.entities.AdminsEO;
+
+public interface AdminService {
+
+    
+}

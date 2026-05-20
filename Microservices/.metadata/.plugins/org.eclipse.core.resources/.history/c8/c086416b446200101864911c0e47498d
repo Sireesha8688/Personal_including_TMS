@@ -1,0 +1,45 @@
+package cps.entities;
+
+import java.time.Instant;
+import java.util.List;
+
+import org.bson.types.ObjectId;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+
+@Getter
+@Setter
+@ToString
+@NoArgsConstructor
+@AllArgsConstructor
+@Document(collection = "customerclaimsqueries")
+public class CustomerClaimsQueriesEO {
+
+	@Id
+	private ObjectId id;
+
+	private String raisedByInsurerId;
+
+	private String customerClaimId;
+
+	private String queryStatus;
+
+	private List<QueryDetailsEO> query;
+
+	private Instant createdAt;
+
+	private Instant updatedAt;
+
+	@JsonProperty("_id")
+	public String getIdAsString() {
+		return id != null ? id.toHexString() : null;
+	}
+}

@@ -1,0 +1,16 @@
+package training.iqgateway.service;
+
+import java.util.List;
+import training.iqgateway.entities.TmUserMaster;
+import training.iqgateway.entities.TmRoleMaster;
+
+public interface AdminOperationsService {
+    Integer createUser(TmUserMaster user);
+    int deleteUser(String username);
+    int addRole(TmRoleMaster role);
+    List<TmRoleMaster> listAllRoles();
+    String deleteRoleByRolename(String rolename);
+
+    List<TmUserMaster> fetchAllUsers();
+    String updateRole(TmRoleMaster role);
+}

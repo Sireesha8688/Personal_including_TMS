@@ -1,0 +1,42 @@
+// src/main/java/training/iqgateway/controller/AdminOperationsController.java
+package training.iqgateway.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import training.iqgateway.dto.UserCreateDTO;
+import training.iqgateway.entities.TmUserMaster;
+import training.iqgateway.entities.TmRoleMaster;
+import training.iqgateway.repositories.RolemasterRepository;
+import training.iqgateway.service.AdminOperationsService;
+
+@RestController
+@RequestMapping("/api/admin")
+public class AdminOperationsController {
+
+    private final AdminOperationsService adminService;
+    private final RolemasterRepository roleRepo;
+
+    @Autowired
+    public AdminOperationsController(AdminOperationsService adminService, RolemasterRepository roleRepo) {
+        this.adminService = adminService;
+        this.roleRepo = roleRepo;
+    }
+
+    @PostMapping("/users")
+    public ResponseEntity<String> createUser(@RequestBody UserCreateDTO dto) {
+        // Fetch the role from DB
+        TmRoleMaster role = roleRepo.findById(dto.getRolename())
+            .orElseThrow(() -> new IllegalArgumentException("Role not found: " + dto.getRolename()));
+
+        TmUserMaster user = new TmUserMaster(dto.getUsername(), dto.getPassword(), role);
+
+        Integer result = adminService.createUser(user);
+        if (result == 1) {
+            return ResponseEntity.ok("User created successfully");
+        } else {
+            return ResponseEntity.badRequest().body("User creation failed (duplicate username or invalid data)");
+        }
+    }
+}

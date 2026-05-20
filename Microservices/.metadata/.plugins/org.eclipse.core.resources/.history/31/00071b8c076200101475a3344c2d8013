@@ -1,0 +1,5 @@
+package cps.repository;
+
+public interface CustomerClaimsRepository {
+
+}

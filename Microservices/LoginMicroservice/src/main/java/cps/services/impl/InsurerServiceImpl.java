@@ -1,0 +1,26 @@
+package cps.services.impl;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.mongodb.core.ReactiveMongoTemplate;
+import org.springframework.data.mongodb.core.query.Criteria;
+import org.springframework.data.mongodb.core.query.Query;
+import org.springframework.stereotype.Service;
+
+import cps.entities.InsurersEO;
+import cps.services.InsurerService;
+import reactor.core.publisher.Mono;
+
+@Service
+public class InsurerServiceImpl implements InsurerService {
+	
+	@Autowired
+	private ReactiveMongoTemplate reactiveMongoTemplate;
+
+	@Override
+	public Mono<InsurersEO> getInsurerByEmail(String email) {
+		Query query = new Query(Criteria.where("email").is(email));
+	    return reactiveMongoTemplate.findOne(query, InsurersEO.class);
+	}
+
+   
+}

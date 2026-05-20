@@ -1,0 +1,142 @@
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html">
+  <jsp:output omit-xml-declaration="true" doctype-root-element="HTML"
+              doctype-system="http://www.w3.org/TR/html4/loose.dtd"
+              doctype-public="-//W3C//DTD HTML 4.01 Transitional//EN"/>
+  <jsp:directive.page contentType="text/html;charset=windows-1252"/>
+  <f:view>
+    <html>
+      <head>
+        <meta http-equiv="Content-Type"
+              content="text/html; charset=windows-1252"/>
+        <title>Pending Offenses</title>
+        <style>
+          body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #f5f5f5;
+            margin: 0;
+            padding: 20px;
+          }
+          .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 32px 24px;
+            border-radius: 12px;
+            box-shadow: 0 2px 16px rgba(0,0,0,0.10);
+          }
+          h2 {
+            color: #219150;
+            border-bottom: 2px solid #219150;
+            padding-bottom: 12px;
+            margin-top: 0;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 28px;
+          }
+          table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-bottom: 30px;
+            background: #f9f9f9;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 1px 4px rgba(33,145,80,0.04);
+          }
+          th, td {
+            padding: 12px 10px;
+            border-bottom: 1px solid #e0e0e0;
+            text-align: left;
+            font-size: 1rem;
+          }
+          th {
+            background: #219150;
+            color: #fff;
+            font-weight: 600;
+          }
+          tr:nth-child(even) {
+            background: #f4fef8;
+          }
+          tr:last-child td {
+            border-bottom: none;
+          }
+          .btn {
+            background: #219150;
+            color: #fff;
+            border: none;
+            padding: 11px 28px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            margin-right: 10px;
+            transition: background 0.2s, box-shadow 0.2s;
+          }
+          .btn:hover {
+            background: #17663a;
+            box-shadow: 0 2px 8px rgba(33,145,80,0.12);
+          }
+          .btn-accent {
+            background: #1976D2;
+            color: #fff;
+          }
+          .btn-accent:hover {
+            background: #0d47a1;
+          }
+          .action-row {
+            margin-top: 28px;
+            text-align: center;
+          }
+          @media (max-width: 1000px) {
+            .container { padding: 12px 2vw; }
+            table { font-size: 0.96rem; }
+          }
+          @media (max-width: 700px) {
+            .container { padding: 8px 0.5vw; }
+            table, th, td { font-size: 0.92rem; }
+            .btn { width: 100%; margin-bottom: 12px; }
+            .action-row { display: flex; flex-direction: column; align-items: stretch; }
+          }
+        </style>
+      </head>
+      <body>
+        <div class="container">
+          <h2>Pending Offenses</h2>
+          <h:form>
+            <h:dataTable value="#{transferVehicleBean.pendingOffenses}" var="offence">
+              <h:column>
+                <f:facet name="header">
+                  <h:outputText value="Offense Detail Id"/>
+                </f:facet>
+                <h:outputText value="#{offence.offenceDetailId}"/>
+              </h:column>
+              <h:column>
+                <f:facet name="header">
+                  <h:outputText value="Offense Status"/>
+                </f:facet>
+                <h:outputText value="#{offence.offenceStatus}"/>
+              </h:column>
+              <h:column>
+                <f:facet name="header">
+                  <h:outputText value="Place"/>
+                </f:facet>
+                <h:outputText value="#{offence.place}"/>
+              </h:column>
+              <h:column>
+                <f:facet name="header">
+                  <h:outputText value="Time"/>
+                </f:facet>
+                <h:outputText value="#{offence.time}"/>
+              </h:column>
+            </h:dataTable>
+            <div class="action-row">
+              <h:commandButton value="Clear All Offenses" action="#{transferVehicleBean.confirmClearAllOffenses}" styleClass="btn" />
+              <h:commandButton value="Back to Transfer" action="transferVehicle" styleClass="btn btn-accent" immediate="true"/>
+            </div>
+          </h:form>
+        </div>
+      </body>
+    </html>
+  </f:view>
+</jsp:root>

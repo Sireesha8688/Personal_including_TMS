@@ -1,0 +1,3759 @@
+{
+  "admins": [
+    {
+      "id": "1",
+      "email": "ayan@iq.admin",
+      "name": "Admin-1",
+      "password": "password"
+    },
+    {
+      "id": "2",
+      "email": "arjun@suninsurance.admin",
+      "name": "Arjun Sharma",
+      "password": "Arjun@123"
+    }
+  ],
+  "customers": [
+    {
+      "id": "1",
+      "name": "Arjun Singh",
+      "email": "arjun.singh@suninsurance.user",
+      "password": "pass1",
+      "aadharcardNumber": "123456789012",
+      "policies": [
+        {
+          "policyId": 1,
+          "bought_date": "2023-01-15",
+          "expiry_date": "2024-01-14"
+        },
+        {
+          "policyId": 5,
+          "bought_date": "2024-05-20",
+          "expiry_date": "2025-05-19"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Priya Sharma",
+      "email": "priya.sharma@suninsurance.user",
+      "password": "pass2",
+      "aadharcardNumber": "987654321098",
+      "policies": [
+        {
+          "policyId": 3,
+          "bought_date": "2024-03-10",
+          "expiry_date": "2025-03-09"
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "name": "Rajesh Kumar",
+      "email": "rajesh.kumar@suninsurance.user",
+      "password": "pass3",
+      "aadharcardNumber": "456789012345",
+      "policies": [
+        {
+          "policyId": 2,
+          "bought_date": "2022-11-01",
+          "expiry_date": "2023-10-31"
+        },
+        {
+          "policyId": 10,
+          "bought_date": "2024-08-01",
+          "expiry_date": "2025-07-31"
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "name": "Sneha Reddy",
+      "email": "sneha.reddy@suninsurance.user",
+      "password": "pass4",
+      "aadharcardNumber": "789012345678",
+      "policies": [
+        {
+          "policyId": 7,
+          "bought_date": "2023-07-22",
+          "expiry_date": "2024-07-21"
+        },
+        {
+          "policyId": 15,
+          "bought_date": "2025-02-01",
+          "expiry_date": "2026-01-31"
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "name": "Amit Patel",
+      "email": "amit.patel@suninsurance.user",
+      "password": "pass5",
+      "aadharcardNumber": "012345678901",
+      "policies": [
+        {
+          "policyId": 12,
+          "bought_date": "2024-01-05",
+          "expiry_date": "2025-01-04"
+        },
+        {
+          "policyId": 20,
+          "bought_date": "2024-11-11",
+          "expiry_date": "2025-11-10"
+        }
+      ]
+    },
+    {
+      "id": "6",
+      "name": "Pooja Singh",
+      "email": "pooja.singh@suninsurance.user",
+      "password": "pass6",
+      "aadharcardNumber": "234567890123",
+      "policies": [
+        {
+          "policyId": 4,
+          "bought_date": "2023-04-18",
+          "expiry_date": "2024-04-17"
+        }
+      ]
+    },
+    {
+      "id": "7",
+      "name": "Deepak Yadav",
+      "email": "deepak.yadav@suninsurance.user",
+      "password": "pass7",
+      "aadharcardNumber": "567890123456",
+      "policies": [
+        {
+          "policyId": 6,
+          "bought_date": "2024-06-01",
+          "expiry_date": "2025-05-31"
+        },
+        {
+          "policyId": 18,
+          "bought_date": "2023-09-01",
+          "expiry_date": "2024-08-31"
+        }
+      ]
+    },
+    {
+      "id": "8",
+      "name": "Kavita Gupta",
+      "email": "kavita.gupta@suninsurance.user",
+      "password": "pass8",
+      "aadharcardNumber": "890123456789",
+      "policies": [
+        {
+          "policyId": 9,
+          "bought_date": "2025-01-01",
+          "expiry_date": "2026-01-01"
+        }
+      ]
+    },
+    {
+      "id": "9",
+      "name": "Sanjay Kumar",
+      "email": "sanjay.kumar@suninsurance.user",
+      "password": "pass9",
+      "aadharcardNumber": "109876543210",
+      "policies": [
+        {
+          "policyId": 8,
+          "bought_date": "2023-02-28",
+          "expiry_date": "2024-02-27"
+        },
+        {
+          "policyId": 11,
+          "bought_date": "2024-07-10",
+          "expiry_date": "2025-07-09"
+        }
+      ]
+    },
+    {
+      "id": "10",
+      "name": "Anjali Rao",
+      "email": "anjali.rao@suninsurance.user",
+      "password": "pass10",
+      "aadharcardNumber": "321098765432",
+      "policies": [
+        {
+          "policyId": 13,
+          "bought_date": "2024-02-14",
+          "expiry_date": "2025-02-13"
+        },
+        {
+          "policyId": 25,
+          "bought_date": "2025-03-01",
+          "expiry_date": "2026-02-28"
+        }
+      ]
+    },
+    {
+      "id": "11",
+      "name": "Vivek Desai",
+      "email": "vivek.desai@suninsurance.user",
+      "password": "pass11",
+      "aadharcardNumber": "654321098765",
+      "policies": [
+        {
+          "policyId": 14,
+          "bought_date": "2023-05-01",
+          "expiry_date": "2024-04-30"
+        }
+      ]
+    },
+    {
+      "id": "12",
+      "name": "Shweta Joshi",
+      "email": "shweta.joshi@suninsurance.user",
+      "password": "pass12",
+      "aadharcardNumber": "901234567890",
+      "policies": [
+        {
+          "policyId": 16,
+          "bought_date": "2024-09-15",
+          "expiry_date": "2025-09-14"
+        },
+        {
+          "policyId": 22,
+          "bought_date": "2023-11-20",
+          "expiry_date": "2024-11-19"
+        }
+      ]
+    },
+    {
+      "id": "13",
+      "name": "Gaurav Malik",
+      "email": "gaurav.malik@suninsurance.user",
+      "password": "pass13",
+      "aadharcardNumber": "345678901234",
+      "policies": [
+        {
+          "policyId": 17,
+          "bought_date": "2025-04-01",
+          "expiry_date": "2026-03-31"
+        }
+      ]
+    },
+    {
+      "id": "14",
+      "name": "Neha Verma",
+      "email": "neha.verma@suninsurance.user",
+      "password": "pass14",
+      "aadharcardNumber": "678901234567",
+      "policies": [
+        {
+          "policyId": 19,
+          "bought_date": "2023-03-05",
+          "expiry_date": "2024-03-04"
+        },
+        {
+          "policyId": 21,
+          "bought_date": "2024-10-25",
+          "expiry_date": "2025-10-24"
+        }
+      ]
+    },
+    {
+      "id": "15",
+      "name": "Manish Sharma",
+      "email": "manish.sharma@suninsurance.user",
+      "password": "pass15",
+      "aadharcardNumber": "012345678901",
+      "policies": [
+        {
+          "policyId": 23,
+          "bought_date": "2024-01-01",
+          "expiry_date": "2025-01-01"
+        },
+        {
+          "policyId": 24,
+          "bought_date": "2025-05-10",
+          "expiry_date": "2026-05-09"
+        }
+      ]
+    },
+    {
+      "id": "16",
+      "name": "Ruchika Gupta",
+      "email": "ruchika.gupta@suninsurance.user",
+      "password": "pass16",
+      "aadharcardNumber": "456789012345",
+      "policies": [
+        {
+          "policyId": 26,
+          "bought_date": "2023-06-12",
+          "expiry_date": "2024-06-11"
+        }
+      ]
+    },
+    {
+      "id": "17",
+      "name": "Kiran Rao",
+      "email": "kiran.rao@suninsurance.user",
+      "password": "pass17",
+      "aadharcardNumber": "789012345678",
+      "policies": [
+        {
+          "policyId": 27,
+          "bought_date": "2024-04-01",
+          "expiry_date": "2025-03-31"
+        },
+        {
+          "policyId": 30,
+          "bought_date": "2023-08-08",
+          "expiry_date": "2024-08-07"
+        }
+      ]
+    },
+    {
+      "id": "18",
+      "name": "Alok Dwivedi",
+      "email": "alok.dwivedi@suninsurance.user",
+      "password": "pass18",
+      "aadharcardNumber": "901234567890",
+      "policies": [
+        {
+          "policyId": 28,
+          "bought_date": "2025-01-20",
+          "expiry_date": "2026-01-19"
+        }
+      ]
+    },
+    {
+      "id": "19",
+      "name": "Divya Mehra",
+      "email": "divya.mehra@suninsurance.user",
+      "password": "pass19",
+      "aadharcardNumber": "123456789012",
+      "policies": [
+        {
+          "policyId": 29,
+          "bought_date": "2023-10-01",
+          "expiry_date": "2024-09-30"
+        },
+        {
+          "policyId": 31,
+          "bought_date": "2024-07-07",
+          "expiry_date": "2025-07-06"
+        }
+      ]
+    },
+    {
+      "id": "20",
+      "name": "Ashok Kumar",
+      "email": "ashok.kumar@suninsurance.user",
+      "password": "pass20",
+      "aadharcardNumber": "987654321098",
+      "policies": [
+        {
+          "policyId": 32,
+          "bought_date": "2024-02-20",
+          "expiry_date": "2025-02-19"
+        }
+      ]
+    },
+    {
+      "id": "21",
+      "name": "Swati Shah",
+      "email": "swati.shah@suninsurance.user",
+      "password": "pass21",
+      "aadharcardNumber": "456789012345",
+      "policies": [
+        {
+          "policyId": 33,
+          "bought_date": "2023-01-01",
+          "expiry_date": "2024-01-01"
+        },
+        {
+          "policyId": 35,
+          "bought_date": "2025-06-01",
+          "expiry_date": "2026-05-31"
+        }
+      ]
+    },
+    {
+      "id": "22",
+      "name": "Varun Malhotra",
+      "email": "varun.malhotra@suninsurance.user",
+      "password": "pass22",
+      "aadharcardNumber": "789012345678",
+      "policies": [
+        {
+          "policyId": 34,
+          "bought_date": "2024-05-05",
+          "expiry_date": "2025-05-04"
+        }
+      ]
+    },
+    {
+      "id": "23",
+      "name": "Priyanka Mishra",
+      "email": "priyanka.mishra@suninsurance.user",
+      "password": "pass23",
+      "aadharcardNumber": "012345678901",
+      "policies": [
+        {
+          "policyId": 36,
+          "bought_date": "2023-09-20",
+          "expiry_date": "2024-09-19"
+        },
+        {
+          "policyId": 38,
+          "bought_date": "2025-02-10",
+          "expiry_date": "2026-02-09"
+        }
+      ]
+    },
+    {
+      "id": "24",
+      "name": "Siddharth Jain",
+      "email": "siddharth.jain@suninsurance.user",
+      "password": "pass24",
+      "aadharcardNumber": "234567890123",
+      "policies": [
+        {
+          "policyId": 37,
+          "bought_date": "2024-03-15",
+          "expiry_date": "2025-03-14"
+        }
+      ]
+    },
+    {
+      "id": "25",
+      "name": "Disha Kapoor",
+      "email": "disha.kapoor@suninsurance.user",
+      "password": "pass25",
+      "aadharcardNumber": "567890123456",
+      "policies": [
+        {
+          "policyId": 39,
+          "bought_date": "2023-04-04",
+          "expiry_date": "2024-04-03"
+        },
+        {
+          "policyId": 40,
+          "bought_date": "2024-11-01",
+          "expiry_date": "2025-10-31"
+        }
+      ]
+    }
+  ],
+  "hospitals": [
+    {
+      "id": "1",
+      "name": "Apollo Hospital",
+      "networked": true,
+      "email": "apollo@suninsurance.htl",
+      "password": "hosp_pass1",
+      "address": {
+        "street": "15, Bannerghatta Road",
+        "city": "Bengaluru",
+        "state": "Karnataka",
+        "pincode": "560076"
+      },
+      "contact_info": {
+        "email": "info@apollo.com",
+        "phone": "08026781234"
+      }
+    },
+    {
+      "id": "2",
+      "name": "Manipal Hospital",
+      "networked": true,
+      "email": "manipal@suninsurance.htl",
+      "password": "hosp_pass2",
+      "address": {
+        "street": "98, Old Airport Road",
+        "city": "Bengaluru",
+        "state": "Karnataka",
+        "pincode": "560017"
+      },
+      "contact_info": {
+        "email": "contact@manipalhospitals.in",
+        "phone": "08040001234"
+      }
+    },
+    {
+      "id": "3",
+      "name": "Fortis Hospital",
+      "networked": true,
+      "email": "fortis@suninsurance.htl",
+      "password": "hosp_pass3",
+      "address": {
+        "street": "14, Cunningham Road",
+        "city": "Bengaluru",
+        "state": "Karnataka",
+        "pincode": "560052"
+      },
+      "contact_info": {
+        "email": "enquiry@fortis.com",
+        "phone": "08066211234"
+      }
+    },
+    {
+      "id": "4",
+      "name": "Max Healthcare",
+      "networked": false,
+      "email": "maxhealthcare@suninsurance.htl",
+      "password": "hosp_pass4",
+      "address": {
+        "street": "1, Press Enclave Road",
+        "city": "New Delhi",
+        "state": "Delhi",
+        "pincode": "110017"
+      },
+      "contact_info": {
+        "email": "info@maxhealthcare.com",
+        "phone": "01126511234"
+      }
+    },
+    {
+      "id": "5",
+      "name": "Kokilaben Hospital",
+      "networked": true,
+      "email": "kokilaben@suninsurance.htl",
+      "password": "hosp_pass5",
+      "address": {
+        "street": "Rao Saheb Achutrao Patwardhan Marg",
+        "city": "Mumbai",
+        "state": "Maharashtra",
+        "pincode": "400053"
+      },
+      "contact_info": {
+        "email": "customercare@kokilabenhospital.com",
+        "phone": "02230691234"
+      }
+    },
+    {
+      "id": "6",
+      "name": "Narayana Hrudayalaya",
+      "networked": true,
+      "email": "narayana@suninsurance.htl",
+      "password": "hosp_pass6",
+      "address": {
+        "street": "258, Bommasandra Industrial Area",
+        "city": "Bengaluru",
+        "state": "Karnataka",
+        "pincode": "560099"
+      },
+      "contact_info": {
+        "email": "queries@narayanahealth.org",
+        "phone": "08071221234"
+      }
+    },
+    {
+      "id": "7",
+      "name": "Medanta - The Medicity",
+      "networked": false,
+      "email": "medanta@suninsurance.htl",
+      "password": "hosp_pass7",
+      "address": {
+        "street": "Sector 38, Vasanth Kunj",
+        "city": "Gurugram",
+        "state": "Haryana",
+        "pincode": "122001"
+      },
+      "contact_info": {
+        "email": "info@medanta.org",
+        "phone": "01244141234"
+      }
+    },
+    {
+      "id": "8",
+      "name": "Aster CMI Hospital",
+      "networked": true,
+      "email": "astercmi@suninsurance.htl",
+      "password": "hosp_pass8",
+      "address": {
+        "street": "NH 44, Hebbal",
+        "city": "Bengaluru",
+        "state": "Karnataka",
+        "pincode": "560092"
+      },
+      "contact_info": {
+        "email": "customercare.blr@asterhospital.com",
+        "phone": "08043421234"
+      }
+    },
+    {
+      "id": "9",
+      "name": "MGM Healthcare",
+      "networked": true,
+      "email": "mgmhealthcare@suninsurance.htl",
+      "password": "hosp_pass9",
+      "address": {
+        "street": "161, Perumbakkam High Road",
+        "city": "Chennai",
+        "state": "Tamil Nadu",
+        "pincode": "600084"
+      },
+      "contact_info": {
+        "email": "info@mgmhealthcare.in",
+        "phone": "04445211234"
+      }
+    },
+    {
+      "id": "10",
+      "name": "Ruby Hall Clinic",
+      "networked": false,
+      "email": "rubyhall@suninsurance.htl",
+      "password": "hosp_pass10",
+      "address": {
+        "street": "Bund Garden Road",
+        "city": "Pune",
+        "state": "Maharashtra",
+        "pincode": "411001"
+      },
+      "contact_info": {
+        "email": "contact@rubyhall.com",
+        "phone": "02026121234"
+      }
+    }
+  ],
+  "insurers": [
+    {
+      "id": "1",
+      "email": "anand@suninsurance.ins",
+      "password": "password1",
+      "name": "Anand Sharma"
+    },
+    {
+      "id": "2",
+      "email": "priya@suninsurance.ins",
+      "password": "password2",
+      "name": "Priya Singh"
+    },
+    {
+      "id": "3",
+      "email": "rajesh@suninsurance.ins",
+      "password": "password3",
+      "name": "Rajesh Kumar"
+    },
+    {
+      "id": "4",
+      "email": "sita@suninsurance.ins",
+      "password": "password4",
+      "name": "Sita Devi"
+    },
+    {
+      "id": "5",
+      "email": "vikram@suninsurance.ins",
+      "password": "password5",
+      "name": "Vikram Patel"
+    }
+  ],
+  "verfiers": [
+    {
+      "id": "1",
+      "name": "Ravi Kumar",
+      "email": "ravi@verifyco.ver",
+      "available": true,
+      "claimTypesAuthorized": [
+        {
+          "claimTypeId": 1
+        },
+        {
+          "claimTypeId": 5
+        },
+        {
+          "claimTypeId": 9
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Priya Sharma",
+      "email": "priya@verifyco.ver",
+      "available": false,
+      "claimTypesAuthorized": [
+        {
+          "claimTypeId": 3
+        },
+        {
+          "claimTypeId": 10
+        },
+        {
+          "claimTypeId": 11
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "name": "Amit Patel",
+      "email": "amit@verifyco.ver",
+      "available": true,
+      "claimTypesAuthorized": [
+        {
+          "claimTypeId": 2
+        },
+        {
+          "claimTypeId": 14
+        },
+        {
+          "claimTypeId": 16
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "name": "Sneha Gupta",
+      "email": "sneha@verifyco.ver",
+      "available": true,
+      "claimTypesAuthorized": [
+        {
+          "claimTypeId": 4
+        },
+        {
+          "claimTypeId": 19
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "name": "Deepak Singh",
+      "email": "deepak@verifyco.ver",
+      "available": false,
+      "claimTypesAuthorized": [
+        {
+          "claimTypeId": 6
+        },
+        {
+          "claimTypeId": 7
+        },
+        {
+          "claimTypeId": 17
+        }
+      ]
+    },
+    {
+      "id": "6",
+      "name": "Pooja Devi",
+      "email": "pooja@verifyco.ver",
+      "available": true,
+      "claimTypesAuthorized": [
+        {
+          "claimTypeId": 1
+        },
+        {
+          "claimTypeId": 3
+        },
+        {
+          "claimTypeId": 4
+        },
+        {
+          "claimTypeId": 5
+        }
+      ]
+    },
+    {
+      "id": "7",
+      "name": "Sanjay Kumar",
+      "email": "sanjay@verifyco.ver",
+      "available": true,
+      "claimTypesAuthorized": [
+        {
+          "claimTypeId": 8
+        },
+        {
+          "claimTypeId": 12
+        },
+        {
+          "claimTypeId": 13
+        }
+      ]
+    },
+    {
+      "id": "8",
+      "name": "Anjali Rao",
+      "email": "anjali@verifyco.ver",
+      "available": false,
+      "claimTypesAuthorized": [
+        {
+          "claimTypeId": 10
+        },
+        {
+          "claimTypeId": 11
+        },
+        {
+          "claimTypeId": 20
+        }
+      ]
+    },
+    {
+      "id": "9",
+      "name": "Vikram Reddy",
+      "email": "vikram@verifyco.ver",
+      "available": true,
+      "claimTypesAuthorized": [
+        {
+          "claimTypeId": 1
+        },
+        {
+          "claimTypeId": 2
+        },
+        {
+          "claimTypeId": 9
+        }
+      ]
+    },
+    {
+      "id": "10",
+      "name": "Meena Kapoor",
+      "email": "meena@verifyco.ver",
+      "available": true,
+      "claimTypesAuthorized": [
+        {
+          "claimTypeId": 15
+        },
+        {
+          "claimTypeId": 18
+        }
+      ]
+    },
+    {
+      "id": "11",
+      "name": "Arjun Sharma",
+      "email": "arjun@verifyco.ver",
+      "available": true,
+      "claimTypesAuthorized": [
+        {
+          "claimTypeId": 3
+        },
+        {
+          "claimTypeId": 4
+        },
+        {
+          "claimTypeId": 10
+        }
+      ]
+    },
+    {
+      "id": "12",
+      "name": "Kavita Devi",
+      "email": "kavita@verifyco.ver",
+      "available": false,
+      "claimTypesAuthorized": [
+        {
+          "claimTypeId": 1
+        },
+        {
+          "claimTypeId": 5
+        },
+        {
+          "claimTypeId": 13
+        }
+      ]
+    },
+    {
+      "id": "13",
+      "name": "Rahul Verma",
+      "email": "rahul@verifyco.ver",
+      "available": true,
+      "claimTypesAuthorized": [
+        {
+          "claimTypeId": 2
+        },
+        {
+          "claimTypeId": 9
+        },
+        {
+          "claimTypeId": 14
+        }
+      ]
+    },
+    {
+      "id": "14",
+      "name": "Nisha Singh",
+      "email": "nisha@verifyco.ver",
+      "available": true,
+      "claimTypesAuthorized": [
+        {
+          "claimTypeId": 6
+        },
+        {
+          "claimTypeId": 7
+        },
+        {
+          "claimTypeId": 17
+        },
+        {
+          "claimTypeId": 18
+        }
+      ]
+    },
+    {
+      "id": "15",
+      "name": "Gaurav Jain",
+      "email": "gaurav@verifyco.ver",
+      "available": true,
+      "claimTypesAuthorized": [
+        {
+          "claimTypeId": 1
+        },
+        {
+          "claimTypeId": 3
+        },
+        {
+          "claimTypeId": 11
+        },
+        {
+          "claimTypeId": 16
+        }
+      ]
+    }
+  ],
+  "policy": [
+    {
+      "id": "1",
+      "name": "Essential Health Shield",
+      "description": "A foundational health plan covering common medical needs.",
+      "covers": [
+        {
+          "coverId": 4
+        },
+        {
+          "coverId": 17
+        }
+      ],
+      "sumAssured": 300000,
+      "premium": 750
+    },
+    {
+      "id": "2",
+      "name": "FamilyCare Pro",
+      "description": "Comprehensive health coverage for all family members.",
+      "covers": [
+        {
+          "coverId": 3
+        },
+        {
+          "coverId": 4
+        },
+        {
+          "coverId": 14
+        },
+        {
+          "coverId": 26
+        }
+      ],
+      "sumAssured": 800000,
+      "premium": 2500
+    },
+    {
+      "id": "3",
+      "name": "Senior Life Secure",
+      "description": "Specialized policy for the health needs of senior citizens.",
+      "covers": [
+        {
+          "coverId": 13
+        },
+        {
+          "coverId": 23
+        },
+        {
+          "coverId": 38
+        }
+      ],
+      "sumAssured": 500000,
+      "premium": 1200
+    },
+    {
+      "id": "4",
+      "name": "Traveler's Medical Buddy",
+      "description": "Medical protection for domestic and international travel.",
+      "covers": [
+        {
+          "coverId": 15
+        },
+        {
+          "coverId": 30
+        }
+      ],
+      "sumAssured": 100000,
+      "premium": 400
+    },
+    {
+      "id": "5",
+      "name": "Critical Guard Plan",
+      "description": "Financial support against life-threatening critical illnesses.",
+      "covers": [
+        {
+          "coverId": 3
+        },
+        {
+          "coverId": 10
+        },
+        {
+          "coverId": 11
+        }
+      ],
+      "sumAssured": 1500000,
+      "premium": 4500
+    },
+    {
+      "id": "6",
+      "name": "Accident Recovery Policy",
+      "description": "Benefits for injuries and disabilities resulting from accidents.",
+      "covers": [
+        {
+          "coverId": 2
+        },
+        {
+          "coverId": 9
+        },
+        {
+          "coverId": 22
+        }
+      ],
+      "sumAssured": 750000,
+      "premium": 1800
+    },
+    {
+      "id": "7",
+      "name": "Dental & Vision Plus",
+      "description": "Add-on coverage for routine dental and vision care.",
+      "covers": [
+        {
+          "coverId": 7
+        },
+        {
+          "coverId": 8
+        }
+      ],
+      "sumAssured": 40000,
+      "premium": 300
+    },
+    {
+      "id": "8",
+      "name": "Wellness Booster Plan",
+      "description": "Encourages a healthy lifestyle with preventive care benefits.",
+      "covers": [
+        {
+          "coverId": 27
+        },
+        {
+          "coverId": 35
+        },
+        {
+          "coverId": 46
+        }
+      ],
+      "sumAssured": 15000,
+      "premium": 150
+    },
+    {
+      "id": "9",
+      "name": "Holistic Healing Policy",
+      "description": "Covers alternative and traditional medical treatments.",
+      "covers": [
+        {
+          "coverId": 20
+        },
+        {
+          "coverId": 32
+        }
+      ],
+      "sumAssured": 70000,
+      "premium": 280
+    },
+    {
+      "id": "10",
+      "name": "Maternity & Child Health",
+      "description": "Dedicated plan for maternity needs and newborn care.",
+      "covers": [
+        {
+          "coverId": 5
+        },
+        {
+          "coverId": 39
+        }
+      ],
+      "sumAssured": 200000,
+      "premium": 650
+    },
+    {
+      "id": "11",
+      "name": "Advanced Protection Plan",
+      "description": "High coverage for major medical conditions including transplants.",
+      "covers": [
+        {
+          "coverId": 10
+        },
+        {
+          "coverId": 11
+        },
+        {
+          "coverId": 12
+        }
+      ],
+      "sumAssured": 2000000,
+      "premium": 6000
+    },
+    {
+      "id": "12",
+      "name": "Chronic Care Support",
+      "description": "Manages expenses for long-term chronic diseases.",
+      "covers": [
+        {
+          "coverId": 25
+        },
+        {
+          "coverId": 45
+        }
+      ],
+      "sumAssured": 800000,
+      "premium": 1000
+    },
+    {
+      "id": "13",
+      "name": "Mental Wellness Plus",
+      "description": "Supports mental health with therapy and counseling coverage.",
+      "covers": [
+        {
+          "coverId": 26
+        }
+      ],
+      "sumAssured": 100000,
+      "premium": 350
+    },
+    {
+      "id": "14",
+      "name": "Post-Care Recovery",
+      "description": "Covers rehabilitation and home healthcare after hospitalization.",
+      "covers": [
+        {
+          "coverId": 19
+        },
+        {
+          "coverId": 31
+        },
+        {
+          "coverId": 51
+        }
+      ],
+      "sumAssured": 150000,
+      "premium": 400
+    },
+    {
+      "id": "15",
+      "name": "Super Secure Policy",
+      "description": "An all-encompassing policy for maximum peace of mind.",
+      "covers": [
+        {
+          "coverId": 2
+        },
+        {
+          "coverId": 3
+        },
+        {
+          "coverId": 4
+        },
+        {
+          "coverId": 10
+        },
+        {
+          "coverId": 25
+        }
+      ],
+      "sumAssured": 3000000,
+      "premium": 8000
+    },
+    {
+      "id": "16",
+      "name": "Basic Accident Plan",
+      "description": "Covers minor injuries and ambulance services from accidents.",
+      "covers": [
+        {
+          "coverId": 18
+        },
+        {
+          "coverId": 34
+        }
+      ],
+      "sumAssured": 50000,
+      "premium": 200
+    },
+    {
+      "id": "17",
+      "name": "Global Medical Aid",
+      "description": "Extends medical coverage for treatments sought overseas.",
+      "covers": [
+        {
+          "coverId": 36
+        }
+      ],
+      "sumAssured": 1200000,
+      "premium": 1500
+    },
+    {
+      "id": "18",
+      "name": "Genetic Insight Plan",
+      "description": "Includes coverage for genetic testing and counseling.",
+      "covers": [
+        {
+          "coverId": 37
+        },
+        {
+          "coverId": 47
+        }
+      ],
+      "sumAssured": 30000,
+      "premium": 180
+    },
+    {
+      "id": "19",
+      "name": "Hospital Cash Benefit",
+      "description": "Provides a daily cash payout during hospitalization.",
+      "covers": [
+        {
+          "coverId": 17
+        },
+        {
+          "coverId": 40
+        }
+      ],
+      "sumAssured": 10000,
+      "premium": 100
+    },
+    {
+      "id": "20",
+      "name": "Elective Care Package",
+      "description": "For planned surgical procedures and second opinions.",
+      "covers": [
+        {
+          "coverId": 28
+        },
+        {
+          "coverId": 29
+        }
+      ],
+      "sumAssured": 300000,
+      "premium": 600
+    },
+    {
+      "id": "21",
+      "name": "Mobility & Hearing Support",
+      "description": "Aids for durable medical equipment and hearing devices.",
+      "covers": [
+        {
+          "coverId": 44
+        },
+        {
+          "coverId": 50
+        }
+      ],
+      "sumAssured": 60000,
+      "premium": 250
+    },
+    {
+      "id": "22",
+      "name": "Comprehensive Protection",
+      "description": "A robust policy combining health, accident, and liability.",
+      "covers": [
+        {
+          "coverId": 4
+        },
+        {
+          "coverId": 9
+        },
+        {
+          "coverId": 21
+        }
+      ],
+      "sumAssured": 1000000,
+      "premium": 2800
+    },
+    {
+      "id": "23",
+      "name": "Youth Active Plan",
+      "description": "Designed for young, active individuals covering sports injuries.",
+      "covers": [
+        {
+          "coverId": 34
+        }
+      ],
+      "sumAssured": 70000,
+      "premium": 180
+    },
+    {
+      "id": "24",
+      "name": "Weight Management Policy",
+      "description": "Covers bariatric surgery and related medical support.",
+      "covers": [
+        {
+          "coverId": 48
+        }
+      ],
+      "sumAssured": 500000,
+      "premium": 700
+    },
+    {
+      "id": "25",
+      "name": "Spine & Joint Care",
+      "description": "Specialized coverage for spinal injuries and orthopedic issues.",
+      "covers": [
+        {
+          "coverId": 49
+        },
+        {
+          "coverId": 1
+        }
+      ],
+      "sumAssured": 750000,
+      "premium": 900
+    },
+    {
+      "id": "26",
+      "name": "Digital Health Access",
+      "description": "Includes telemedicine and online consultation benefits.",
+      "covers": [
+        {
+          "coverId": 43
+        }
+      ],
+      "sumAssured": 10000,
+      "premium": 80
+    },
+    {
+      "id": "27",
+      "name": "Preventive Care Priority",
+      "description": "Focuses on early detection and prevention of diseases.",
+      "covers": [
+        {
+          "coverId": 35
+        },
+        {
+          "coverId": 46
+        }
+      ],
+      "sumAssured": 20000,
+      "premium": 150
+    },
+    {
+      "id": "28",
+      "name": "Long-Term Care Essentials",
+      "description": "Provides support for elderly care and extended home care.",
+      "covers": [
+        {
+          "coverId": 19
+        },
+        {
+          "coverId": 38
+        }
+      ],
+      "sumAssured": 400000,
+      "premium": 800
+    },
+    {
+      "id": "29",
+      "name": "Outpatient Plus",
+      "description": "Extends coverage beyond hospitalization to outpatient services.",
+      "covers": [
+        {
+          "coverId": 6
+        },
+        {
+          "coverId": 41
+        }
+      ],
+      "sumAssured": 80000,
+      "premium": 250
+    },
+    {
+      "id": "30",
+      "name": "Peace of Mind Plan",
+      "description": "Covers end-of-life expenses for comprehensive assurance.",
+      "covers": [
+        {
+          "coverId": 24
+        }
+      ],
+      "sumAssured": 25000,
+      "premium": 120
+    },
+    {
+      "id": "31",
+      "name": "Active Living Plan",
+      "description": "For those leading an active lifestyle, protecting against injuries.",
+      "covers": [
+        {
+          "coverId": 9
+        },
+        {
+          "coverId": 34
+        }
+      ],
+      "sumAssured": 450000,
+      "premium": 1000
+    },
+    {
+      "id": "32",
+      "name": "Student Care Plan",
+      "description": "Basic health and accident coverage for students.",
+      "covers": [
+        {
+          "coverId": 6
+        },
+        {
+          "coverId": 16
+        }
+      ],
+      "sumAssured": 70000,
+      "premium": 220
+    },
+    {
+      "id": "33",
+      "name": "Income Protection Plus",
+      "description": "Replaces lost income due to temporary or permanent disability.",
+      "covers": [
+        {
+          "coverId": 22
+        },
+        {
+          "coverId": 33
+        }
+      ],
+      "sumAssured": 150000,
+      "premium": 300
+    },
+    {
+      "id": "34",
+      "name": "Flexible Health Option",
+      "description": "A customizable plan to pick and choose your covers.",
+      "covers": [
+        {
+          "coverId": 1
+        },
+        {
+          "coverId": 14
+        },
+        {
+          "coverId": 26
+        }
+      ],
+      "sumAssured": 600000,
+      "premium": 1800
+    },
+    {
+      "id": "35",
+      "name": "Ultimate Family Cover",
+      "description": "All-inclusive plan for extended family protection.",
+      "covers": [
+        {
+          "coverId": 3
+        },
+        {
+          "coverId": 4
+        },
+        {
+          "coverId": 5
+        },
+        {
+          "coverId": 14
+        },
+        {
+          "coverId": 25
+        },
+        {
+          "coverId": 39
+        }
+      ],
+      "sumAssured": 1800000,
+      "premium": 4500
+    },
+    {
+      "id": "36",
+      "name": "Budget-Friendly Basics",
+      "description": "An affordable plan for essential hospitalization and accidents.",
+      "covers": [
+        {
+          "coverId": 4
+        },
+        {
+          "coverId": 9
+        }
+      ],
+      "sumAssured": 250000,
+      "premium": 600
+    },
+    {
+      "id": "37",
+      "name": "Comprehensive Care Gold",
+      "description": "High-tier plan with broad coverage including critical illness and organ transplant.",
+      "covers": [
+        {
+          "coverId": 3
+        },
+        {
+          "coverId": 10
+        },
+        {
+          "coverId": 12
+        },
+        {
+          "coverId": 16
+        }
+      ],
+      "sumAssured": 2500000,
+      "premium": 7000
+    },
+    {
+      "id": "38",
+      "name": "Young Professional Plan",
+      "description": "Tailored for young professionals with emphasis on mental health and wellness.",
+      "covers": [
+        {
+          "coverId": 26
+        },
+        {
+          "coverId": 27
+        },
+        {
+          "coverId": 35
+        }
+      ],
+      "sumAssured": 150000,
+      "premium": 450
+    },
+    {
+      "id": "39",
+      "name": "Adventurous Spirit Plan",
+      "description": "Designed for travelers and adventurers, with evacuation benefits.",
+      "covers": [
+        {
+          "coverId": 15
+        },
+        {
+          "coverId": 30
+        }
+      ],
+      "sumAssured": 120000,
+      "premium": 500
+    },
+    {
+      "id": "40",
+      "name": "Rural Health Support",
+      "description": "Focused on basic health needs and easy access to care in rural areas.",
+      "covers": [
+        {
+          "coverId": 6
+        },
+        {
+          "coverId": 17
+        }
+      ],
+      "sumAssured": 100000,
+      "premium": 250
+    },
+    {
+      "id": "41",
+      "name": "Corporate Wellness Plan",
+      "description": "Customizable plan for corporate employees with added wellness benefits.",
+      "covers": [
+        {
+          "coverId": 4
+        },
+        {
+          "coverId": 27
+        },
+        {
+          "coverId": 35
+        }
+      ],
+      "sumAssured": 700000,
+      "premium": 2000
+    },
+    {
+      "id": "42",
+      "name": "New Beginnings Policy",
+      "description": "For young couples, covering maternity and early child care.",
+      "covers": [
+        {
+          "coverId": 5
+        },
+        {
+          "coverId": 39
+        }
+      ],
+      "sumAssured": 180000,
+      "premium": 580
+    },
+    {
+      "id": "43",
+      "name": "Accident & Disability Combo",
+      "description": "Combines accidental death and permanent disability benefits.",
+      "covers": [
+        {
+          "coverId": 2
+        },
+        {
+          "coverId": 23
+        }
+      ],
+      "sumAssured": 1000000,
+      "premium": 1900
+    },
+    {
+      "id": "44",
+      "name": "Medication Plus Plan",
+      "description": "Focuses on covering high prescription drug costs.",
+      "covers": [
+        {
+          "coverId": 45
+        }
+      ],
+      "sumAssured": 50000,
+      "premium": 180
+    },
+    {
+      "id": "45",
+      "name": "Rehab & Recovery Plan",
+      "description": "Dedicated to covering rehabilitation and post-hospitalization expenses.",
+      "covers": [
+        {
+          "coverId": 31
+        },
+        {
+          "coverId": 51
+        }
+      ],
+      "sumAssured": 100000,
+      "premium": 300
+    },
+    {
+      "id": "46",
+      "name": "Budgeted Family Safety",
+      "description": "An economical plan providing essential family health protection.",
+      "covers": [
+        {
+          "coverId": 4
+        },
+        {
+          "coverId": 14
+        }
+      ],
+      "sumAssured": 400000,
+      "premium": 1200
+    },
+    {
+      "id": "47",
+      "name": "Premium Lifestyle Plan",
+      "description": "For a luxurious cover, including extensive overseas treatment.",
+      "covers": [
+        {
+          "coverId": 3
+        },
+        {
+          "coverId": 10
+        },
+        {
+          "coverId": 36
+        }
+      ],
+      "sumAssured": 1800000,
+      "premium": 4000
+    },
+    {
+      "id": "48",
+      "name": "Health First Aid",
+      "description": "Covers immediate emergency room visits and basic outpatient care.",
+      "covers": [
+        {
+          "coverId": 6
+        },
+        {
+          "coverId": 41
+        }
+      ],
+      "sumAssured": 50000,
+      "premium": 150
+    },
+    {
+      "id": "49",
+      "name": "Complete Coverage Suite",
+      "description": "Offers a wide range of covers from critical illness to dental and vision.",
+      "covers": [
+        {
+          "coverId": 3
+        },
+        {
+          "coverId": 7
+        },
+        {
+          "coverId": 8
+        },
+        {
+          "coverId": 10
+        },
+        {
+          "coverId": 26
+        }
+      ],
+      "sumAssured": 1500000,
+      "premium": 3500
+    },
+    {
+      "id": "50",
+      "name": "Basic Protection Plan",
+      "description": "A straightforward plan for essential medical and accidental needs.",
+      "covers": [
+        {
+          "coverId": 4
+        },
+        {
+          "coverId": 9
+        }
+      ],
+      "sumAssured": 300000,
+      "premium": 800
+    }
+  ],
+  "claimTypes": [
+    {
+      "id": "1",
+      "type": "Hospitalization Claim",
+      "description": "Claim for expenses incurred during inpatient hospital treatment, including room, board, and medical procedures."
+    },
+    {
+      "id": "2",
+      "type": "Accidental Injury Claim",
+      "description": "Claim for medical expenses or benefits due to injuries sustained in an accident, not requiring extended hospitalization."
+    },
+    {
+      "id": "3",
+      "type": "Critical Illness Claim",
+      "description": "Claim for a lump sum benefit upon diagnosis of a specified critical illness as defined in the policy."
+    },
+    {
+      "id": "4",
+      "type": "Maternity Claim",
+      "description": "Claim for expenses related to pregnancy, childbirth, and associated pre/post-natal care."
+    },
+    {
+      "id": "5",
+      "type": "Outpatient Consultation Claim",
+      "description": "Claim for medical expenses from doctor's visits, general consultations, and prescribed tests done outside a hospital stay."
+    },
+    {
+      "id": "6",
+      "type": "Dental Treatment Claim",
+      "description": "Claim for routine dental check-ups, cleanings, fillings, root canals, and other common dental procedures."
+    },
+    {
+      "id": "7",
+      "type": "Vision Care Claim",
+      "description": "Claim for eye examinations, prescription glasses, contact lenses, or treatments for common eye conditions."
+    },
+    {
+      "id": "8",
+      "type": "Pre-Existing Condition Claim",
+      "description": "Claim for treatment of medical conditions that existed before the policy's effective date, after applicable waiting periods."
+    },
+    {
+      "id": "9",
+      "type": "Reimbursement Claim",
+      "description": "Claim for medical expenses initially paid out-of-pocket by the insured, seeking reimbursement from the insurer."
+    },
+    {
+      "id": "10",
+      "type": "Death Benefit Claim",
+      "description": "Claim for the payout of the sum assured to beneficiaries upon the accidental or covered death of the insured."
+    },
+    {
+      "id": "11",
+      "type": "Permanent Disability Claim",
+      "description": "Claim for a lump sum benefit in case of permanent partial or total disability due to an accident or covered illness."
+    },
+    {
+      "id": "12",
+      "type": "Alternative Therapy Claim",
+      "description": "Claim for treatments under alternative medicine systems like Ayurveda, Yoga, Unani, Siddha, Homeopathy (AYUSH)."
+    },
+    {
+      "id": "13",
+      "type": "Diagnostic Test Claim",
+      "description": "Claim specifically for costs of medical diagnostic tests like X-rays, MRIs, blood tests, etc."
+    },
+    {
+      "id": "14",
+      "type": "Ambulance Services Claim",
+      "description": "Claim for emergency medical transportation services to and from a hospital."
+    },
+    {
+      "id": "15",
+      "type": "Medical Evacuation Claim",
+      "description": "Claim for costs associated with emergency medical evacuation from one location to a more suitable medical facility."
+    },
+    {
+      "id": "16",
+      "type": "Rehabilitation Therapy Claim",
+      "description": "Claim for physical therapy, occupational therapy, or other rehabilitation services post-injury or illness."
+    },
+    {
+      "id": "17",
+      "type": "Prescription Drug Claim",
+      "description": "Claim for reimbursement of costs for prescribed medications."
+    },
+    {
+      "id": "18",
+      "type": "Wellness Program Claim",
+      "description": "Claim for benefits related to participation in wellness programs or preventive health initiatives as per policy."
+    },
+    {
+      "id": "19",
+      "type": "Home Healthcare Claim",
+      "description": "Claim for medically necessary services provided at the insured's home by qualified healthcare professionals."
+    },
+    {
+      "id": "20",
+      "type": "Second Opinion Claim",
+      "description": "Claim for consultation fees for obtaining a second medical opinion from another healthcare provider."
+    }
+  ],
+  "covers": [
+    {
+      "id": "1",
+      "coverName": "Fracture",
+      "coverAmount": 3000,
+      "premium": 200,
+      "description": "Description of cover"
+    },
+    {
+      "id": "2",
+      "coverName": "Accidental Death",
+      "coverAmount": 500000,
+      "premium": 500,
+      "description": "Coverage in case of accidental death."
+    },
+    {
+      "id": "3",
+      "coverName": "Critical Illness",
+      "coverAmount": 750000,
+      "premium": 750,
+      "description": "Financial support for critical illnesses like cancer, heart attack."
+    },
+    {
+      "id": "4",
+      "coverName": "Hospitalization",
+      "coverAmount": 200000,
+      "premium": 300,
+      "description": "Covers hospital room, board, and nursing expenses."
+    },
+    {
+      "id": "5",
+      "coverName": "Maternity",
+      "coverAmount": 150000,
+      "premium": 400,
+      "description": "Expenses related to pregnancy and childbirth."
+    },
+    {
+      "id": "6",
+      "coverName": "Outpatient Care",
+      "coverAmount": 50000,
+      "premium": 150,
+      "description": "Coverage for doctor visits and minor procedures."
+    },
+    {
+      "id": "7",
+      "coverName": "Dental Care",
+      "coverAmount": 25000,
+      "premium": 100,
+      "description": "Covers routine dental check-ups and treatments."
+    },
+    {
+      "id": "8",
+      "coverName": "Vision Care",
+      "coverAmount": 15000,
+      "premium": 80,
+      "description": "Includes eye exams, glasses, and contact lenses."
+    },
+    {
+      "id": "9",
+      "coverName": "Personal Accident",
+      "coverAmount": 300000,
+      "premium": 250,
+      "description": "Benefits for injuries due to accidents, including disability."
+    },
+    {
+      "id": "10",
+      "coverName": "Cancer Care",
+      "coverAmount": 1000000,
+      "premium": 1200,
+      "description": "Specialized coverage for cancer diagnosis and treatment."
+    },
+    {
+      "id": "11",
+      "coverName": "Heart Disease",
+      "coverAmount": 900000,
+      "premium": 1100,
+      "description": "Specific cover for heart-related ailments and surgeries."
+    },
+    {
+      "id": "12",
+      "coverName": "Organ Transplant",
+      "coverAmount": 1500000,
+      "premium": 1500,
+      "description": "Covers costs associated with organ transplantation."
+    },
+    {
+      "id": "13",
+      "coverName": "Senior Citizen",
+      "coverAmount": 400000,
+      "premium": 600,
+      "description": "Health coverage tailored for elderly individuals."
+    },
+    {
+      "id": "14",
+      "coverName": "Child Care",
+      "coverAmount": 100000,
+      "premium": 200,
+      "description": "Comprehensive health coverage for children."
+    },
+    {
+      "id": "15",
+      "coverName": "Travel Medical",
+      "coverAmount": 50000,
+      "premium": 180,
+      "description": "Medical emergencies while traveling internationally."
+    },
+    {
+      "id": "16",
+      "coverName": "Pre-existing Conditions",
+      "coverAmount": 250000,
+      "premium": 450,
+      "description": "Coverage for existing medical conditions after a waiting period."
+    },
+    {
+      "id": "17",
+      "coverName": "Daily Hospital Cash",
+      "coverAmount": 1000,
+      "premium": 50,
+      "description": "Fixed cash benefit for each day of hospitalization."
+    },
+    {
+      "id": "18",
+      "coverName": "Ambulance Services",
+      "coverAmount": 10000,
+      "premium": 30,
+      "description": "Covers emergency ambulance transportation."
+    },
+    {
+      "id": "19",
+      "coverName": "Home Healthcare",
+      "coverAmount": 75000,
+      "premium": 120,
+      "description": "Expenses for medical care received at home."
+    },
+    {
+      "id": "20",
+      "coverName": "Ayurveda & Yoga",
+      "coverAmount": 30000,
+      "premium": 90,
+      "description": "Alternative therapy coverage for traditional treatments."
+    },
+    {
+      "id": "21",
+      "coverName": "Personal Liability",
+      "coverAmount": 200000,
+      "premium": 200,
+      "description": "Covers legal liability for accidental injury or property damage."
+    },
+    {
+      "id": "22",
+      "coverName": "Temporary Disability",
+      "coverAmount": 100000,
+      "premium": 180,
+      "description": "Income replacement for temporary inability to work due to injury/illness."
+    },
+    {
+      "id": "23",
+      "coverName": "Permanent Disability",
+      "coverAmount": 800000,
+      "premium": 800,
+      "description": "Lump sum benefit for permanent disability from accident/illness."
+    },
+    {
+      "id": "24",
+      "coverName": "Burial Expenses",
+      "coverAmount": 20000,
+      "premium": 70,
+      "description": "Covers funeral and burial costs."
+    },
+    {
+      "id": "25",
+      "coverName": "Chronic Disease",
+      "coverAmount": 600000,
+      "premium": 650,
+      "description": "Long-term management of chronic conditions like diabetes, asthma."
+    },
+    {
+      "id": "26",
+      "coverName": "Mental Health",
+      "coverAmount": 150000,
+      "premium": 280,
+      "description": "Coverage for therapy, counseling, and psychiatric treatment."
+    },
+    {
+      "id": "27",
+      "coverName": "Wellness Programs",
+      "coverAmount": 5000,
+      "premium": 25,
+      "description": "Incentives for healthy living and preventive care."
+    },
+    {
+      "id": "28",
+      "coverName": "Elective Surgery",
+      "coverAmount": 250000,
+      "premium": 350,
+      "description": "Coverage for non-emergency surgical procedures."
+    },
+    {
+      "id": "29",
+      "coverName": "Second Opinion",
+      "coverAmount": 5000,
+      "premium": 15,
+      "description": "Consultation fees for a second medical opinion."
+    },
+    {
+      "id": "30",
+      "coverName": "Medical Evacuation",
+      "coverAmount": 100000,
+      "premium": 220,
+      "description": "Emergency transport to the nearest suitable medical facility."
+    },
+    {
+      "id": "31",
+      "coverName": "Rehabilitation",
+      "coverAmount": 80000,
+      "premium": 130,
+      "description": "Physical therapy and rehabilitation post-injury or illness."
+    },
+    {
+      "id": "32",
+      "coverName": "Alternative Medicine",
+      "coverAmount": 40000,
+      "premium": 110,
+      "description": "Coverage for homeopathy, acupuncture, etc."
+    },
+    {
+      "id": "33",
+      "coverName": "Loss of Income",
+      "coverAmount": 120000,
+      "premium": 190,
+      "description": "Replaces lost income due to illness or injury."
+    },
+    {
+      "id": "34",
+      "coverName": "Sports Injury",
+      "coverAmount": 60000,
+      "premium": 95,
+      "description": "Specific coverage for injuries sustained during sports activities."
+    },
+    {
+      "id": "35",
+      "coverName": "Annual Health Checkup",
+      "coverAmount": 7000,
+      "premium": 40,
+      "description": "Covers costs of a comprehensive annual medical checkup."
+    },
+    {
+      "id": "36",
+      "coverName": "Overseas Treatment",
+      "coverAmount": 1000000,
+      "premium": 900,
+      "description": "Covers medical treatment abroad for specific conditions."
+    },
+    {
+      "id": "37",
+      "coverName": "Genetic Testing",
+      "coverAmount": 20000,
+      "premium": 60,
+      "description": "Coverage for genetic screening and diagnostic tests."
+    },
+    {
+      "id": "38",
+      "coverName": "Elderly Care",
+      "coverAmount": 350000,
+      "premium": 550,
+      "description": "Assistance with daily living activities for seniors."
+    },
+    {
+      "id": "39",
+      "coverName": "Newborn Baby",
+      "coverAmount": 50000,
+      "premium": 150,
+      "description": "Coverage for medical expenses of a newborn baby."
+    },
+    {
+      "id": "40",
+      "coverName": "Domestic Help",
+      "coverAmount": 10000,
+      "premium": 20,
+      "description": "Allowance for domestic help during hospitalization."
+    },
+    {
+      "id": "41",
+      "coverName": "Emergency Room",
+      "coverAmount": 40000,
+      "premium": 100,
+      "description": "Covers costs of emergency room visits."
+    },
+    {
+      "id": "42",
+      "coverName": "Out-of-Pocket Max",
+      "coverAmount": 10000,
+      "premium": 0,
+      "description": "The maximum you pay in a policy period for covered services."
+    },
+    {
+      "id": "43",
+      "coverName": "Telemedicine",
+      "coverAmount": 5000,
+      "premium": 20,
+      "description": "Covers virtual consultations with doctors."
+    },
+    {
+      "id": "44",
+      "coverName": "Durable Medical Equip",
+      "coverAmount": 25000,
+      "premium": 75,
+      "description": "Coverage for equipment like wheelchairs, oxygen tanks."
+    },
+    {
+      "id": "45",
+      "coverName": "Prescription Drugs",
+      "coverAmount": 30000,
+      "premium": 100,
+      "description": "Covers cost of prescribed medications."
+    },
+    {
+      "id": "46",
+      "coverName": "Vaccination",
+      "coverAmount": 8000,
+      "premium": 45,
+      "description": "Covers costs of recommended vaccinations."
+    },
+    {
+      "id": "47",
+      "coverName": "Genetic Counseling",
+      "coverAmount": 12000,
+      "premium": 55,
+      "description": "Consultations related to genetic risks and conditions."
+    },
+    {
+      "id": "48",
+      "coverName": "Bariatric Surgery",
+      "coverAmount": 500000,
+      "premium": 400,
+      "description": "Coverage for weight-loss surgeries."
+    },
+    {
+      "id": "49",
+      "coverName": "Spinal Injury",
+      "coverAmount": 700000,
+      "premium": 650,
+      "description": "Specialized coverage for spine-related injuries and treatments."
+    },
+    {
+      "id": "50",
+      "coverName": "Hearing Aids",
+      "coverAmount": 35000,
+      "premium": 90,
+      "description": "Covers cost of hearing aids and related services."
+    },
+    {
+      "id": "51",
+      "coverName": "Post-Hospitalization",
+      "coverAmount": 50000,
+      "premium": 120,
+      "description": "Expenses incurred after discharge from the hospital."
+    }
+  ],
+  "claimReimbursements": [
+    {
+      "id": "1",
+      "customerId": 201,
+      "claimTypeId": 1,
+      "date_of_raise": "2025-06-20",
+      "amount_claimed": 7500,
+      "status": "paid",
+      "documents": {
+        "hospitalReports": [
+          {
+            "fileName": "report_fever_2025_06.pdf",
+            "fileUrl": "https://example.com/docs/reimbursement/cust201/report_fever.pdf"
+          }
+        ],
+        "preApprovalLetters": [],
+        "hospitalBills": [
+          {
+            "fileName": "bill_fever_2025_06.pdf",
+            "fileUrl": "https://example.com/docs/reimbursement/cust201/bill_fever.pdf"
+          }
+        ]
+      },
+      "createdAt": "2025-06-20 10:15:00",
+      "updatedAt": "2025-06-28 14:30:00"
+    },
+    {
+      "id": "2",
+      "customerId": 202,
+      "claimTypeId": 2,
+      "date_of_raise": "2025-06-25",
+      "amount_claimed": 35000,
+      "status": "raised",
+      "documents": {
+        "hospitalReports": [
+          {
+            "fileName": "report_fracture_2025_06.pdf",
+            "fileUrl": "https://example.com/docs/reimbursement/cust202/report_fracture.pdf"
+          },
+          {
+            "fileName": "xray_fracture_2025_06.jpg",
+            "fileUrl": "https://example.com/docs/reimbursement/cust202/xray_fracture.jpg"
+          }
+        ],
+        "preApprovalLetters": [
+          {
+            "fileName": "pre_app_fracture_2025.pdf",
+            "fileUrl": "https://example.com/docs/reimbursement/cust202/pre_app_fracture.pdf"
+          }
+        ],
+        "hospitalBills": [
+          {
+            "fileName": "bill_fracture_2025_06.pdf",
+            "fileUrl": "https://example.com/docs/reimbursement/cust202/bill_fracture.pdf"
+          }
+        ]
+      },
+      "createdAt": "2025-06-25 11:00:00",
+      "updatedAt": "2025-06-25 11:00:00"
+    },
+    {
+      "id": "3",
+      "customerId": 203,
+      "claimTypeId": 1,
+      "date_of_raise": "2025-06-18",
+      "amount_claimed": 1200,
+      "status": "query",
+      "documents": {
+        "hospitalReports": [
+          {
+            "fileName": "report_dental_2025_06.pdf",
+            "fileUrl": "https://example.com/docs/reimbursement/cust203/report_dental.pdf"
+          }
+        ],
+        "preApprovalLetters": [],
+        "hospitalBills": [
+          {
+            "fileName": "bill_dental_2025_06.pdf",
+            "fileUrl": "https://example.com/docs/reimbursement/cust203/bill_dental.pdf"
+          }
+        ]
+      },
+      "createdAt": "2025-06-18 09:00:00",
+      "updatedAt": "2025-06-22 16:00:00"
+    },
+    {
+      "id": "4",
+      "customerId": 204,
+      "claimTypeId": 3,
+      "date_of_raise": "2025-06-10",
+      "amount_claimed": 80000,
+      "status": "denied",
+      "documents": {
+        "hospitalReports": [
+          {
+            "fileName": "report_cardiac_2025_06.pdf",
+            "fileUrl": "https://example.com/docs/reimbursement/cust204/report_cardiac.pdf"
+          }
+        ],
+        "preApprovalLetters": [],
+        "hospitalBills": [
+          {
+            "fileName": "bill_cardiac_2025_06.pdf",
+            "fileUrl": "https://example.com/docs/reimbursement/cust204/bill_cardiac.pdf"
+          }
+        ]
+      },
+      "createdAt": "2025-06-10 14:00:00",
+      "updatedAt": "2025-06-29 10:00:00"
+    },
+    {
+      "id": "5",
+      "customerId": 205,
+      "claimTypeId": 1,
+      "date_of_raise": "2025-06-30",
+      "amount_claimed": 2500,
+      "status": "raised",
+      "documents": {
+        "hospitalReports": [
+          {
+            "fileName": "report_physio_2025_06.pdf",
+            "fileUrl": "https://example.com/docs/reimbursement/cust205/report_physio.pdf"
+          }
+        ],
+        "preApprovalLetters": [],
+        "hospitalBills": [
+          {
+            "fileName": "bill_physio_2025_06.pdf",
+            "fileUrl": "https://example.com/docs/reimbursement/cust205/bill_physio.pdf"
+          }
+        ]
+      },
+      "createdAt": "2025-06-30 08:30:00",
+      "updatedAt": "2025-06-30 08:30:00"
+    },
+    {
+      "id": "6",
+      "customerId": 201,
+      "claimTypeId": 4,
+      "date_of_raise": "2025-05-15",
+      "amount_claimed": 150000,
+      "status": "paid",
+      "documents": {
+        "hospitalReports": [
+          {
+            "fileName": "report_oncology_2025_05.pdf",
+            "fileUrl": "https://example.com/docs/reimbursement/cust201/report_oncology.pdf"
+          }
+        ],
+        "preApprovalLetters": [
+          {
+            "fileName": "pre_app_oncology_2025.pdf",
+            "fileUrl": "https://example.com/docs/reimbursement/cust201/pre_app_oncology.pdf"
+          }
+        ],
+        "hospitalBills": [
+          {
+            "fileName": "bill_oncology_2025_05.pdf",
+            "fileUrl": "https://example.com/docs/reimbursement/cust201/bill_oncology.pdf"
+          }
+        ]
+      },
+      "createdAt": "2025-05-15 12:00:00",
+      "updatedAt": "2025-06-10 09:00:00"
+    },
+    {
+      "id": "7",
+      "customerId": 206,
+      "claimTypeId": 1,
+      "date_of_raise": "2025-06-29",
+      "amount_claimed": 4000,
+      "status": "raised",
+      "documents": {
+        "hospitalReports": [
+          {
+            "fileName": "report_eyes_2025_06.pdf",
+            "fileUrl": "https://example.com/docs/reimbursement/cust206/report_eyes.pdf"
+          }
+        ],
+        "preApprovalLetters": [],
+        "hospitalBills": [
+          {
+            "fileName": "bill_eyes_2025_06.pdf",
+            "fileUrl": "https://example.com/docs/reimbursement/cust206/bill_eyes.pdf"
+          }
+        ]
+      },
+      "createdAt": "2025-06-29 16:00:00",
+      "updatedAt": "2025-06-29 16:00:00"
+    },
+    {
+      "id": "8",
+      "customerId": 207,
+      "claimTypeId": 2,
+      "date_of_raise": "2025-06-05",
+      "amount_claimed": 60000,
+      "status": "query",
+      "documents": {
+        "hospitalReports": [
+          {
+            "fileName": "report_gastro_2025_06.pdf",
+            "fileUrl": "https://example.com/docs/reimbursement/cust207/report_gastro.pdf"
+          }
+        ],
+        "preApprovalLetters": [
+          {
+            "fileName": "pre_app_gastro_2025.pdf",
+            "fileUrl": "https://example.com/docs/reimbursement/cust207/pre_app_gastro.pdf"
+          }
+        ],
+        "hospitalBills": [
+          {
+            "fileName": "bill_gastro_2025_06.pdf",
+            "fileUrl": "https://example.com/docs/reimbursement/cust207/bill_gastro.pdf"
+          }
+        ]
+      },
+      "createdAt": "2025-06-05 10:00:00",
+      "updatedAt": "2025-06-20 11:00:00"
+    },
+    {
+      "id": "9",
+      "customerId": 208,
+      "claimTypeId": 1,
+      "date_of_raise": "2025-07-01",
+      "amount_claimed": 900,
+      "status": "raised",
+      "documents": {
+        "hospitalReports": [
+          {
+            "fileName": "report_cold_2025_07.pdf",
+            "fileUrl": "https://example.com/docs/reimbursement/cust208/report_cold.pdf"
+          }
+        ],
+        "preApprovalLetters": [],
+        "hospitalBills": [
+          {
+            "fileName": "bill_cold_2025_07.pdf",
+            "fileUrl": "https://example.com/docs/reimbursement/cust208/bill_cold.pdf"
+          }
+        ]
+      },
+      "createdAt": "2025-07-01 13:59:20",
+      "updatedAt": "2025-07-01 13:59:20"
+    },
+    {
+      "id": "10",
+      "customerId": 209,
+      "claimTypeId": 4,
+      "date_of_raise": "2025-05-01",
+      "amount_claimed": 200000,
+      "status": "paid",
+      "documents": {
+        "hospitalReports": [
+          {
+            "fileName": "report_major_surgery_2025_05.pdf",
+            "fileUrl": "https://example.com/docs/reimbursement/cust209/report_major_surgery.pdf"
+          }
+        ],
+        "preApprovalLetters": [
+          {
+            "fileName": "pre_app_major_surgery_2025.pdf",
+            "fileUrl": "https://example.com/docs/reimbursement/cust209/pre_app_major_surgery.pdf"
+          }
+        ],
+        "hospitalBills": [
+          {
+            "fileName": "bill_major_surgery_2025_05.pdf",
+            "fileUrl": "https://example.com/docs/reimbursement/cust209/bill_major_surgery.pdf"
+          }
+        ]
+      },
+      "createdAt": "2025-05-01 11:00:00",
+      "updatedAt": "2025-06-25 17:00:00"
+    }
+  ],
+  "claimsReimbursedQueries": [
+    {
+      "id": "1",
+      "raisedByInsurerId": 1,
+      "claimReimbursementId": 2,
+      "queryStatus": "open",
+      "query": [
+        {
+          "queryNumber": 1,
+          "dateRaised": "2025-06-28 10:00:00",
+          "queryText": "Missing original hospital bill copy for Claim ID 2. Please provide scanned copy for verification.",
+          "attachments": []
+        }
+      ],
+      "queryResponse": [],
+      "assignedVerifier": {
+        "verifierId": 1,
+        "assignedDate": "2025-06-28 09:55:00",
+        "status": "pending"
+      },
+      "createdAt": "2025-06-28 09:55:00",
+      "updatedAt": "2025-06-28 10:00:00"
+    },
+    {
+      "id": "2",
+      "raisedByInsurerId": 3,
+      "claimReimbursementId": 3,
+      "queryStatus": "resolved",
+      "query": [
+        {
+          "queryNumber": 1,
+          "dateRaised": "2025-06-20 14:00:00",
+          "queryText": "Clarification needed for diagnostic test results for Claim ID 3. Scans are blurry. Kindly resubmit clearer copies.",
+          "attachments": []
+        }
+      ],
+      "queryResponse": [
+        {
+          "by": "customer",
+          "dateResponded": "2025-06-21 11:15:00",
+          "note": "Attached clearer scanned copies of diagnostic reports as requested.",
+          "attachments": [
+            {
+              "fileName": "diag_reports_clear.pdf",
+              "fileUrl": "https://example.com/files/diag_reports_clear.pdf"
+            }
+          ]
+        }
+      ],
+      "assignedVerifier": {
+        "verifierId": 3,
+        "assignedDate": "2025-06-20 14:10:00",
+        "status": "completed"
+      },
+      "createdAt": "2025-06-20 14:00:00",
+      "updatedAt": "2025-06-21 11:15:00"
+    },
+    {
+      "id": "3",
+      "raisedByInsurerId": 2,
+      "claimReimbursementId": 4,
+      "queryStatus": "escalated",
+      "query": [
+        {
+          "queryNumber": 1,
+          "dateRaised": "2025-06-18 10:00:00",
+          "queryText": "Additional medical history and consent forms required for critical illness Claim ID 4, as per policy terms.",
+          "attachments": []
+        }
+      ],
+      "queryResponse": [
+        {
+          "by": "customer",
+          "dateResponded": "2025-06-19 11:00:00",
+          "note": "I believe all necessary documents were submitted. Could you please specify which forms are missing?",
+          "attachments": []
+        },
+        {
+          "by": "verifier",
+          "dateResponded": "2025-06-20 09:00:00",
+          "note": "Query escalated to senior verifier for detailed explanation and customer communication due to continued dispute.",
+          "attachments": []
+        }
+      ],
+      "assignedVerifier": {
+        "verifierId": 8,
+        "assignedDate": "2025-06-20 09:05:00",
+        "status": "pending"
+      },
+      "createdAt": "2025-06-18 10:00:00",
+      "updatedAt": "2025-06-20 09:05:00"
+    },
+    {
+      "id": "4",
+      "raisedByInsurerId": 5,
+      "claimReimbursementId": 1,
+      "queryStatus": "open",
+      "query": [
+        {
+          "queryNumber": 1,
+          "dateRaised": "2025-06-29 15:00:00",
+          "queryText": "For Claim ID 1, please provide the original diagnosis report from the doctor.",
+          "attachments": []
+        }
+      ],
+      "queryResponse": [],
+      "assignedVerifier": {
+        "verifierId": 5,
+        "assignedDate": "2025-06-29 14:55:00",
+        "status": "pending"
+      },
+      "createdAt": "2025-06-29 14:55:00",
+      "updatedAt": "2025-06-29 15:00:00"
+    },
+    {
+      "id": "5",
+      "raisedByInsurerId": 7,
+      "claimReimbursementId": 7,
+      "queryStatus": "open",
+      "query": [
+        {
+          "queryNumber": 1,
+          "dateRaised": "2025-07-01 09:00:00",
+          "queryText": "Need clarity on accidental injury details for Claim ID 7. Please provide police report or detailed incident description.",
+          "attachments": []
+        }
+      ],
+      "queryResponse": [],
+      "assignedVerifier": {
+        "verifierId": 7,
+        "assignedDate": "2025-07-01 08:55:00",
+        "status": "pending"
+      },
+      "createdAt": "2025-07-01 08:55:00",
+      "updatedAt": "2025-07-01 09:00:00"
+    },
+    {
+      "id": "6",
+      "raisedByInsurerId": 7,
+      "claimReimbursementId": 8,
+      "queryStatus": "resolved",
+      "query": [
+        {
+          "queryNumber": 1,
+          "dateRaised": "2025-05-10 11:00:00",
+          "queryText": "Please confirm the reason for the variation in the medical bill for Claim ID 8. Provide itemized bill.",
+          "attachments": []
+        }
+      ],
+      "queryResponse": [
+        {
+          "by": "customer",
+          "dateResponded": "2025-05-11 10:00:00",
+          "note": "Attached the itemized bill as requested for Claim ID 8. The variation is due to specific room charges.",
+          "attachments": [
+            {
+              "fileName": "itemized_bill_claim8.pdf",
+              "fileUrl": "https://example.com/files/itemized_bill_claim8.pdf"
+            }
+          ]
+        }
+      ],
+      "assignedVerifier": {
+        "verifierId": 7,
+        "assignedDate": "2025-05-10 11:10:00",
+        "status": "completed"
+      },
+      "createdAt": "2025-05-10 11:00:00",
+      "updatedAt": "2025-05-11 10:00:00"
+    },
+    {
+      "id": "7",
+      "raisedByInsurerId": 8,
+      "claimReimbursementId": 9,
+      "queryStatus": "open",
+      "query": [
+        {
+          "queryNumber": 1,
+          "dateRaised": "2025-06-25 14:00:00",
+          "queryText": "For Claim ID 9, need additional medical certificates for permanent disability assessment from a certified authority.",
+          "attachments": []
+        }
+      ],
+      "queryResponse": [],
+      "assignedVerifier": {
+        "verifierId": 8,
+        "assignedDate": "2025-06-25 13:50:00",
+        "status": "pending"
+      },
+      "createdAt": "2025-06-25 13:50:00",
+      "updatedAt": "2025-06-25 14:00:00"
+    },
+    {
+      "id": "8",
+      "raisedByInsurerId": 4,
+      "claimReimbursementId": 5,
+      "queryStatus": "open",
+      "query": [
+        {
+          "queryNumber": 1,
+          "dateRaised": "2025-07-01 11:00:00",
+          "queryText": "Please submit the original discharge summary for Claim ID 5. The provided copy is not clear.",
+          "attachments": []
+        }
+      ],
+      "queryResponse": [],
+      "assignedVerifier": {
+        "verifierId": 4,
+        "assignedDate": "2025-07-01 10:55:00",
+        "status": "pending"
+      },
+      "createdAt": "2025-07-01 10:55:00",
+      "updatedAt": "2025-07-01 11:00:00"
+    },
+    {
+      "id": "9",
+      "raisedByInsurerId": 9,
+      "claimReimbursementId": 10,
+      "queryStatus": "open",
+      "query": [
+        {
+          "queryNumber": 1,
+          "dateRaised": "2025-06-29 09:30:00",
+          "queryText": "Confirm if prescribed medication for Claim ID 10 was purchased from a network pharmacy. Provide pharmacy bill.",
+          "attachments": []
+        }
+      ],
+      "queryResponse": [],
+      "assignedVerifier": {
+        "verifierId": 9,
+        "assignedDate": "2025-06-29 09:25:00",
+        "status": "pending"
+      },
+      "createdAt": "2025-06-29 09:25:00",
+      "updatedAt": "2025-06-29 09:30:00"
+    },
+    {
+      "id": "10",
+      "raisedByInsurerId": 6,
+      "claimReimbursementId": 6,
+      "queryStatus": "resolved",
+      "query": [
+        {
+          "queryNumber": 1,
+          "dateRaised": "2025-05-28 10:00:00",
+          "queryText": "Original pre-approval letter for Claim ID 6 is unreadable. Please re-scan and resubmit.",
+          "attachments": []
+        }
+      ],
+      "queryResponse": [
+        {
+          "by": "customer",
+          "dateResponded": "2025-05-29 11:00:00",
+          "note": "Resubmitting clearer scan of pre-approval letter as requested.",
+          "attachments": [
+            {
+              "fileName": "pre_approval_letter_claim6_new.pdf",
+              "fileUrl": "https://example.com/files/pre_approval_6_new.pdf"
+            }
+          ]
+        }
+      ],
+      "assignedVerifier": {
+        "verifierId": 6,
+        "assignedDate": "2025-05-28 10:10:00",
+        "status": "completed"
+      },
+      "createdAt": "2025-05-28 10:00:00",
+      "updatedAt": "2025-05-29 11:00:00"
+    }
+  ],
+  "claimsRaised": [
+    {
+      "id": "1",
+      "hospitalId": 101,
+      "customerAadharNumber": "123456789012",
+      "treatmentOffered": "Fever Management",
+      "claimTypeId": 1,
+      "costToHospital": 2500,
+      "dateOfClaimRaise": "2025-06-25 09:30:00",
+      "status": "raised",
+      "preAuthorization": {
+        "isEligible": true,
+        "insurerComments": "Customer is active and eligible for outpatient services."
+      },
+      "admissionDetails": {
+        "isAdmitted": true,
+        "dateOfAdmission": "2025-06-25 09:35:00",
+        "admissionNotes": "Routine outpatient visit, immediate admission for observation and treatment."
+      },
+      "createdAt": "2025-07-01 13:59:20",
+      "updatedAt": "2025-07-01 13:59:20"
+    },
+    {
+      "id": "2",
+      "hospitalId": 102,
+      "customerAadharNumber": "987654321098",
+      "treatmentOffered": "Appendectomy",
+      "claimTypeId": 2,
+      "costToHospital": 45000,
+      "dateOfClaimRaise": "2025-06-20 10:00:00",
+      "status": "raised",
+      "preAuthorization": {
+        "isEligible": true,
+        "insurerComments": "Policy covers surgical procedures for this customer. All good to proceed."
+      },
+      "admissionDetails": {
+        "isAdmitted": true,
+        "dateOfAdmission": "2025-06-20 12:00:00",
+        "admissionNotes": "Admitted for scheduled appendectomy after eligibility check."
+      },
+      "createdAt": "2025-07-01 13:59:20",
+      "updatedAt": "2025-07-01 13:59:20"
+    },
+    {
+      "id": "3",
+      "hospitalId": 103,
+      "customerAadharNumber": "555544443333",
+      "treatmentOffered": "Maternity Delivery (Planned)",
+      "claimTypeId": 3,
+      "costToHospital": 60000,
+      "dateOfClaimRaise": "2025-06-15 08:00:00",
+      "status": "raised",
+      "preAuthorization": {
+        "isEligible": true,
+        "insurerComments": "Customer's maternity benefits are active. Pregnancy confirmed."
+      },
+      "admissionDetails": {
+        "isAdmitted": false,
+        "dateOfAdmission": null,
+        "admissionNotes": "Eligibility confirmed. Admission pending patient's due date in July."
+      },
+      "createdAt": "2025-07-01 13:59:20",
+      "updatedAt": "2025-07-01 13:59:20"
+    },
+    {
+      "id": "4",
+      "hospitalId": 101,
+      "customerAadharNumber": "112233445566",
+      "treatmentOffered": "Knee Ligament Repair",
+      "claimTypeId": 2,
+      "costToHospital": 90000,
+      "dateOfClaimRaise": "2025-06-28 09:00:00",
+      "status": "denied",
+      "preAuthorization": {
+        "isEligible": false,
+        "insurerComments": "Claim falls under pre-existing condition exclusion. Customer not eligible for this treatment."
+      },
+      "admissionDetails": {
+        "isAdmitted": false,
+        "dateOfAdmission": null,
+        "admissionNotes": "Admission cancelled due to eligibility denial from insurer."
+      },
+      "createdAt": "2025-07-01 13:59:20",
+      "updatedAt": "2025-07-01 13:59:20"
+    },
+    {
+      "id": "5",
+      "hospitalId": 104,
+      "customerAadharNumber": "777788889999",
+      "treatmentOffered": "Cardiac Stenting (Emergency)",
+      "claimTypeId": 4,
+      "costToHospital": 250000,
+      "dateOfClaimRaise": "2025-06-10 02:00:00",
+      "status": "raised",
+      "preAuthorization": {
+        "isEligible": true,
+        "insurerComments": "Emergency treatment eligibility confirmed for life-threatening condition."
+      },
+      "admissionDetails": {
+        "isAdmitted": true,
+        "dateOfAdmission": "2025-06-10 02:30:00",
+        "admissionNotes": "Emergency admission. Eligibility checked quickly before procedure."
+      },
+      "createdAt": "2025-07-01 13:59:20",
+      "updatedAt": "2025-07-01 13:59:20"
+    },
+    {
+      "id": "6",
+      "hospitalId": 105,
+      "customerAadharNumber": "100020003000",
+      "treatmentOffered": "Cataract Surgery",
+      "claimTypeId": 1,
+      "costToHospital": 20000,
+      "dateOfClaimRaise": "2025-06-22 11:00:00",
+      "status": "raised",
+      "preAuthorization": {
+        "isEligible": true,
+        "insurerComments": "Eligibility for elective surgery confirmed. Benefits available."
+      },
+      "admissionDetails": {
+        "isAdmitted": false,
+        "dateOfAdmission": null,
+        "admissionNotes": "Eligibility confirmed. Patient is consulting family for suitable admission date."
+      },
+      "createdAt": "2025-07-01 13:59:20",
+      "updatedAt": "2025-07-01 13:59:20"
+    },
+    {
+      "id": "7",
+      "hospitalId": 101,
+      "customerAadharNumber": "445566778899",
+      "treatmentOffered": "Routine Checkup",
+      "claimTypeId": 1,
+      "costToHospital": 1500,
+      "dateOfClaimRaise": "2025-06-27 10:00:00",
+      "status": "raised",
+      "preAuthorization": {
+        "isEligible": true,
+        "insurerComments": "Eligible for routine outpatient services under current policy."
+      },
+      "admissionDetails": {
+        "isAdmitted": true,
+        "dateOfAdmission": "2025-06-27 10:05:00",
+        "admissionNotes": "Direct admission for routine checkup."
+      },
+      "createdAt": "2025-07-01 13:59:20",
+      "updatedAt": "2025-07-01 13:59:20"
+    },
+    {
+      "id": "8",
+      "hospitalId": 102,
+      "customerAadharNumber": "210987654321",
+      "treatmentOffered": "Hip Replacement Surgery",
+      "claimTypeId": 2,
+      "costToHospital": 150000,
+      "dateOfClaimRaise": "2025-06-19 09:00:00",
+      "status": "denied",
+      "preAuthorization": {
+        "isEligible": false,
+        "insurerComments": "Policy deductible not met for this claim. Customer not eligible for full coverage."
+      },
+      "admissionDetails": {
+        "isAdmitted": false,
+        "dateOfAdmission": null,
+        "admissionNotes": "Admission cancelled due to eligibility criteria not being met by insurer."
+      },
+      "createdAt": "2025-07-01 13:59:20",
+      "updatedAt": "2025-07-01 13:59:20"
+    },
+    {
+      "id": "9",
+      "hospitalId": 103,
+      "customerAadharNumber": "666677778888",
+      "treatmentOffered": "Chemotherapy Session",
+      "claimTypeId": 4,
+      "costToHospital": 75000,
+      "dateOfClaimRaise": "2025-06-24 10:00:00",
+      "status": "raised",
+      "preAuthorization": {
+        "isEligible": true,
+        "insurerComments": "Oncology treatment benefits are active for this customer. Eligible."
+      },
+      "admissionDetails": {
+        "isAdmitted": false,
+        "dateOfAdmission": null,
+        "admissionNotes": "Eligibility confirmed. Patient is preparing for admission next week."
+      },
+      "createdAt": "2025-07-01 13:59:20",
+      "updatedAt": "2025-07-01 13:59:20"
+    },
+    {
+      "id": "10",
+      "hospitalId": 104,
+      "customerAadharNumber": "321098765432",
+      "treatmentOffered": "Emergency Observation",
+      "claimTypeId": 1,
+      "costToHospital": 5000,
+      "dateOfClaimRaise": "2025-06-30 20:00:00",
+      "status": "raised",
+      "preAuthorization": {
+        "isEligible": true,
+        "insurerComments": "Eligible for emergency services under policy terms."
+      },
+      "admissionDetails": {
+        "isAdmitted": true,
+        "dateOfAdmission": "2025-06-30 20:15:00",
+        "admissionNotes": "Emergency admission for observation. Eligibility confirmed upon arrival."
+      },
+      "createdAt": "2025-07-01 13:59:20",
+      "updatedAt": "2025-07-01 13:59:20"
+    }
+  ],
+  "claimsRaisedQueries": [
+    {
+      "id": "1",
+      "claimRaisedId": 1,
+      "raisedByInsurerId": 1,
+      "queryStatus": "open",
+      "query": [
+        {
+          "queryNumber": 1,
+          "dateRaised": "2025-06-25 09:45:00",
+          "queryText": "For ClaimRaised ID 1, the submitted patient consent form is incomplete. Please provide a fully signed copy.",
+          "attachments": []
+        }
+      ],
+      "queryResponse": [],
+      "assignedVerifier": {
+        "verifierId": 1,
+        "assignedDate": "2025-06-25 09:40:00",
+        "status": "pending"
+      },
+      "createdAt": "2025-06-25 09:40:00",
+      "updatedAt": "2025-06-25 09:45:00"
+    },
+    {
+      "id": "2",
+      "claimRaisedId": 2,
+      "raisedByInsurerId": 3,
+      "queryStatus": "resolved",
+      "query": [
+        {
+          "queryNumber": 1,
+          "dateRaised": "2025-06-20 14:15:00",
+          "queryText": "Need breakdown of general consultation charges for ClaimRaised ID 2. It exceeds standard limits.",
+          "attachments": []
+        }
+      ],
+      "queryResponse": [
+        {
+          "by": "hospital",
+          "dateResponded": "2025-06-21 10:30:00",
+          "note": "Attached itemized bill for consultation and additional lab tests performed during visit. Lab tests were not initially billed separately.",
+          "attachments": [
+            {
+              "fileName": "itemized_bill_claim2.pdf",
+              "fileUrl": "https://example.com/files/claim2_itemized.pdf"
+            }
+          ]
+        }
+      ],
+      "assignedVerifier": {
+        "verifierId": 3,
+        "assignedDate": "2025-06-20 14:10:00",
+        "status": "completed"
+      },
+      "createdAt": "2025-06-20 14:10:00",
+      "updatedAt": "2025-06-21 10:30:00"
+    },
+    {
+      "id": "3",
+      "claimRaisedId": 3,
+      "raisedByInsurerId": 2,
+      "queryStatus": "escalated",
+      "query": [
+        {
+          "queryNumber": 1,
+          "dateRaised": "2025-06-15 11:30:00",
+          "queryText": "Medical necessity for prolonged hospital stay (ClaimRaised ID 3) needs further justification. Provide daily physician notes.",
+          "attachments": []
+        }
+      ],
+      "queryResponse": [
+        {
+          "by": "hospital",
+          "dateResponded": "2025-06-16 09:00:00",
+          "note": "Daily physician notes provided. Patient developed complications requiring extended care.",
+          "attachments": [
+            {
+              "fileName": "physician_notes_claim3.pdf",
+              "fileUrl": "https://example.com/files/claim3_notes.pdf"
+            }
+          ]
+        },
+        {
+          "by": "verifier",
+          "dateResponded": "2025-06-17 14:00:00",
+          "note": "Notes reviewed. Still unclear on specific complications beyond initial diagnosis. Escalating for clinical review.",
+          "attachments": []
+        }
+      ],
+      "assignedVerifier": {
+        "verifierId": 8,
+        "assignedDate": "2025-06-17 14:10:00",
+        "status": "pending"
+      },
+      "createdAt": "2025-06-15 11:30:00",
+      "updatedAt": "2025-06-17 14:10:00"
+    },
+    {
+      "id": "4",
+      "claimRaisedId": 4,
+      "raisedByInsurerId": 5,
+      "queryStatus": "open",
+      "query": [
+        {
+          "queryNumber": 1,
+          "dateRaised": "2025-06-28 17:00:00",
+          "queryText": "For ClaimRaised ID 4, verify the treating physician's credentials. Copy provided is illegible.",
+          "attachments": []
+        }
+      ],
+      "queryResponse": [],
+      "assignedVerifier": {
+        "verifierId": 5,
+        "assignedDate": "2025-06-28 16:55:00",
+        "status": "pending"
+      },
+      "createdAt": "2025-06-28 16:55:00",
+      "updatedAt": "2025-06-28 17:00:00"
+    },
+    {
+      "id": "5",
+      "claimRaisedId": 5,
+      "raisedByInsurerId": 7,
+      "queryStatus": "open",
+      "query": [
+        {
+          "queryNumber": 1,
+          "dateRaised": "2025-06-10 09:00:00",
+          "queryText": "Regarding ClaimRaised ID 5 (Cardiac Stenting), kindly provide a detailed pre-auth request form with all sections filled.",
+          "attachments": []
+        }
+      ],
+      "queryResponse": [],
+      "assignedVerifier": {
+        "verifierId": 7,
+        "assignedDate": "2025-06-10 08:55:00",
+        "status": "pending"
+      },
+      "createdAt": "2025-06-10 08:55:00",
+      "updatedAt": "2025-06-10 09:00:00"
+    },
+    {
+      "id": "6",
+      "claimRaisedId": 6,
+      "raisedByInsurerId": 7,
+      "queryStatus": "resolved",
+      "query": [
+        {
+          "queryNumber": 1,
+          "dateRaised": "2025-06-22 10:30:00",
+          "queryText": "For Dental Root Canal (ClaimRaised ID 6), specify the tooth number and provide pre-treatment X-ray.",
+          "attachments": []
+        }
+      ],
+      "queryResponse": [
+        {
+          "by": "hospital",
+          "dateResponded": "2025-06-23 09:45:00",
+          "note": "Tooth #30 identified. Pre-treatment X-ray attached for verification.",
+          "attachments": [
+            {
+              "fileName": "dental_xray_claim6.jpg",
+              "fileUrl": "https://example.com/files/claim6_xray.jpg"
+            }
+          ]
+        }
+      ],
+      "assignedVerifier": {
+        "verifierId": 6,
+        "assignedDate": "2025-06-22 10:25:00",
+        "status": "completed"
+      },
+      "createdAt": "2025-06-22 10:25:00",
+      "updatedAt": "2025-06-23 09:45:00"
+    },
+    {
+      "id": "7",
+      "claimRaisedId": 7,
+      "raisedByInsurerId": 8,
+      "queryStatus": "open",
+      "query": [
+        {
+          "queryNumber": 1,
+          "dateRaised": "2025-06-27 13:15:00",
+          "queryText": "Vaccination details for ClaimRaised ID 7 are missing batch number. Please provide the vaccine sticker or batch details.",
+          "attachments": []
+        }
+      ],
+      "queryResponse": [],
+      "assignedVerifier": {
+        "verifierId": 1,
+        "assignedDate": "2025-06-27 13:10:00",
+        "status": "pending"
+      },
+      "createdAt": "2025-06-27 13:10:00",
+      "updatedAt": "2025-06-27 13:15:00"
+    },
+    {
+      "id": "8",
+      "claimRaisedId": 8,
+      "raisedByInsurerId": 4,
+      "queryStatus": "open",
+      "query": [
+        {
+          "queryNumber": 1,
+          "dateRaised": "2025-06-19 07:15:00",
+          "queryText": "For Fracture Treatment (ClaimRaised ID 8), please confirm the exact date of injury and whether it was accidental or pre-existing.",
+          "attachments": []
+        }
+      ],
+      "queryResponse": [],
+      "assignedVerifier": {
+        "verifierId": 4,
+        "assignedDate": "2025-06-19 07:10:00",
+        "status": "pending"
+      },
+      "createdAt": "2025-06-19 07:10:00",
+      "updatedAt": "2025-06-19 07:15:00"
+    },
+    {
+      "id": "9",
+      "claimRaisedId": 9,
+      "raisedByInsurerId": 9,
+      "queryStatus": "open",
+      "query": [
+        {
+          "queryNumber": 1,
+          "dateRaised": "2025-06-24 09:15:00",
+          "queryText": "For Diabetes Management (ClaimRaised ID 9), provide patient's detailed treatment plan and projected duration.",
+          "attachments": []
+        }
+      ],
+      "queryResponse": [],
+      "assignedVerifier": {
+        "verifierId": 9,
+        "assignedDate": "2025-06-24 09:10:00",
+        "status": "pending"
+      },
+      "createdAt": "2025-06-24 09:10:00",
+      "updatedAt": "2025-06-24 09:15:00"
+    },
+    {
+      "id": "10",
+      "claimRaisedId": 10,
+      "raisedByInsurerId": 6,
+      "queryStatus": "resolved",
+      "query": [
+        {
+          "queryNumber": 1,
+          "dateRaised": "2025-06-30 11:45:00",
+          "queryText": "For Eye Checkup (ClaimRaised ID 10), please provide ophthalmologist's full report.",
+          "attachments": []
+        }
+      ],
+      "queryResponse": [
+        {
+          "by": "hospital",
+          "dateResponded": "2025-07-01 09:00:00",
+          "note": "Ophthalmologist's report attached, including findings and recommendations.",
+          "attachments": [
+            {
+              "fileName": "eye_report_claim10.pdf",
+              "fileUrl": "https://example.com/files/claim10_eye_report.pdf"
+            }
+          ]
+        }
+      ],
+      "assignedVerifier": {
+        "verifierId": 6,
+        "assignedDate": "2025-06-30 11:40:00",
+        "status": "completed"
+      },
+      "createdAt": "2025-06-30 11:40:00",
+      "updatedAt": "2025-07-01 09:00:00"
+    }
+  ],
+  "preauths": [
+    {
+      "id": "a52a",
+      "customerId": "1",
+      "policyIds": [
+        1,
+        5
+      ],
+      "treatment": "sdfghjk",
+      "cost": 3456,
+      "date": "2025-07-01",
+      "status": "admitted",
+      "documents": [],
+      "admissionDetails": {
+        "isAdmitted": true,
+        "dateOfAdmission": "2025-07-03",
+        "admissionNotes": "rdftgyhuj"
+      }
+    },
+    {
+      "id": "cc08",
+      "customerId": "1",
+      "policyIds": [
+        1,
+        5
+      ],
+      "treatment": "fg cvbnm",
+      "cost": 3456,
+      "date": "2025-07-01",
+      "status": "admitted",
+      "documents": [],
+      "admissionDetails": {
+        "isAdmitted": true,
+        "dateOfAdmission": "2025-07-03",
+        "admissionNotes": "ertyuiyui"
+      }
+    },
+    {
+      "id": "3394",
+      "customerId": "3",
+      "policyIds": [
+        2,
+        10
+      ],
+      "treatment": "sdfghjkl,",
+      "cost": 23456,
+      "date": "2025-07-01",
+      "status": "admitted",
+      "documents": [],
+      "admissionDetails": {
+        "isAdmitted": true,
+        "dateOfAdmission": "2025-07-02",
+        "admissionNotes": "ggggggg"
+      }
+    },
+    {
+      "id": "829d",
+      "customerId": "5",
+      "policyIds": [
+        12,
+        20
+      ],
+      "treatment": "heart surgery",
+      "cost": 35274,
+      "date": "2025-07-01",
+      "status": "admitted",
+      "documents": [],
+      "admissionDetails": {
+        "isAdmitted": true,
+        "dateOfAdmission": "2025-07-01",
+        "admissionNotes": "rsytfiuh"
+      }
+    },
+    {
+      "id": "4af3",
+      "customerId": "6",
+      "policyIds": [
+        4
+      ],
+      "treatment": "bone dislocation",
+      "cost": 50000,
+      "date": "2025-06-30",
+      "status": "cancelled",
+      "documents": [],
+      "admissionDetails": {
+        "isAdmitted": false
+      }
+    },
+    {
+      "id": "8071",
+      "customerId": "2",
+      "policyIds": [
+        3
+      ],
+      "treatment": "hgkjlh",
+      "cost": 34567,
+      "date": "2025-07-17",
+      "status": "admitted",
+      "documents": [],
+      "admissionDetails": {
+        "isAdmitted": true,
+        "dateOfAdmission": "2025-07-02",
+        "admissionNotes": "tkiuhl;"
+      }
+    },
+    {
+      "id": "2f15",
+      "customerId": "2",
+      "policyIds": [
+        3
+      ],
+      "treatment": "dhgkiul",
+      "cost": 345678,
+      "date": "2025-07-01",
+      "status": "admitted",
+      "documents": [],
+      "admissionDetails": {
+        "isAdmitted": true,
+        "dateOfAdmission": "2025-07-03",
+        "admissionNotes": "ertyuio"
+      }
+    },
+    {
+      "customerId": "7",
+      "policyIds": [
+        6,
+        18
+      ],
+      "treatment": "heart Attack",
+      "cost": 50000,
+      "date": "2025-07-01",
+      "status": "pending",
+      "documents": [],
+      "admissionDetails": {
+        "isAdmitted": true
+      },
+      "id": "d4e6"
+    },
+    {
+      "id": "3a1b",
+      "customerId": "11",
+      "policyIds": [
+        14
+      ],
+      "treatment": "heart Attack",
+      "cost": 60000,
+      "date": "2025-07-01",
+      "hospitalId": 101,
+      "status": "admitted",
+      "admissionDetails": {
+        "isAdmitted": true,
+        "dateOfAdmission": "2025-07-03",
+        "admissionNotes": "Admitted"
+      },
+      "documents": []
+    },
+    {
+      "customerId": "5",
+      "policyIds": [
+        12,
+        20
+      ],
+      "treatment": "asdfgh",
+      "cost": 4567,
+      "date": "2025-07-02",
+      "status": "approved",
+      "documents": [],
+      "admissionDetails": {
+        "isAdmitted": false
+      },
+      "id": "a477"
+    },
+    {
+      "id": "85eb",
+      "customerId": "5",
+      "policyIds": [
+        12,
+        20
+      ],
+      "treatment": "ertyuio",
+      "cost": 5678,
+      "date": "2025-07-02",
+      "status": "approved",
+      "documents": [],
+      "admissionDetails": {
+        "isAdmitted": false
+      }
+    },
+    {
+      "id": "5859",
+      "customerId": "4",
+      "policyIds": [
+        7,
+        15
+      ],
+      "treatment": "hrfoierjogijtr",
+      "cost": 46587,
+      "date": "2025-07-03",
+      "status": "admitted",
+      "documents": [],
+      "admissionDetails": {
+        "isAdmitted": true,
+        "dateOfAdmission": "2025-07-02",
+        "admissionNotes": "dfghjkl"
+      }
+    },
+    {
+      "id": "804c",
+      "customerId": "4",
+      "policyIds": [
+        7,
+        15
+      ],
+      "treatment": "hguhoi",
+      "cost": 3456,
+      "date": "2025-07-02",
+      "status": "admitted",
+      "documents": [],
+      "admissionDetails": {
+        "isAdmitted": true,
+        "dateOfAdmission": "2025-07-02",
+        "admissionNotes": "dytiu"
+      },
+      "patientId": "PAT1001"
+    },
+    {
+      "id": "8d3c",
+      "customerId": "4",
+      "policyIds": [
+        7,
+        15
+      ],
+      "treatment": "gudhfkejr",
+      "cost": 89012,
+      "date": "2025-07-03",
+      "status": "pending",
+      "documents": [],
+      "admissionDetails": {
+        "isAdmitted": false
+      }
+    },
+    {
+      "id": "ecd9",
+      "customerId": "2",
+      "policyIds": [
+        3
+      ],
+      "treatment": "ehwfieri",
+      "cost": 45678,
+      "date": "2025-07-02",
+      "status": "completed",
+      "documents": [
+        {
+          "name": "Discharge_Summary_a52a (1).pdf",
+          "path": "/uploads/Discharge_Summary_a52a (1).pdf",
+          "uploadedAt": "2025-07-02T15:39:17.735Z"
+        },
+        {
+          "name": "Claim_Receipt_ecd9.pdf",
+          "path": "/uploads/Claim_Receipt_ecd9.pdf",
+          "uploadedAt": "2025-07-02T15:48:35.338Z"
+        }
+      ],
+      "admissionDetails": {
+        "isAdmitted": false
+      }
+    },
+    {
+      "id": "014f",
+      "customerId": "9",
+      "policyIds": [
+        8,
+        11
+      ],
+      "treatment": "dsfsdfrge",
+      "cost": 45666,
+      "date": "2025-07-02",
+      "status": "admitted",
+      "documents": [],
+      "admissionDetails": {
+        "isAdmitted": true,
+        "dateOfAdmission": "2025-07-02",
+        "admissionNotes": "Admitted"
+      }
+    },
+    {
+      "id": "4eca",
+      "customerId": "EMERGENCY-1751448247731",
+      "policyIds": [],
+      "treatment": "ertyjk",
+      "cost": 45666,
+      "date": "2025-07-02",
+      "hospitalId": 101,
+      "status": "completed",
+      "admissionDetails": {
+        "isAdmitted": true,
+        "dateOfAdmission": "2025-07-02",
+        "admissionNotes": "ertyui"
+      },
+      "documents": []
+    },
+    {
+      "id": "e51b",
+      "customerId": "3",
+      "policyIds": [
+        2,
+        10
+      ],
+      "treatment": "heart operation",
+      "cost": 4567,
+      "date": "2025-07-03",
+      "status": "admitted",
+      "documents": [],
+      "admissionDetails": {
+        "isAdmitted": true,
+        "dateOfAdmission": "2025-07-03",
+        "admissionNotes": "ertyuio"
+      }
+    },
+    {
+      "id": "609b",
+      "customerId": "456789012345",
+      "policyIds": [],
+      "treatment": "dsfghjkl;",
+      "cost": 45678,
+      "date": "2025-07-03",
+      "hospitalId": 101,
+      "status": "approved",
+      "admissionDetails": {
+        "isAdmitted": true,
+        "dateOfAdmission": "2025-07-03",
+        "admissionNotes": "ertyuioi"
+      },
+      "documents": []
+    },
+    {
+      "id": "88f3",
+      "customerId": "3",
+      "policyIds": [
+        2,
+        10
+      ],
+      "treatment": "dsfghjkl;",
+      "cost": 45678,
+      "date": "2025-07-03",
+      "status": "pending",
+      "documents": [],
+      "admissionDetails": {
+        "isAdmitted": false
+      }
+    },
+    {
+      "id": "5a2c",
+      "customerId": "012345678901",
+      "policyIds": [],
+      "treatment": "leg operation",
+      "cost": 67899,
+      "date": "2025-07-02",
+      "hospitalId": 101,
+      "status": "approved",
+      "admissionDetails": {
+        "isAdmitted": true,
+        "dateOfAdmission": "2025-07-02",
+        "admissionNotes": "admited"
+      },
+      "documents": []
+    },
+    {
+      "id": "6261",
+      "aadhaarNumber": "456789012345",
+      "customerId": "3",
+      "policyIds": [
+        2,
+        10
+      ],
+      "treatment": "heart Attack",
+      "cost": 60000,
+      "date": "2025-07-02",
+      "hospitalId": 101,
+      "status": "admitted",
+      "admissionDetails": {
+        "isAdmitted": true,
+        "dateOfAdmission": "2025-07-03",
+        "admissionNotes": "ertyui"
+      },
+      "documents": []
+    },
+    {
+      "id": "7ec4",
+      "aadhaarNumber": "456789012345",
+      "customerId": "3",
+      "policyIds": [
+        2,
+        10
+      ],
+      "treatment": "heart Attack",
+      "cost": 60000,
+      "date": "2025-07-03",
+      "hospitalId": 101,
+      "status": "approved",
+      "admissionDetails": {
+        "isAdmitted": true,
+        "dateOfAdmission": "2025-07-03",
+        "admissionNotes": "sdfghj"
+      },
+      "documents": []
+    },
+    {
+      "id": "9b86",
+      "customerId": "3",
+      "policyIds": [
+        2,
+        10
+      ],
+      "treatment": "heart Attack",
+      "cost": 60000,
+      "date": "2025-07-03",
+      "status": "completed",
+      "documents": [],
+      "admissionDetails": {
+        "isAdmitted": true,
+        "dateOfAdmission": "2025-07-03",
+        "admissionNotes": "dfghj"
+      }
+    },
+    {
+      "id": "76d7",
+      "customerId": "10",
+      "policyIds": [
+        13,
+        25
+      ],
+      "treatment": "Heart operation",
+      "cost": 345678,
+      "date": "2025-07-03",
+      "status": "admitted",
+      "documents": [],
+      "admissionDetails": {
+        "isAdmitted": true,
+        "dateOfAdmission": "2025-07-03",
+        "admissionNotes": "Admited"
+      },
+      "hospitalId": "1"
+    },
+    {
+      "id": "d0d1",
+      "aadhaarNumber": "654321098765",
+      "customerId": "11",
+      "policyIds": [
+        14
+      ],
+      "treatment": "Heart Attack",
+      "cost": 60000,
+      "date": "2025-07-03",
+      "hospitalId": "1",
+      "status": "emergency",
+      "admissionDetails": {
+        "isAdmitted": true,
+        "dateOfAdmission": "2025-07-03",
+        "admissionNotes": "Admitted"
+      },
+      "documents": []
+    },
+    {
+      "id": "0f84",
+      "customerId": "12",
+      "policyIds": [
+        16,
+        22
+      ],
+      "treatment": "Kidney Stone Removal",
+      "cost": 40000,
+      "date": "2025-07-03",
+      "status": "approved",
+      "documents": [],
+      "admissionDetails": {
+        "isAdmitted": false
+      }
+    },
+    {
+      "id": "0b26",
+      "customerId": "13",
+      "policyIds": [
+        17
+      ],
+      "treatment": "Surgery",
+      "cost": 23456,
+      "date": "2025-07-03",
+      "status": "completed",
+      "documents": [],
+      "admissionDetails": {
+        "isAdmitted": true,
+        "dateOfAdmission": "2025-07-03",
+        "admissionNotes": "Admitted"
+      },
+      "hospitalId": "1"
+    },
+    {
+      "id": "c8c9",
+      "customerId": "13",
+      "policyIds": [
+        17
+      ],
+      "treatment": "Surgery",
+      "cost": 45678,
+      "date": "2025-07-03",
+      "status": "admitted",
+      "documents": [],
+      "admissionDetails": {
+        "isAdmitted": true,
+        "dateOfAdmission": "2025-07-03",
+        "admissionNotes": "Admitted"
+      },
+      "hospitalId": "1"
+    },
+    {
+      "id": "ef24",
+      "customerId": "14",
+      "policyIds": [
+        19,
+        21
+      ],
+      "treatment": "Eye Operation",
+      "cost": 23456,
+      "date": "2025-07-04",
+      "status": "admitted",
+      "documents": [],
+      "admissionDetails": {
+        "isAdmitted": true,
+        "dateOfAdmission": "2025-07-04",
+        "admissionNotes": "Admitted"
+      },
+      "hospitalId": "1"
+    }
+  ],
+  "admitPatients": [
+    {
+      "patientId": "1",
+      "customerId": "501",
+      "hospitalId": "1",
+      "dateOfAdmission": "2025-07-02T13:30:00Z",
+      "treatment": "Appendectomy",
+      "cost": 45000,
+      "policyIds": [
+        "2001"
+      ],
+      "notes": "Admitted after approval",
+      "id": "c917"
+    }
+  ]
+}

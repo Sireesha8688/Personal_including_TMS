@@ -1,0 +1,83 @@
+package cps.services.impl;
+
+import java.util.Map;
+import java.util.Optional;
+
+import org.bson.types.ObjectId;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.mongodb.core.ReactiveMongoTemplate;
+import org.springframework.data.mongodb.core.query.Criteria;
+import org.springframework.data.mongodb.core.query.Query;
+import org.springframework.data.mongodb.core.query.Update;
+import org.springframework.stereotype.Service;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.mongodb.client.result.UpdateResult;
+
+import cps.entities.CustomerClaimsEO;
+import cps.repository.CustomerClaimsRepository;
+import cps.services.CustomerClaimsServices;
+import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
+
+@Service
+public class CustomerClaimsServicesImpl implements CustomerClaimsServices {
+
+	@Autowired
+	private ReactiveMongoTemplate reactiveMongoTemplate;
+
+	private final CustomerClaimsRepository customerClaimsRepositoryRef;
+
+	public CustomerClaimsServicesImpl(CustomerClaimsRepository customerClaimsRepositoryRef) {
+		this.customerClaimsRepositoryRef = customerClaimsRepositoryRef;
+	}
+
+	@Override
+	public CustomerClaimsEO addNewCustomerClaim(CustomerClaimsEO customerClaimsEO) {
+		return customerClaimsRepositoryRef.save(customerClaimsEO);
+	}
+
+	@Override
+	public Flux<CustomerClaimsEO> getAll() {
+		return reactiveMongoTemplate.query(CustomerClaimsEO.class).all();
+	}
+
+	@Override
+	public Optional<CustomerClaimsEO> getOne(ObjectId id) {
+		return customerClaimsRepositoryRef.findById(id);
+	}
+
+	@Override
+	public Mono<UpdateResult> updateCustomerClaim(ObjectId id, CustomerClaimsEO customerClaimsEO) {
+		Query query = new Query(Criteria.where("_id").is(id));
+		Update update = new Update();
+
+		@SuppressWarnings("unchecked")
+		Map<String, Object> map = new ObjectMapper().convertValue(customerClaimsEO, Map.class);
+		map.forEach((key, value) -> {
+			if (value != null && !key.equals("_id")) {
+				update.set(key, value);
+			}
+		});
+
+		Mono<UpdateResult> result = reactiveMongoTemplate.update(CustomerClaimsEO.class).matching(query).apply(update)
+				.upsert();
+
+		return result;
+	}
+
+	@Override
+	public Flux<CustomerClaimsEO> getAllClaimByInsurerId(String insurerId) {
+		Query query = new Query(Criteria.where("insurerId").is(insurerId));
+		Flux<CustomerClaimsEO> result = reactiveMongoTemplate.query(CustomerClaimsEO.class).matching(query).all();
+		return result;
+	}
+
+	@Override
+	public Flux<CustomerClaimsEO> getAllClaimWithNoInsurer() {
+		Query query = new Query(Criteria.where("insurerId").is(null));
+		Flux<CustomerClaimsEO> result = reactiveMongoTemplate.query(CustomerClaimsEO.class).matching(query).all();
+		return result;
+	}
+
+}

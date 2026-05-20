@@ -1,0 +1,14 @@
+package cps.services;
+
+import org.bson.types.ObjectId;
+
+import cps.entities.CustomerClaimsQueriesEO;
+import reactor.core.publisher.Mono;
+
+public interface CustomerClaimsQueriesServices {
+	
+	public Mono<CustomerClaimsQueriesEO> addNewQuery(CustomerClaimsQueriesEO customerClaimsQueriesEO);
+	
+	public Mono<CustomerClaimsQueriesEO> updateQuery(ObjectId id, CustomerClaimsQueriesEO customerClaimsQueriesEO);
+	
+}

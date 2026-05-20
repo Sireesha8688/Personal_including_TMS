@@ -1,0 +1,13 @@
+package training.iqgateway.service;
+
+import java.util.List;
+import training.iqgateway.entities.TmRegDetails;
+
+public interface RegDetailsService {
+    void insert(TmRegDetails regdetails);
+    TmRegDetails getByVehNo(String vehNo);
+    List<TmRegDetails> getAll();
+    void update(TmRegDetails regdetails);
+    void delete(String vehNo);
+    void transferOwnership(Long appNo, Long newOwnerId);
+}

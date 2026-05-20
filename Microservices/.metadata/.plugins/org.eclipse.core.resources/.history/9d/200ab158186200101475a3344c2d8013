@@ -1,0 +1,12 @@
+package cps.services;
+
+import cps.entities.CustomerClaimsEO;
+
+public interface CustomerClaimsServices {
+	
+	public CustomerClaimsEO addNewCustomerClaim(CustomerClaimsEO customerClaimsEO);
+	
+	public void updateCustomerStatus(CustomerClaimsEO customerClaimsEO);
+	
+	public void getAll();
+}

@@ -1,0 +1,355 @@
+package cps.controller;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.bson.types.ObjectId;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
+
+import training.iqgateway.entities.AdminsEO;
+import training.iqgateway.entities.ClaimTypesEO;
+import training.iqgateway.entities.CoversEO;
+import training.iqgateway.entities.InsurersEO;
+import training.iqgateway.entities.PolicyEO;
+import training.iqgateway.entities.VerifierEO;
+import training.iqgateway.service.AdminService;
+import training.iqgateway.service.ClaimTypesService;
+import training.iqgateway.service.CoverService;
+import training.iqgateway.service.InsurerService;
+import training.iqgateway.service.PolicyService;
+import training.iqgateway.service.VerifierService;
+
+@RestController
+@RequestMapping("/api/admin")
+public class AdminController {
+
+	@Autowired
+	private AdminService adminService;
+
+	@Autowired
+	private CoverService coverServiceRef;
+
+	@Autowired
+	private ClaimTypesService claimTypesServiceRef;
+
+	@Autowired
+	private InsurerService insurerServiceRef;
+
+	@Autowired
+	private PolicyService policyServiceRef;
+
+	@Autowired
+	private VerifierService VerifierServiceRef;
+	
+	
+	
+
+	@GetMapping("/getAllAdmins")
+	public List<AdminsEO> getAllAdmins() {
+		return adminService.getAllAdmins();
+	}
+
+	@PostMapping("/addAdmin")
+	public ResponseEntity<AdminsEO> addAdmin(@RequestBody AdminsEO admin) {
+		AdminsEO created = adminService.addAdmin(admin);
+		return new ResponseEntity<>(created, HttpStatus.CREATED);
+	}
+
+	@PutMapping("/updateAdmin/{id}")
+	public ResponseEntity<?> updateAdmin(@PathVariable String id, @RequestBody AdminsEO admin) {
+		try {
+			ObjectId objectId = new ObjectId(id);
+			AdminsEO updated = adminService.updateAdmin(objectId, admin);
+			if (updated != null) {
+				return ResponseEntity.ok(updated);
+			} else {
+				return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Admin not found");
+			}
+		} catch (IllegalArgumentException e) {
+			return ResponseEntity.badRequest().body("Invalid ObjectId format");
+		}
+	}
+
+	@DeleteMapping("/deleteAdmin/{id}")
+	public ResponseEntity<?> deleteAdmin(@PathVariable String id) {
+		try {
+			ObjectId objectId = new ObjectId(id);
+			adminService.deleteAdmin(objectId);
+			return ResponseEntity.ok("Deleted successfully");
+		} catch (IllegalArgumentException e) {
+			return ResponseEntity.badRequest().body("Invalid ObjectId format");
+		}
+	}
+
+	// Covers
+
+	@GetMapping("/getAllCovers")
+	public List<CoversEO> getAllCovers() {
+		return coverServiceRef.getAllCovers();
+	}
+
+	@GetMapping("covers/{id}")
+	public ResponseEntity<?> getCoverById(@PathVariable String id) {
+		try {
+			ObjectId objectId = new ObjectId(id);
+			Optional<CoversEO> cover = coverServiceRef.getCoverById(objectId);
+			if (cover.isPresent()) {
+				return ResponseEntity.ok(cover.get());
+			} else {
+				return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Cover not found");
+			}
+		} catch (IllegalArgumentException e) {
+			return ResponseEntity.badRequest().body("Invalid ObjectId format");
+		}
+	}
+
+	@PostMapping("/addCover")
+	public ResponseEntity<CoversEO> addCover(@RequestBody CoversEO cover) {
+		CoversEO created = coverServiceRef.addCover(cover);
+		return new ResponseEntity<>(created, HttpStatus.CREATED);
+	}
+
+	@PutMapping("/updateCover/{id}")
+	public ResponseEntity<?> updateCover(@PathVariable String id, @RequestBody CoversEO cover) {
+		try {
+			ObjectId objectId = new ObjectId(id);
+			CoversEO updated = coverServiceRef.updateCover(objectId, cover);
+			if (updated != null) {
+				return ResponseEntity.ok(updated);
+			} else {
+				return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Cover not found");
+			}
+		} catch (IllegalArgumentException e) {
+			return ResponseEntity.badRequest().body("Invalid ObjectId format");
+		}
+	}
+
+	@DeleteMapping("/deleteCover/{id}")
+	public ResponseEntity<?> deleteCover(@PathVariable String id) {
+		try {
+			ObjectId objectId = new ObjectId(id);
+			coverServiceRef.deleteCover(objectId);
+			return ResponseEntity.ok("Deleted successfully");
+		} catch (IllegalArgumentException e) {
+			return ResponseEntity.badRequest().body("Invalid ObjectId format");
+		}
+	}
+
+	// ClaimTypes
+	@GetMapping("/getAllClaimTypes")
+	public List<ClaimTypesEO> getAllClaimTypes() {
+		return claimTypesServiceRef.getAllClaimTypes();
+	}
+
+	@GetMapping("/claimTypes/{id}")
+	public ResponseEntity<?> getClaimTypeById(@PathVariable String id) {
+		try {
+			ObjectId objectId = new ObjectId(id);
+			Optional<ClaimTypesEO> claimType = claimTypesServiceRef.getClaimTypeById(objectId);
+			if (claimType.isPresent()) {
+				return ResponseEntity.ok(claimType.get());
+			} else {
+				return ResponseEntity.status(HttpStatus.NOT_FOUND).body("ClaimType not found");
+			}
+		} catch (IllegalArgumentException e) {
+			return ResponseEntity.badRequest().body("Invalid ObjectId format");
+		}
+	}
+
+	@PostMapping("/addClaimType")
+	public ResponseEntity<ClaimTypesEO> addClaimType(@RequestBody ClaimTypesEO claimType) {
+		ClaimTypesEO created = claimTypesServiceRef.addClaimType(claimType);
+		return new ResponseEntity<>(created, HttpStatus.CREATED);
+	}
+
+	@PutMapping("/updateClaimType/{id}")
+	public ResponseEntity<?> updateClaimType(@PathVariable String id, @RequestBody ClaimTypesEO claimType) {
+		try {
+			ObjectId objectId = new ObjectId(id);
+			ClaimTypesEO updated = claimTypesServiceRef.updateClaimType(objectId, claimType);
+			if (updated != null) {
+				return ResponseEntity.ok(updated);
+			} else {
+				return ResponseEntity.status(HttpStatus.NOT_FOUND).body("ClaimType not found");
+			}
+		} catch (IllegalArgumentException e) {
+			return ResponseEntity.badRequest().body("Invalid ObjectId format");
+		}
+	}
+
+	@DeleteMapping("/deleteClaimType/{id}")
+	public ResponseEntity<?> deleteClaimType(@PathVariable String id) {
+		try {
+			ObjectId objectId = new ObjectId(id);
+			claimTypesServiceRef.deleteClaimType(objectId);
+			return ResponseEntity.ok("Deleted successfully");
+		} catch (IllegalArgumentException e) {
+			return ResponseEntity.badRequest().body("Invalid ObjectId format");
+		}
+	}
+
+	// Insurers
+
+	@GetMapping("/getAllInsurers")
+	public List<InsurersEO> getAllInsurers() {
+		return insurerServiceRef.getAllInsurers();
+	}
+
+	@GetMapping("/insurers/{id}")
+	public ResponseEntity<?> getInsurerById(@PathVariable String id) {
+		try {
+			ObjectId objectId = new ObjectId(id);
+			Optional<InsurersEO> insurer = insurerServiceRef.getInsurerById(objectId);
+			if (insurer.isPresent()) {
+				return ResponseEntity.ok(insurer.get());
+			} else {
+				return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Insurer not found");
+			}
+		} catch (IllegalArgumentException e) {
+			return ResponseEntity.badRequest().body("Invalid ObjectId format");
+		}
+	}
+
+	@PostMapping("/addInsurer")
+	public ResponseEntity<InsurersEO> addInsurer(@RequestBody InsurersEO insurer) {
+		InsurersEO created = insurerServiceRef.addInsurer(insurer);
+		return new ResponseEntity<>(created, HttpStatus.CREATED);
+	}
+
+	@PutMapping("/updateInsurer/{id}")
+	public ResponseEntity<?> updateInsurer(@PathVariable String id, @RequestBody InsurersEO insurer) {
+		try {
+			ObjectId objectId = new ObjectId(id);
+			InsurersEO updated = insurerServiceRef.updateInsurer(objectId, insurer);
+			if (updated != null) {
+				return ResponseEntity.ok(updated);
+			} else {
+				return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Insurer not found");
+			}
+		} catch (IllegalArgumentException e) {
+			return ResponseEntity.badRequest().body("Invalid ObjectId format");
+		}
+	}
+
+	@DeleteMapping("/deleteInsurer/{id}")
+	public ResponseEntity<?> deleteInsurer(@PathVariable String id) {
+		try {
+			ObjectId objectId = new ObjectId(id);
+			insurerServiceRef.deleteInsurer(objectId);
+			return ResponseEntity.ok("Deleted successfully");
+		} catch (IllegalArgumentException e) {
+			return ResponseEntity.badRequest().body("Invalid ObjectId format");
+		}
+	}
+
+	// Policies
+
+	@GetMapping("/getAllPolicies")
+	public List<PolicyEO> getAllPolicies() {
+		return policyServiceRef.getAllPolicies();
+	}
+
+	@GetMapping("/policies/{id}")
+	public ResponseEntity<?> getPolicyById(@PathVariable String id) {
+		try {
+			ObjectId objectId = new ObjectId(id);
+			Optional<PolicyEO> policy = policyServiceRef.getPolicyById(objectId);
+			if (policy.isPresent()) {
+				return ResponseEntity.ok(policy.get());
+			} else {
+				return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Policy not found");
+			}
+		} catch (IllegalArgumentException e) {
+			return ResponseEntity.badRequest().body("Invalid ObjectId format");
+		}
+	}
+
+	@PostMapping("/addPolicy")
+	public ResponseEntity<PolicyEO> addPolicy(@RequestBody PolicyEO policy) {
+		PolicyEO created = policyServiceRef.addPolicy(policy);
+		return new ResponseEntity<>(created, HttpStatus.CREATED);
+	}
+
+	@PutMapping("/updatePolicy/{id}")
+	public ResponseEntity<?> updatePolicy(@PathVariable String id, @RequestBody PolicyEO policy) {
+		try {
+			ObjectId objectId = new ObjectId(id);
+			PolicyEO updated = policyServiceRef.updatePolicy(objectId, policy);
+			if (updated != null) {
+				return ResponseEntity.ok(updated);
+			} else {
+				return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Policy not found");
+			}
+		} catch (IllegalArgumentException e) {
+			return ResponseEntity.badRequest().body("Invalid ObjectId format");
+		}
+	}
+
+	@DeleteMapping("/deletePolicy/{id}")
+	public ResponseEntity<?> deletePolicy(@PathVariable String id) {
+		try {
+			ObjectId objectId = new ObjectId(id);
+			policyServiceRef.deletePolicy(objectId);
+			return ResponseEntity.ok("Deleted successfully");
+		} catch (IllegalArgumentException e) {
+			return ResponseEntity.badRequest().body("Invalid ObjectId format");
+		}
+	}
+
+	// verifiers
+
+	@GetMapping("/getAllVerifiers")
+	public List<VerifierEO> getAllVerifiers() {
+		return VerifierServiceRef.getAllVerifiers();
+	}
+
+	@GetMapping("/verifiers/{id}")
+	public ResponseEntity<?> getVerifierById(@PathVariable String id) {
+		try {
+			ObjectId objectId = new ObjectId(id);
+			Optional<VerifierEO> verifier = VerifierServiceRef.getVerifierById(objectId);
+			if (verifier.isPresent()) {
+				return ResponseEntity.ok(verifier.get());
+			} else {
+				return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Verifier not found");
+			}
+		} catch (IllegalArgumentException e) {
+			return ResponseEntity.badRequest().body("Invalid ObjectId format");
+		}
+	}
+
+	@PostMapping("/addVerifier")
+	public ResponseEntity<VerifierEO> addVerifier(@RequestBody VerifierEO verifier) {
+		VerifierEO created = VerifierServiceRef.addVerifier(verifier);
+		return new ResponseEntity<>(created, HttpStatus.CREATED);
+	}
+
+	@PutMapping("/updateVerifier/{id}")
+	public ResponseEntity<?> updateVerifier(@PathVariable String id, @RequestBody VerifierEO verifier) {
+		try {
+			ObjectId objectId = new ObjectId(id);
+			VerifierEO updated = VerifierServiceRef.updateVerifier(objectId, verifier);
+			if (updated != null) {
+				return ResponseEntity.ok(updated);
+			} else {
+				return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Verifier not found");
+			}
+		} catch (IllegalArgumentException e) {
+			return ResponseEntity.badRequest().body("Invalid ObjectId format");
+		}
+	}
+
+	@DeleteMapping("/deleteVerifier/{id}")
+	public ResponseEntity<?> deleteVerifier(@PathVariable String id) {
+		try {
+			ObjectId objectId = new ObjectId(id);
+			VerifierServiceRef.deleteVerifier(objectId);
+			return ResponseEntity.ok("Deleted successfully");
+		} catch (IllegalArgumentException e) {
+			return ResponseEntity.badRequest().body("Invalid ObjectId format");
+		}
+	}
+}

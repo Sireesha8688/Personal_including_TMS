@@ -1,0 +1,1 @@
+export default function GenerateReports() { return <div>Generate Reports Page</div>; }

@@ -1,0 +1,78 @@
+package cps.controller;
+
+
+import org.bson.types.ObjectId;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.mongodb.client.result.UpdateResult;
+
+import cps.entities.CustomerClaimsEO;
+import cps.services.CustomerClaimsServices;
+import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
+
+@RestController
+@RequestMapping("/api/customer/claims")
+public class CustomerClaimsController {
+	
+	private final CustomerClaimsServices customerClaimsServicesRef;
+	
+	public CustomerClaimsController(CustomerClaimsServices customerClaimsServicesRef) {
+		this.customerClaimsServicesRef = customerClaimsServicesRef;
+	}
+	
+	@GetMapping
+	public void getAll() {
+		customerClaimsServicesRef.getAll();
+	}
+	
+	@GetMapping("/{id}")
+	public ResponseEntity<CustomerClaimsEO> getOneClaim(@PathVariable ObjectId id) {
+	    return customerClaimsServicesRef.getOne(id)
+	        .map(ResponseEntity::ok)
+	        .orElse(ResponseEntity.notFound().build());
+	}
+	
+	
+	@PostMapping
+	public ResponseEntity<CustomerClaimsEO> addNewClaim(@RequestBody CustomerClaimsEO customerClaimsEO) {
+		CustomerClaimsEO customerClaim = customerClaimsServicesRef.addNewCustomerClaim(customerClaimsEO);
+		
+		if (customerClaim != null) {
+            
+            return new ResponseEntity<>(customerClaim, HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+	}
+	
+	@PutMapping("/{id}")
+	public Mono<ResponseEntity<UpdateResult>> updateCustomerStatus(@PathVariable ObjectId id, @RequestBody CustomerClaimsEO customerClaimsEO) {
+	    return customerClaimsServicesRef.updateCustomerClaim(id, customerClaimsEO)
+	        .map(ResponseEntity::ok)
+	        .defaultIfEmpty(ResponseEntity.notFound().build());
+	}
+	
+	
+	@GetMapping
+	public Flux<CustomerClaimsEO> getClaimsByInsurerId(@RequestParam(value = "insurerId", required = false) String insurerId) {
+	    if ("null".equals(insurerId)) {
+	        return customerClaimsServicesRef.getAllClaimWithNoInsurer();
+	    }
+	    	
+	    return customerClaimsServicesRef.getAllClaimByInsurerId(insurerId);
+	}
+
+	
+
+
+}

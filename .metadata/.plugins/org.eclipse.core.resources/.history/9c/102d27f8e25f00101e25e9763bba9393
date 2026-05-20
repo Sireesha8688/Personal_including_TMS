@@ -1,0 +1,123 @@
+package training.iqgateway.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+import training.iqgateway.dto.UserCreateDTO;
+import training.iqgateway.entities.TmUserMaster;
+import training.iqgateway.entities.TmRoleMaster;
+import training.iqgateway.service.AdminOperationsService;
+import training.iqgateway.repositories.RolemasterRepository;
+
+import java.util.List;
+
+@RestController
+@RequestMapping("/api/admin")
+public class AdminOperationsController {
+
+    private final AdminOperationsService adminService;
+    private final RolemasterRepository roleRepo;
+
+    @Autowired
+    public AdminOperationsController(AdminOperationsService adminService, RolemasterRepository roleRepo) {
+        this.adminService = adminService;
+        this.roleRepo = roleRepo;
+    }
+
+   
+    @PostMapping("/users")
+    public ResponseEntity<String> createUser(@RequestBody UserCreateDTO dto) {
+        try {
+            TmRoleMaster role = roleRepo.findById(dto.getRolename())
+                .orElseThrow(() -> new IllegalArgumentException("Role not found: " + dto.getRolename()));
+
+            TmUserMaster user = new TmUserMaster(dto.getUsername(), dto.getPassword(), role);
+            Integer result = adminService.createUser(user);
+
+            if (result == 1) {
+                return ResponseEntity.ok("User created successfully");
+            } else {
+                return ResponseEntity.badRequest().body("User creation failed (duplicate username or invalid data)");
+            }
+        } catch (IllegalArgumentException e) {
+            return ResponseEntity.badRequest().body(e.getMessage());
+        } catch (Exception e) {
+            return ResponseEntity.internalServerError().body("Server error: " + e.getMessage());
+        }
+    }
+
+    @DeleteMapping("/users/{username}")
+    public ResponseEntity<String> deleteUser(@PathVariable String username) {
+        try {
+            int result = adminService.deleteUser(username);
+            if (result == 1) {
+                return ResponseEntity.ok("User deleted successfully");
+            } else {
+                return ResponseEntity.badRequest().body("User not found");
+            }
+        } catch (Exception e) {
+            return ResponseEntity.internalServerError().body("Server error: " + e.getMessage());
+        }
+    }
+
+    @PostMapping("/roles")
+    public ResponseEntity<String> addRole(@RequestBody TmRoleMaster role) {
+        try {
+            int result = adminService.addRole(role);
+            if (result == 1) {
+                return ResponseEntity.ok("Role added successfully");
+            } else {
+                return ResponseEntity.badRequest().body("Role already exists or invalid data");
+            }
+        } catch (Exception e) {
+            return ResponseEntity.internalServerError().body("Server error: " + e.getMessage());
+        }
+    }
+
+    @GetMapping("/roles")
+    public ResponseEntity<List<TmRoleMaster>> listAllRoles() {
+        try {
+            return ResponseEntity.ok(adminService.listAllRoles());
+        } catch (Exception e) {
+            return ResponseEntity.internalServerError().build();
+        }
+    }
+
+    @DeleteMapping("/roles/{rolename}")
+    public ResponseEntity<String> deleteRole(@PathVariable String rolename) {
+        try {
+            String result = adminService.deleteRoleByRolename(rolename);
+            if ("Role deleted successfully".equals(result)) {
+                return ResponseEntity.ok(result);
+            } else {
+                return ResponseEntity.badRequest().body(result);
+            }
+        } catch (Exception e) {
+            return ResponseEntity.internalServerError().body("Server error: " + e.getMessage());
+        }
+    }
+
+
+    @GetMapping("/users")
+    public ResponseEntity<List<TmUserMaster>> fetchAllUsers() {
+        try {
+            return ResponseEntity.ok(adminService.fetchAllUsers());
+        } catch (Exception e) {
+            return ResponseEntity.internalServerError().build();
+        }
+    }
+
+    @PutMapping("/roles")
+    public ResponseEntity<String> updateRole(@RequestBody TmRoleMaster role) {
+        try {
+            String result = adminService.updateRole(role);
+            if ("Role updated successfully".equals(result)) {
+                return ResponseEntity.ok(result);
+            } else {
+                return ResponseEntity.badRequest().body(result);
+            }
+        } catch (Exception e) {
+            return ResponseEntity.internalServerError().body("Server error: " + e.getMessage());
+        }
+    }
+}

@@ -1,0 +1,23 @@
+package cps.services.impl;
+
+import org.bson.types.ObjectId;
+
+import cps.entities.CustomerClaimsQueriesEO;
+import cps.services.CustomerClaimsQueriesServices;
+import reactor.core.publisher.Mono;
+
+public class CustomerClaimsQueriesServicesImpl implements CustomerClaimsQueriesServices {
+
+	@Override
+	public Mono<CustomerClaimsQueriesEO> addNewQuery(CustomerClaimsQueriesEO customerClaimsQueriesEO) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Mono<CustomerClaimsQueriesEO> updateQuery(ObjectId id, CustomerClaimsQueriesEO customerClaimsQueriesEO) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

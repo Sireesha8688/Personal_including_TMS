@@ -1,0 +1,21 @@
+package cps.services;
+
+import java.util.Optional;
+
+import org.bson.types.ObjectId;
+
+import com.mongodb.client.result.UpdateResult;
+
+import cps.entities.CustomerClaimsEO;
+import reactor.core.publisher.Mono;
+
+public interface CustomerClaimsServices {
+	
+	public CustomerClaimsEO addNewCustomerClaim(CustomerClaimsEO customerClaimsEO);
+	
+	public void getAll();
+	
+	public Optional<CustomerClaimsEO> getOne(ObjectId id);
+
+	public Mono<UpdateResult> updateCustomerClaim(ObjectId id, CustomerClaimsEO customerClaimsEO);
+}

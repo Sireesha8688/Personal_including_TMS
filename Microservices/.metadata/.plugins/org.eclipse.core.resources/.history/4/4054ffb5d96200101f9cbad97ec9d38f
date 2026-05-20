@@ -1,0 +1,93 @@
+package cps.controller;
+
+
+import lombok.RequiredArgsConstructor;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import cps.entities.CustomerClaimEO;
+import cps.entities.HospitalClaimEO;
+import training.iqgateway.entities.VerifierDocument;
+import training.iqgateway.service.VerifierClaimService;
+
+import java.util.List;
+import java.util.Map;
+
+@RestController
+@RequestMapping("/api/verifier")
+@RequiredArgsConstructor
+public class VerifierController {
+	
+	@Autowired
+    private  VerifierClaimService service;
+
+    // ------------------------------------------
+    // 🚑 HOSPITAL CLAIMS
+    // ------------------------------------------
+
+    // GET assigned hospital claims for a verifier
+    @GetMapping("/assigned-hospital-claims/{verifierId}")
+    public ResponseEntity<List<HospitalClaimEO>> getHospitalClaims(@PathVariable String verifierId) {
+        return ResponseEntity.ok(service.getHospitalClaimsByVerifier(verifierId));
+    }
+
+    // PATCH - update verifier fields for hospital claim
+    @Autowired
+    private ObjectMapper objectMapper;
+
+    @PatchMapping("/update-hospital-claim/{claimId}")
+    public ResponseEntity<HospitalClaimEO> updateHospitalClaim(
+            @PathVariable String claimId,
+            @RequestBody Map<String, Object> payload) {
+        try {
+            String comments = (String) payload.get("verifierComments");
+            String status = (String) payload.get("verifierStatus");
+
+            List<VerifierDocument> verifierDocs = null;
+            Object verifierDocsObj = payload.get("verifierDocuments");
+            if (verifierDocsObj != null) {
+                verifierDocs = objectMapper.convertValue(
+                    verifierDocsObj, new TypeReference<List<VerifierDocument>>() {});
+            }
+
+            return ResponseEntity.ok(service.updateHospitalClaim(claimId, comments, status, verifierDocs));
+        } catch (Exception e) {
+            e.printStackTrace();
+            return ResponseEntity.badRequest().body(null);
+        }
+    }
+
+
+
+    // ------------------------------------------
+    // 🧍 CUSTOMER CLAIMS
+    // ------------------------------------------
+
+    // GET assigned customer claims for a verifier
+    @GetMapping("/assigned-customer-claims/{verifierId}")
+    public ResponseEntity<List<CustomerClaimEO>> getCustomerClaims(@PathVariable String verifierId) {
+        return ResponseEntity.ok(service.getCustomerClaimsByVerifier(verifierId));
+    }
+
+    // PATCH - update verifier fields for customer claim
+    @PatchMapping("/update-customer-claim/{claimId}")
+    public ResponseEntity<CustomerClaimEO> updateCustomerClaim(
+            @PathVariable String claimId,
+            @RequestBody Map<String, Object> payload
+    ) {
+        try {
+            String comments = (String) payload.get("verifierComments");
+            String status = payload.get("verifierStatus").toString(); // Boolean as string
+            List<VerifierDocument> verifierDocs = (List<VerifierDocument>) payload.get("verifierDocuments");
+
+            return ResponseEntity.ok(service.updateCustomerClaim(claimId, comments, status, verifierDocs));
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().body(null);
+        }
+    }
+}

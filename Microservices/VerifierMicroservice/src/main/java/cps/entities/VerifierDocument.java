@@ -1,0 +1,9 @@
+package cps.entities;
+
+import lombok.Data;
+
+@Data
+public class VerifierDocument {
+    private String fileName;
+    private String fileUrl; // base64 representation
+}

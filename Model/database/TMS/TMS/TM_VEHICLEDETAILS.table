@@ -1,0 +1,755 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<table xmlns="http://xmlns.oracle.com/jdeveloper/1111/offlinedb">
+  <ID class="oracle.javatools.db.IdentifierBasedID">
+    <identifier class="java.lang.String">b8f53aa8-191d-4c99-aa40-374f31b44203</identifier>
+  </ID>
+  <name>TM_VEHICLEDETAILS</name>
+  <columns>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">08587773-49f7-4a65-ac9d-f8f35b3111b9</identifier>
+      </ID>
+      <name>VEH_ID</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">9bb1f5f9-e759-4b77-96c9-f4e2288a1c7b</identifier>
+        </ID>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.OracleDatabaseImpl</providerClass>
+          <typeName>NUMBER</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>VEH_ID</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>TM_VEHICLEDETAILS</name>
+                  <identifier class="java.math.BigDecimal">21289</identifier>
+                  <schemaName>TMS</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>VEH_ID</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>TM_VEHICLEDETAILS</name>
+              <identifier class="java.math.BigDecimal">21289</identifier>
+              <schemaName>TMS</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">aa10f4d6-a4e9-447f-915d-693fb5a174f7</identifier>
+      </ID>
+      <name>VEH_TYPE</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">b6e34a22-3802-4a78-9296-bbd33a073fd7</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">50</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">BYTE</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>VEH_TYPE</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>TM_VEHICLEDETAILS</name>
+                  <identifier class="java.math.BigDecimal">21289</identifier>
+                  <schemaName>TMS</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>VEH_TYPE</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>TM_VEHICLEDETAILS</name>
+              <identifier class="java.math.BigDecimal">21289</identifier>
+              <schemaName>TMS</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">9f10dd01-21c6-4df8-851b-5b8e219c4e19</identifier>
+      </ID>
+      <name>ENGINE_NO</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">c0bdcb4a-6b0f-4986-b04a-1643bec92030</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">50</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">BYTE</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>ENGINE_NO</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>TM_VEHICLEDETAILS</name>
+                  <identifier class="java.math.BigDecimal">21289</identifier>
+                  <schemaName>TMS</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>ENGINE_NO</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>TM_VEHICLEDETAILS</name>
+              <identifier class="java.math.BigDecimal">21289</identifier>
+              <schemaName>TMS</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">3c8d926b-05e0-4930-91fd-e76991055586</identifier>
+      </ID>
+      <name>MODEL_NO</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">7f675d14-8f52-4938-9047-e3d15d669649</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">50</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">BYTE</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>MODEL_NO</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>TM_VEHICLEDETAILS</name>
+                  <identifier class="java.math.BigDecimal">21289</identifier>
+                  <schemaName>TMS</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>MODEL_NO</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>TM_VEHICLEDETAILS</name>
+              <identifier class="java.math.BigDecimal">21289</identifier>
+              <schemaName>TMS</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">b40f1de6-5897-4e40-835e-2199ceab13d6</identifier>
+      </ID>
+      <name>VEH_NAME</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">344adeef-39b6-43e0-8f3a-65fdefaa9b56</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">50</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">BYTE</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>VEH_NAME</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>TM_VEHICLEDETAILS</name>
+                  <identifier class="java.math.BigDecimal">21289</identifier>
+                  <schemaName>TMS</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>VEH_NAME</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>TM_VEHICLEDETAILS</name>
+              <identifier class="java.math.BigDecimal">21289</identifier>
+              <schemaName>TMS</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">c54252d5-5b73-40e1-b612-c9ad76f93951</identifier>
+      </ID>
+      <name>VEH_COLOR</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">b236645a-4466-40a7-8e18-86414660744f</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">50</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">BYTE</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>VEH_COLOR</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>TM_VEHICLEDETAILS</name>
+                  <identifier class="java.math.BigDecimal">21289</identifier>
+                  <schemaName>TMS</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>false</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>VEH_COLOR</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>TM_VEHICLEDETAILS</name>
+              <identifier class="java.math.BigDecimal">21289</identifier>
+              <schemaName>TMS</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">377c797f-0b21-44cc-aa23-8bc33c876ec0</identifier>
+      </ID>
+      <name>MANUFACTURER_NAME</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">49aea90c-7903-4a41-9e60-506842669d9b</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">50</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">BYTE</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>MANUFACTURER_NAME</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>TM_VEHICLEDETAILS</name>
+                  <identifier class="java.math.BigDecimal">21289</identifier>
+                  <schemaName>TMS</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>MANUFACTURER_NAME</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>TM_VEHICLEDETAILS</name>
+              <identifier class="java.math.BigDecimal">21289</identifier>
+              <schemaName>TMS</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">24f3c130-b21a-4ff0-86f1-ae5e1f34cd8d</identifier>
+      </ID>
+      <name>DATE_OF_MANUFACTURE</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">7fe60b06-5eec-474e-afb3-60579c0c7d2a</identifier>
+        </ID>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.OracleDatabaseImpl</providerClass>
+          <typeName>DATE</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>DATE_OF_MANUFACTURE</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>TM_VEHICLEDETAILS</name>
+                  <identifier class="java.math.BigDecimal">21289</identifier>
+                  <schemaName>TMS</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>DATE_OF_MANUFACTURE</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>TM_VEHICLEDETAILS</name>
+              <identifier class="java.math.BigDecimal">21289</identifier>
+              <schemaName>TMS</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">93889a68-c058-4cbf-a47b-51fa6fbb8f0a</identifier>
+      </ID>
+      <name>NO_OF_CYLINDERS</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">59f2dd5a-75d5-4a78-b6d0-f760dcaf3ad3</identifier>
+        </ID>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.OracleDatabaseImpl</providerClass>
+          <typeName>NUMBER</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>NO_OF_CYLINDERS</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>TM_VEHICLEDETAILS</name>
+                  <identifier class="java.math.BigDecimal">21289</identifier>
+                  <schemaName>TMS</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>false</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>NO_OF_CYLINDERS</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>TM_VEHICLEDETAILS</name>
+              <identifier class="java.math.BigDecimal">21289</identifier>
+              <schemaName>TMS</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">293e664f-b097-405d-9209-e443c45c417f</identifier>
+      </ID>
+      <name>CUBIC_CAPACITY</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">8a9f1e9a-1bca-4ce8-bc07-5037a7fdcc53</identifier>
+        </ID>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.OracleDatabaseImpl</providerClass>
+          <typeName>NUMBER</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>CUBIC_CAPACITY</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>TM_VEHICLEDETAILS</name>
+                  <identifier class="java.math.BigDecimal">21289</identifier>
+                  <schemaName>TMS</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>false</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>CUBIC_CAPACITY</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>TM_VEHICLEDETAILS</name>
+              <identifier class="java.math.BigDecimal">21289</identifier>
+              <schemaName>TMS</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">f97fdeaa-dd0a-448a-b2b3-c274b5cc2a52</identifier>
+      </ID>
+      <name>FUEL_USED</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">9d22b4e2-1000-43d5-85bd-d2c5b116df52</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">20</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">BYTE</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>FUEL_USED</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>TM_VEHICLEDETAILS</name>
+                  <identifier class="java.math.BigDecimal">21289</identifier>
+                  <schemaName>TMS</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>false</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>FUEL_USED</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>TM_VEHICLEDETAILS</name>
+              <identifier class="java.math.BigDecimal">21289</identifier>
+              <schemaName>TMS</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+  </columns>
+  <constraints>
+    <constraint class="oracle.javatools.db.PKConstraint">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">499901f8-f6bf-48bb-92b6-2232bf4c239b</identifier>
+      </ID>
+      <name>TM_VEHICLEDETAILS_PK</name>
+      <columnIDs>
+        <columnID class="oracle.javatools.db.IdentifierBasedID">
+          <name>VEH_ID</name>
+          <identifier class="java.lang.String">08587773-49f7-4a65-ac9d-f8f35b3111b9</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>TM_VEHICLEDETAILS</name>
+            <identifier class="java.lang.String">b8f53aa8-191d-4c99-aa40-374f31b44203</identifier>
+            <schemaName>TMS</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <schemaName>TMS</schemaName>
+          <type>COLUMN</type>
+        </columnID>
+      </columnIDs>
+      <enabled>true</enabled>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>TM_VEHICLEDETAILS_PK</name>
+            <childObjectNames>
+              <childObjectName>VEH_ID</childObjectName>
+            </childObjectNames>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>TM_VEHICLEDETAILS</name>
+              <identifier class="java.math.BigDecimal">21289</identifier>
+              <schemaName>TMS</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <subType>PKConstraint</subType>
+            <type>CONSTRAINT</type>
+          </value>
+        </entry>
+      </properties>
+    </constraint>
+    <constraint class="oracle.javatools.db.UniqueConstraint">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">4a99f477-f258-4bf3-8095-4e601d4e2ba8</identifier>
+      </ID>
+      <name>TM_VEHICLEDETAILS_UK1</name>
+      <columnIDs>
+        <columnID class="oracle.javatools.db.IdentifierBasedID">
+          <name>ENGINE_NO</name>
+          <identifier class="java.lang.String">9f10dd01-21c6-4df8-851b-5b8e219c4e19</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>TM_VEHICLEDETAILS</name>
+            <identifier class="java.lang.String">b8f53aa8-191d-4c99-aa40-374f31b44203</identifier>
+            <schemaName>TMS</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <schemaName>TMS</schemaName>
+          <type>COLUMN</type>
+        </columnID>
+      </columnIDs>
+      <enabled>true</enabled>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>TM_VEHICLEDETAILS_UK1</name>
+            <childObjectNames>
+              <childObjectName>ENGINE_NO</childObjectName>
+            </childObjectNames>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>TM_VEHICLEDETAILS</name>
+              <identifier class="java.math.BigDecimal">21289</identifier>
+              <schemaName>TMS</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <subType>UniqueConstraint</subType>
+            <type>CONSTRAINT</type>
+          </value>
+        </entry>
+      </properties>
+    </constraint>
+  </constraints>
+  <properties>
+    <entry>
+      <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+      <value class="oracle.javatools.db.ReferenceID">
+        <name>TM_VEHICLEDETAILS</name>
+        <identifier class="java.math.BigDecimal">21289</identifier>
+        <schemaName>TMS</schemaName>
+        <type>TABLE</type>
+      </value>
+    </entry>
+    <entry>
+      <key>OracleStorageProperties</key>
+      <value class="oracle.javatools.db.ora.OracleStorageProperties">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">231a7916-ee99-4c96-a958-c761ffad5e51</identifier>
+        </ID>
+        <bufferMode>DEFAULT</bufferMode>
+        <freelistGroups>1</freelistGroups>
+        <freelists>1</freelists>
+        <initialExtent>65536</initialExtent>
+        <initrans>1</initrans>
+        <logging>true</logging>
+        <maxExtent>2147483645</maxExtent>
+        <minExtent>1</minExtent>
+        <nextExtent>1048576</nextExtent>
+        <percentFree>10</percentFree>
+        <percentUsed>40</percentUsed>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>TM_VEHICLEDETAILS</name>
+                <identifier class="java.math.BigDecimal">21289</identifier>
+                <schemaName>TMS</schemaName>
+                <type>TABLE</type>
+              </parent>
+              <type>OracleStorageProperties</type>
+            </value>
+          </entry>
+        </properties>
+        <tablespaceID class="oracle.javatools.db.ReferenceID">
+          <name>SYSTEM</name>
+          <type>TABLESPACE</type>
+        </tablespaceID>
+      </value>
+    </entry>
+    <entry>
+      <key>TableType</key>
+      <value class="oracle.javatools.db.Table$TableType">NORMAL</value>
+    </entry>
+  </properties>
+  <schema>
+    <name>TMS</name>
+  </schema>
+</table>

@@ -1,0 +1,54 @@
+package cps.serviceImpl;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.bson.types.ObjectId;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import cps.entities.VerifierEO;
+import cps.repository.VerifierRepository;
+import cps.service.VerifierService;
+
+@Service
+public class VerifierServiceImpl implements VerifierService {
+
+    @Autowired
+    private VerifierRepository verifierRepository;
+
+    @Override
+    public VerifierEO addVerifier(VerifierEO verifier) {
+        return verifierRepository.save(verifier);
+    }
+
+    @Override
+    public List<VerifierEO> getAllVerifiers() {
+        return verifierRepository.findAll();
+    }
+
+    @Override
+    public Optional<VerifierEO> getVerifierById(ObjectId id) {
+        return verifierRepository.findById(id);
+    }
+
+    @Override
+    public VerifierEO updateVerifier(ObjectId id, VerifierEO verifier) {
+        Optional<VerifierEO> existing = verifierRepository.findById(id);
+        if (existing.isPresent()) {
+            VerifierEO old = existing.get();
+            old.setName(verifier.getName());
+            old.setEmail(verifier.getEmail());
+            old.setPassword(verifier.getPassword());
+            old.setAvailable(verifier.isAvailable());
+            old.setClaimTypesAuthorized(verifier.getClaimTypesAuthorized());
+            return verifierRepository.save(old);
+        }
+        return null;
+    }
+
+    @Override
+    public void deleteVerifier(ObjectId id) {
+        verifierRepository.deleteById(id);
+    }
+}

@@ -1,0 +1,8 @@
+package cps;
+
+import cps.entities.CustomerClaimsEO;
+
+public interface CustomerClaimsServices {
+	
+	public CustomerClaimsEO addNewCustomerClaim(CustomerClaimsEO customerClaimsEO);
+}

@@ -1,0 +1,16 @@
+package cps.services.impl;
+
+public class HospitalServicesImpl implements HospitalServices {
+	
+	@Autowired
+	private ReactiveMongoTemplate reactiveMongoTemplate;
+
+	
+
+	@Override
+	public Mono<HospitalEO> getHospitalById(ObjectId id) {
+		Query query = new Query(Criteria.where("_id").is(id));
+	    return reactiveMongoTemplate.findOne(query, HospitalEO.class);
+	}
+
+}

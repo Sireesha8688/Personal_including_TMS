@@ -1,0 +1,79 @@
+package training.iqgateway.service.impl;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import training.iqgateway.entities.TmUserMaster;
+import training.iqgateway.entities.TmRoleMaster;
+import training.iqgateway.repositories.UserMasterRepository;
+import training.iqgateway.repositories.RolemasterRepository;
+import training.iqgateway.service.AdminOperationsService;
+
+import java.util.List;
+import java.util.Optional;
+
+@Service
+public class AdminOperationsServiceImpl implements AdminOperationsService {
+
+    private final UserMasterRepository userRepo;
+    private final RolemasterRepository roleRepo;
+
+    @Autowired
+    public AdminOperationsServiceImpl(UserMasterRepository userRepo, RolemasterRepository roleRepo) {
+        this.userRepo = userRepo;
+        this.roleRepo = roleRepo;
+    }
+
+    @Override
+    public Integer createUser(TmUserMaster user) {
+        if (user == null || user.getUsername() == null) return 0;
+        if (userRepo.existsById(user.getUsername())) return 0;
+        userRepo.save(user);
+        return 1;
+    }
+
+    @Override
+    public int deleteUser(String username) {
+        if (username == null || username.trim().isEmpty()) throw new IllegalArgumentException("Username is required");
+        if (userRepo.existsById(username)) {
+            userRepo.deleteById(username);
+            return 1;
+        }
+        return 0;
+    }
+
+    @Override
+    public int addRole(TmRoleMaster role) {
+        if (role == null || role.getRolename() == null) return 0;
+        if (roleRepo.existsById(role.getRolename())) return 0;
+        roleRepo.save(role);
+        return 1;
+    }
+
+    @Override
+    public List<TmRoleMaster> listAllRoles() {
+        return roleRepo.findAll();
+    }
+
+    @Override
+    public String deleteRole(TmRoleMaster role) {
+        if (role == null || role.getRolename() == null) return "Role name is required";
+        if (!roleRepo.existsById(role.getRolename())) return "Role does not exist";
+        roleRepo.deleteById(role.getRolename());
+        return "Role deleted successfully";
+    }
+
+    @Override
+    public List<TmUserMaster> fetchAllUsers() {
+        return userRepo.findAll();
+    }
+
+    @Override
+    public String updateRole(TmRoleMaster role) {
+        if (role == null || role.getRolename() == null || role.getRoleDesc() == null)
+            return "Role name and description are required";
+        Optional<TmRoleMaster> existing = roleRepo.findById(role.getRolename());
+        if (!existing.isPresent()) return "Role does not exist";
+        roleRepo.save(role);
+        return "Role updated successfully";
+    }
+}

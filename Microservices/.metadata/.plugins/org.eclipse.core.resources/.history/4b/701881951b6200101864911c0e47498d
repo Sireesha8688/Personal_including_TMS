@@ -1,0 +1,16 @@
+package cps.services;
+
+import org.bson.types.ObjectId;
+
+import cps.entities.CustomerClaimsEO;
+
+public interface CustomerClaimsServices {
+	
+	public CustomerClaimsEO addNewCustomerClaim(CustomerClaimsEO customerClaimsEO);
+	
+	public void updateCustomerStatus(CustomerClaimsEO customerClaimsEO);
+	
+	public void getAll();
+	
+	public void getOne(ObjectId id);
+}

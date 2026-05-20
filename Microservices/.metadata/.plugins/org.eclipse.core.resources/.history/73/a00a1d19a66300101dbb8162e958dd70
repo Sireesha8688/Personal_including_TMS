@@ -1,0 +1,62 @@
+package cps.controller;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import cps.entities.HospitalClaim;
+import cps.service.HospitalClaimService;
+
+@RestController
+@RequestMapping("/api/hospital")
+@CrossOrigin(origins = "http://localhost:5173")
+
+public class HospitalClaimController {
+
+    @Autowired
+    private HospitalClaimService hospitalClaimService;
+
+    @GetMapping("/claims")
+    public List<HospitalClaim> getAllClaims() {
+        return hospitalClaimService.getAllClaims();
+    }
+
+    @GetMapping("/claims/{id}")
+    public ResponseEntity<HospitalClaim> getClaimById(@PathVariable String id) {
+        Optional<HospitalClaim> claimOpt = hospitalClaimService.getClaimById(id);
+        return claimOpt.map(ResponseEntity::ok)
+                       .orElse(ResponseEntity.notFound().build());
+    }
+
+    @PostMapping("/claims")
+    public ResponseEntity<HospitalClaim> createClaim(@RequestBody HospitalClaim claim) {
+        HospitalClaim created = hospitalClaimService.createClaim(claim);
+        return ResponseEntity.ok(created);
+    }
+
+    @PutMapping("/claims/{id}")
+    public ResponseEntity<HospitalClaim> updateClaim(@PathVariable String id,
+                                                     @RequestBody HospitalClaim claim) {
+        Optional<HospitalClaim> updatedOpt = hospitalClaimService.updateClaim(id, claim);
+        return updatedOpt.map(ResponseEntity::ok)
+                         .orElse(ResponseEntity.notFound().build());
+    }
+
+    @DeleteMapping("/claims/{id}")
+    public ResponseEntity<Void> deleteClaim(@PathVariable String id) {
+        boolean deleted = hospitalClaimService.deleteClaim(id);
+        if (deleted) {
+            return ResponseEntity.noContent().build();
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
+    
+    @GetMapping("/claims/no-insurer")
+    public List<HospitalClaim> getClaimsWithNoInsurer() {
+        return hospitalClaimService.getClaimsWhereInsurerIdIsNull();
+    }
+}

@@ -1,0 +1,5 @@
+package training.iqgateway.dto;
+
+public class OwnerVehicleDTO {
+
+}

@@ -1,0 +1,208 @@
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+Access-Control-Allow-Origin: *
+
+{
+  "covers": [
+    {
+      "_id": { "$oid": "68512ca134c711c48b8e78b4" },
+      "coverId": 1,
+      "coverName": "Fracture",
+      "sumAssured": 3000,
+      "premium": 200,
+      "description": "Coverage for bone fractures due to accidents."
+    },
+    {
+      "_id": { "$oid": "68512ca134c711c48b8e78b5" },
+      "coverId": 2,
+      "coverName": "Dental",
+      "sumAssured": 5000,
+      "premium": 300,
+      "description": "Covers dental injuries and treatments."
+    },
+    {
+      "_id": { "$oid": "68512ca134c711c48b8e78b6" },
+      "coverId": 3,
+      "coverName": "Vision",
+      "sumAssured": 4000,
+      "premium": 250,
+      "description": "Coverage for eye injuries and corrective procedures."
+    },
+    {
+      "_id": { "$oid": "68512ca134c711c48b8e78b7" },
+      "coverId": 4,
+      "coverName": "Critical Illness",
+      "sumAssured": 100000,
+      "premium": 1200,
+      "description": "Provides lump sum on diagnosis of critical illnesses."
+    },
+    {
+      "_id": { "$oid": "68512ca134c711c48b8e78b8" },
+      "coverId": 5,
+      "coverName": "Accidental Death",
+      "sumAssured": 200000,
+      "premium": 1500,
+      "description": "Sum assured paid in case of accidental death."
+    },
+    {
+      "_id": { "$oid": "68512ca134c711c48b8e78b9" },
+      "coverId": 6,
+      "coverName": "Hospital Cash",
+      "sumAssured": 20000,
+      "premium": 450,
+      "description": "Daily cash allowance during hospital stay."
+    },
+    {
+      "_id": { "$oid": "68512ca134c711c48b8e78ba" },
+      "coverId": 7,
+      "coverName": "Personal Accident",
+      "sumAssured": 75000,
+      "premium": 900,
+      "description": "Covers accidental injuries and disability."
+    },
+    {
+      "_id": { "$oid": "68512ca134c711c48b8e78bb" },
+      "coverId": 8,
+      "coverName": "Burns",
+      "sumAssured": 10000,
+      "premium": 350,
+      "description": "Coverage for burn injuries."
+    },
+    {
+      "_id": { "$oid": "68512ca134c711c48b8e78bc" },
+      "coverId": 9,
+      "coverName": "Cancer",
+      "sumAssured": 250000,
+      "premium": 2000,
+      "description": "Financial support on diagnosis of cancer."
+    },
+    {
+      "_id": { "$oid": "68512ca134c711c48b8e78bd" },
+      "coverId": 10,
+      "coverName": "Heart Care",
+      "sumAssured": 150000,
+      "premium": 1800,
+      "description": "Coverage for heart-related illnesses and surgeries."
+    },
+    {
+      "_id": { "$oid": "68512ca134c711c48b8e78be" },
+      "coverId": 11,
+      "coverName": "Maternity",
+      "sumAssured": 50000,
+      "premium": 1000,
+      "description": "Covers maternity expenses and newborn care."
+    },
+    {
+      "_id": { "$oid": "68512ca134c711c48b8e78bf" },
+      "coverId": 12,
+      "coverName": "Outpatient",
+      "sumAssured": 10000,
+      "premium": 400,
+      "description": "Covers outpatient consultations and procedures."
+    },
+    {
+      "_id": { "$oid": "68512ca134c711c48b8e78c0" },
+      "coverId": 13,
+      "coverName": "Day Care",
+      "sumAssured": 15000,
+      "premium": 350,
+      "description": "Coverage for day care treatments and minor surgeries."
+    },
+    {
+      "_id": { "$oid": "68512ca134c711c48b8e78c1" },
+      "coverId": 14,
+      "coverName": "Ambulance",
+      "sumAssured": 5000,
+      "premium": 150,
+      "description": "Covers ambulance charges during emergencies."
+    },
+    {
+      "_id": { "$oid": "68512ca134c711c48b8e78c2" },
+      "coverId": 15,
+      "coverName": "COVID-19",
+      "sumAssured": 100000,
+      "premium": 1100,
+      "description": "Coverage for COVID-19 hospitalization and treatment."
+    },
+    {
+      "_id": { "$oid": "68512ca134c711c48b8e78c3" },
+      "coverId": 16,
+      "coverName": "Travel Insurance",
+      "sumAssured": 50000,
+      "premium": 600,
+      "description": "Coverage for medical emergencies and trip cancellations during travel."
+    },
+    {
+      "_id": { "$oid": "68512ca134c711c48b8e78c4" },
+      "coverId": 17,
+      "coverName": "Home Protection",
+      "sumAssured": 300000,
+      "premium": 2500,
+      "description": "Insurance for home structure and contents against fire, theft, and natural disasters."
+    },
+    {
+      "_id": { "$oid": "68512ca134c711c48b8e78c5" },
+      "coverId": 18,
+      "coverName": "Gadget Cover",
+      "sumAssured": 10000,
+      "premium": 350,
+      "description": "Protection for electronic gadgets against accidental damage and theft."
+    },
+    {
+      "_id": { "$oid": "68512ca134c711c48b8e78c6" },
+      "coverId": 19,
+      "coverName": "Pet Insurance",
+      "sumAssured": 15000,
+      "premium": 400,
+      "description": "Covers veterinary expenses and accidental injuries for your pets."
+    },
+    {
+      "_id": { "$oid": "68512ca134c711c48b8e78c7" },
+      "coverId": 20,
+      "coverName": "Senior Citizen Health",
+      "sumAssured": 200000,
+      "premium": 3000,
+      "description": "Comprehensive health coverage for senior citizens above 60 years."
+    },
+    {
+      "_id": { "$oid": "68512ca134c711c48b8e78c8" },
+      "coverId": 21,
+      "coverName": "Student Health",
+      "sumAssured": 100000,
+      "premium": 800,
+      "description": "Affordable health insurance for students studying in India and abroad."
+    },
+    {
+      "_id": { "$oid": "68512ca134c711c48b8e78c9" },
+      "coverId": 22,
+      "coverName": "Cancer Care",
+      "sumAssured": 500000,
+      "premium": 2500,
+      "description": "Financial support and treatment coverage for cancer diagnosis."
+    },
+    {
+      "_id": { "$oid": "68512ca134c711c48b8e78ca" },
+      "coverId": 23,
+      "coverName": "Personal Liability",
+      "sumAssured": 75000,
+      "premium": 700,
+      "description": "Protection against legal liabilities arising from accidental damages to others."
+    },
+    {
+      "_id": { "$oid": "68512ca134c711c48b8e78cb" },
+      "coverId": 24,
+      "coverName": "Child Education",
+      "sumAssured": 200000,
+      "premium": 1200,
+      "description": "Secures your child's education expenses in case of unforeseen events."
+    },
+    {
+      "_id": { "$oid": "68512ca134c711c48b8e78cc" },
+      "coverId": 25,
+      "coverName": "Income Protection",
+      "sumAssured": 100000,
+      "premium": 1100,
+      "description": "Monthly income support in case of job loss due to accident or illness."
+    }
+  ]
+}

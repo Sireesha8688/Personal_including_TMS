@@ -1,0 +1,468 @@
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:ui="http://java.sun.com/jsf/facelets">
+<jsp:output omit-xml-declaration="true" doctype-root-element="HTML"
+            doctype-system="http://www.w3.org/TR/html4/loose.dtd"
+            doctype-public="-//W3C//DTD HTML 4.01 Transitional//EN"/>
+<jsp:directive.page contentType="text/html;charset=UTF-8"/>
+<f:view>
+<html>
+<head>
+<title>Transfer Vehicle</title>
+<meta charset="UTF-8" />
+<style>
+    body {
+        font-family: 'Segoe UI', Arial, sans-serif;
+        background-color: #f8f9fa;
+        margin: 0;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        color: #212529;
+    }
+    .container {
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        max-width: 900px; /* Increased max-width to accommodate more content */
+        margin: 2rem auto; /* Adjusted margin for better spacing */
+        padding: 2rem;
+    }
+    h2, h3 {
+        color: #2c3e50;
+        text-align: center;
+        margin-bottom: 1.5rem;
+    }
+    .form-section {
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* Two columns for labels and inputs */
+        gap: 15px; /* Spacing between grid items */
+        margin-bottom: 1.5rem;
+    }
+    .form-section > div {
+        display: flex;
+        flex-direction: column;
+    }
+    .form-section label {
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+    .form-section input[type="text"],
+    .form-section input[type="number"],
+    .form-section select {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 1rem;
+    }
+    .button-group {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin-top: 30px;
+    }
+    .button {
+        color: white;
+        border: none;
+        padding: 12px 24px;
+        cursor: pointer;
+        border-radius: 6px;
+        font-size: 1rem;
+        font-weight: 500;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        transition: background-color 0.2s, transform 0.2s;
+    }
+    .button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    }
+    .button-primary {
+        background-color: #007bff; /* Blue for primary actions */
+    }
+    .button-primary:hover {
+        background-color: #0056b3;
+    }
+    .button-success {
+        background-color: #28a745; /* Green for success/create */
+    }
+    .button-success:hover {
+        background-color: #218838;
+    }
+    .button-warning {
+        background-color: #ffc107; /* Yellow for search/check */
+        color: #212529; /* Dark text for better contrast */
+    }
+    .button-warning:hover {
+        background-color: #e0a800;
+    }
+    .button-info {
+        background-color: #17a2b8; /* Cyan for info/dashboard */
+    }
+    .button-info:hover {
+        background-color: #138496;
+    }
+    .messages-panel {
+        background-color: #e2f0d9;
+        border: 1px solid #28a745;
+        color: #218838;
+        padding: 10px;
+        border-radius: 5px;
+        margin-top: 1.5rem;
+        text-align: center;
+    }
+    .error-message {
+        color: red;
+        font-size: 0.9em;
+        margin-top: 5px;
+    }
+    hr {
+        border: 0;
+        border-top: 1px solid #e0e0e0;
+        margin: 2rem 0;
+    }
+    .inline-group {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 15px;
+    }
+    .inline-group input[type="checkbox"] {
+        width: auto;
+        margin-right: 5px;
+    }
+    .half-width {
+        width: 50%; /* For search input */
+    }
+    /* Layout adjustments for input groups */
+    .input-group {
+        display: flex;
+        align-items: flex-end; /* Align button to the bottom of the input */
+        gap: 10px;
+    }
+    .input-group > div {
+        flex-grow: 1;
+    }
+    .input-group .button {
+        flex-shrink: 0;
+    }
+    @media (max-width: 768px) {
+        .form-section {
+            grid-template-columns: 1fr; /* Stack columns on smaller screens */
+        }
+        .container {
+            padding: 1rem;
+            margin: 1rem;
+        }
+        .button-group {
+            flex-direction: column;
+            gap: 10px;
+        }
+        .button {
+            width: 100%;
+        }
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <h2>Transfer Vehicle</h2>
+    <h:form id="transferVehicleForm">
+
+        <h3>Search Vehicle</h3>
+        <div class="form-section">
+            <div class="input-group">
+                <h:outputLabel for="vehicleNumber" value="Enter Vehicle Number:" />
+                <div>
+                    <h:inputText id="vehicleNumber" value="#{transferVehicleBean.vehicleNumber}" size="15" styleClass="half-width"/>
+                </div>
+                <div>
+                    <h:commandButton id="searchCurrentVehicleBtn" value="Search" action="#{transferVehicleBean.searchVehicle}" styleClass="button button-warning"/>
+                </div>
+            </div>
+            <div></div> </div>
+
+        <hr/>
+
+        <h3>Current Owner Details</h3>
+        <div class="form-section">
+            <div>
+                <h:outputLabel value="Owner ID:" />
+                <div>
+                    <h:inputText id="currentOwnerId" value="#{transferVehicleBean.currentOwner.ownerId}" readonly="true" />
+                </div>
+            </div>
+            <div>
+                <h:outputLabel value="First Name:" />
+                <div>
+                    <h:inputText id="currentOwnerFname" value="#{transferVehicleBean.currentOwner.fname}" readonly="true" />
+                </div>
+            </div>
+            <div>
+                <h:outputLabel value="Last Name:" />
+                <div>
+                    <h:inputText id="currentOwnerLname" value="#{transferVehicleBean.currentOwner.lname}" readonly="true" />
+                </div>
+            </div>
+            <div>
+                <h:outputLabel value="Temporary Address:" />
+                <div>
+                    <h:inputText id="currentOwnerTempAddr" value="#{transferVehicleBean.currentOwner.tempAddr}" readonly="true" />
+                </div>
+            </div>
+            <div>
+                <h:outputLabel value="Permanent Address:" />
+                <div>
+                    <h:inputText id="currentOwnerPermAddr" value="#{transferVehicleBean.currentOwner.permAddr}" readonly="true" />
+                </div>
+            </div>
+            <div>
+                <h:outputLabel value="Landline:" />
+                <div>
+                    <h:inputText id="currentOwnerLandlineNo" value="#{transferVehicleBean.currentOwner.landlineNo}" readonly="true" />
+                </div>
+            </div>
+            <div>
+                <h:outputLabel value="Mobile No:" />
+                <div>
+                    <h:inputText id="currentOwnerMobileNo" value="#{transferVehicleBean.currentOwner.mobileNo}" readonly="true" />
+                </div>
+            </div>
+            <div>
+                <h:outputLabel value="Gender:" />
+                <div>
+                    <h:inputText id="currentOwnerGender" value="#{transferVehicleBean.currentOwner.gender}" readonly="true" />
+                </div>
+            </div>
+            <div>
+                <h:outputLabel value="Occupation:" />
+                <div>
+                    <h:inputText id="currentOwnerOccupation" value="#{transferVehicleBean.currentOwner.occupation}" readonly="true" />
+                </div>
+            </div>
+            <div>
+                <h:outputLabel value="Pincode:" />
+                <div>
+                    <h:inputText id="currentOwnerPincode" value="#{transferVehicleBean.currentOwner.pincode}" readonly="true" />
+                </div>
+            </div>
+            <div>
+                <h:outputLabel value="Pancard:" />
+                <div>
+                    <h:inputText id="currentOwnerPancardNo" value="#{transferVehicleBean.currentOwner.pancardNo}" readonly="true" />
+                </div>
+            </div>
+            <div>
+                <h:outputLabel value="Address Proof:" />
+                <div>
+                    <h:inputText id="currentOwnerAddProofName" value="#{transferVehicleBean.currentOwner.addProofName}" readonly="true" />
+                </div>
+            </div>
+        </div>
+
+        <hr/>
+
+        <h3>Vehicle Details</h3>
+        <div class="form-section">
+            <div>
+                <h:outputLabel value="Vehicle ID:" />
+                <div>
+                    <h:inputText id="currentVehicleId" value="#{transferVehicleBean.currentVehicle.vehId}" readonly="true" />
+                </div>
+            </div>
+            <div>
+                <h:outputLabel value="Vehicle Name:" />
+                <div>
+                    <h:inputText id="currentVehicleName" value="#{transferVehicleBean.currentVehicle.vehName}" readonly="true" />
+                </div>
+            </div>
+            <div>
+                <h:outputLabel value="Vehicle Type:" />
+                <div>
+                    <h:inputText id="currentVehicleType" value="#{transferVehicleBean.currentVehicle.vehType}" readonly="true" />
+                </div>
+            </div>
+            <div>
+                <h:outputLabel value="Model No:" />
+                <div>
+                    <h:inputText id="currentVehicleModelNo" value="#{transferVehicleBean.currentVehicle.modelNo}" readonly="true" />
+                </div>
+            </div>
+            <div>
+                <h:outputLabel value="Manufacturer Name:" />
+                <div>
+                    <h:inputText id="currentVehicleManufacturerName" value="#{transferVehicleBean.currentVehicle.manufacturerName}" readonly="true" />
+                </div>
+            </div>
+            <div>
+                <h:outputLabel value="Engine No:" />
+                <div>
+                    <h:inputText id="currentVehicleEngineNo" value="#{transferVehicleBean.currentVehicle.engineNo}" readonly="true" />
+                </div>
+            </div>
+            <div>
+                <h:outputLabel value="Color:" />
+                <div>
+                    <h:inputText id="currentVehicleColor" value="#{transferVehicleBean.currentVehicle.vehColor}" readonly="true" />
+                </div>
+            </div>
+            <div>
+                <h:outputLabel value="Fuel Used:" />
+                <div>
+                    <h:inputText id="currentVehicleFuelUsed" value="#{transferVehicleBean.currentVehicle.fuelUsed}" readonly="true" />
+                </div>
+            </div>
+            <div>
+                <h:outputLabel value="Cubic Capacity:" />
+                <div>
+                    <h:inputText id="currentVehicleCubicCapacity" value="#{transferVehicleBean.currentVehicle.cubicCapacity}" readonly="true" />
+                </div>
+            </div>
+            <div>
+                <h:outputLabel value="No of Cylinders:" />
+                <div>
+                    <h:inputText id="currentVehicleNoOfCylinders" value="#{transferVehicleBean.currentVehicle.noOfCylinders}" readonly="true" />
+                </div>
+            </div>
+            <div>
+                <h:outputLabel value="Date of Manufacture:" />
+                <div>
+                    <h:inputText id="currentVehicleDateOfManufacture" value="#{transferVehicleBean.currentVehicle.dateOfManufacture}" readonly="true" />
+                </div>
+            </div>
+            <div class="button-group">
+                <h:commandButton value="Check Offenses" action="#{transferVehicleBean.checkOffenses}" styleClass="button button-warning"/>
+            </div>
+            <div></div> </div>
+
+        <h:panelGroup id="offensesMessagePanel" layout="block" rendered="#{not empty transferVehicleBean.offensesMessage}" styleClass="messages-panel">
+            <p>
+                <h:outputText value="#{transferVehicleBean.offensesMessage}" />
+            </p>
+        </h:panelGroup>
+
+        <hr/>
+
+        <h3>New Owner Information</h3>
+        <div class="inline-group">
+            <h:outputLabel for="newOwnerOwnsVehicleChk">New Owner owns a vehicle</h:outputLabel>
+            <h:selectBooleanCheckbox id="newOwnerOwnsVehicleChk"
+                                     value="#{transferVehicleBean.newOwnerOwnsVehicle}"
+                                     onchange="this.form.submit();" />
+        </div>
+
+        <div class="form-section">
+            <div class="input-group">
+                <h:outputLabel for="newOwnerVehicleNumberInput" value="Enter Vehicle Number (New Owner):" />
+                <div>
+                    <h:inputText id="newOwnerVehicleNumberInput"
+                                 value="#{transferVehicleBean.newOwnerVehicleNumber}"
+                                 size="15"
+                                 disabled="#{!transferVehicleBean.newOwnerOwnsVehicle}"
+                                 styleClass="half-width" />
+                </div>
+                <div>
+                    <h:commandButton id="newOwnerVehicleSearchBtn"
+                                     value="Search"
+                                     action="#{transferVehicleBean.searchNewOwnerVehicle}"
+                                     disabled="#{!transferVehicleBean.newOwnerOwnsVehicle}"
+                                     styleClass="button button-warning"
+                    />
+                </div>
+            </div>
+            <div></div> </div>
+
+        <div class="form-section">
+            <div>
+                <h:outputLabel value="First Name:" />
+                <div>
+                    <h:inputText id="newOwnerFname" value="#{transferVehicleBean.newOwnerDetails.fname}" />
+                </div>
+            </div>
+            <div>
+                <h:outputLabel value="Last Name:" />
+                <div>
+                    <h:inputText id="newOwnerLname" value="#{transferVehicleBean.newOwnerDetails.lname}" />
+                </div>
+            </div>
+            <div>
+                <h:outputLabel for="newOwnerDob" value="Date of Birth (YYYY-MM-DD):" />
+                <div>
+                    <h:inputText id="newOwnerDob" value="#{transferVehicleBean.newOwnerDetails.dateofbirth}">
+                        <f:convertDateTime pattern="yyyy-MM-dd" />
+                    </h:inputText>
+                </div>
+                <h:message for="newOwnerDob" styleClass="error-message" />
+            </div>
+            <div>
+                <h:outputLabel value="Temporary Address:" />
+                <div>
+                    <h:inputText id="newOwnerTempAddr" value="#{transferVehicleBean.newOwnerDetails.tempAddr}" />
+                </div>
+            </div>
+            <div>
+                <h:outputLabel value="Permanent Address:" />
+                <div>
+                    <h:inputText id="newOwnerPermAddr" value="#{transferVehicleBean.newOwnerDetails.permAddr}" />
+                </div>
+            </div>
+            <div>
+                <h:outputLabel value="Landline No:" />
+                <div>
+                    <h:inputText id="newOwnerLandlineNo" value="#{transferVehicleBean.newOwnerDetails.landlineNo}" />
+                </div>
+            </div>
+            <div>
+                <h:outputLabel value="Mobile No:" />
+                <div>
+                    <h:inputText id="newOwnerMobileNo" value="#{transferVehicleBean.newOwnerDetails.mobileNo}" />
+                </div>
+            </div>
+            <div>
+                <h:outputLabel value="Gender:" />
+                <div>
+                    <h:inputText id="newOwnerGender" value="#{transferVehicleBean.newOwnerDetails.gender}" />
+                </div>
+            </div>
+            <div>
+                <h:outputLabel value="Occupation:" />
+                <div>
+                    <h:inputText id="newOwnerOccupation" value="#{transferVehicleBean.newOwnerDetails.occupation}" />
+                </div>
+            </div>
+            <div>
+                <h:outputLabel value="Pincode:" />
+                <div>
+                    <h:inputText id="newOwnerPincode" value="#{transferVehicleBean.newOwnerDetails.pincode}" />
+                </div>
+            </div>
+            <div>
+                <h:outputLabel for="newOwnerPancardNo" value="Pancard No:" />
+                <div>
+                    <h:inputText id="newOwnerPancardNo" value="#{transferVehicleBean.newOwnerDetails.pancardNo}" />
+                    <h:message for="newOwnerPancardNo" styleClass="error-message" />
+                </div>
+            </div>
+            <div>
+                <h:outputLabel value="Address Proof:" />
+                <div>
+                    <h:inputText id="newOwnerAddProofName" value="#{transferVehicleBean.newOwnerDetails.addProofName}" />
+                </div>
+            </div>
+        </div>
+
+        <div class="button-group">
+            <h:commandButton value="Create New Owner" action="#{transferVehicleBean.createOwner}" styleClass="button button-success" />
+            <h:commandButton value="Transfer Vehicle" action="#{transferVehicleBean.submitTransfer}" styleClass="button button-primary" />
+            <h:commandButton value="Go to Dashboard" action="dashboard" styleClass="button button-info" immediate="true" />
+        </div>
+
+        <h:messages id="globalMessages" globalOnly="true" layout="table" styleClass="messages-panel"/>
+    </h:form>
+</div>
+</body>
+</html>
+</f:view>
+</jsp:root>

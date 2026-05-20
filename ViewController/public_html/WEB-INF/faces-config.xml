@@ -1,0 +1,642 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<faces-config version="1.2" xmlns="http://java.sun.com/xml/ns/javaee">
+
+    <managed-bean>
+        <managed-bean-name>roleBean</managed-bean-name>
+        <managed-bean-class>training.iqgatewaty.backing.RoleBean</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+
+    <managed-bean>
+        <managed-bean-name>userBean1</managed-bean-name>
+        <managed-bean-class>training.iqgatewaty.backing.UserBean1</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+
+    <managed-bean>
+        <managed-bean-name>createUser1</managed-bean-name>
+        <managed-bean-class>training.iqgatewaty.backing.CreateUser1</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>ownerBean</managed-bean-name>
+        <managed-bean-class>training.iqgatewaty.backing.OwnerBean</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+
+    <managed-bean>
+        <managed-bean-name>userBean</managed-bean-name>
+        <managed-bean-class>training.iqgatewaty.backing.UserBean</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+   <managed-bean>
+        <managed-bean-name>updateDeleteBeans</managed-bean-name>
+        <managed-bean-class>training.iqgatewaty.backing.UpdateDeleteBeans</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+
+
+    <managed-bean>
+        <managed-bean-name>adminDashboardBean</managed-bean-name>
+        <managed-bean-class>training.iqgatewaty.backing.AdminDashboard</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+
+    <managed-bean>
+        <managed-bean-name>clerkBean</managed-bean-name>
+        <managed-bean-class>training.iqgatewaty.backing.ClerkDashboard</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+
+    <managed-bean>
+        <managed-bean-name>loginBean</managed-bean-name>
+        <managed-bean-class>training.iqgatewaty.backing.Login</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+
+<managed-bean>
+        <managed-bean-name>ownerRegistrationBean</managed-bean-name>
+        <managed-bean-class>training.iqgatewaty.backing.OwnerRegistrationBean</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    <validator>
+        <validator-id>mobileValidator</validator-id>
+        <validator-class>training.iqgatewaty.backing.MobileValidator</validator-class>
+    </validator>
+
+<managed-bean>
+    <managed-bean-name>vehicleRegistrationBean</managed-bean-name>
+    <managed-bean-class>training.iqgatewaty.backing.VehicleRegistrationBean</managed-bean-class>
+    <managed-bean-scope>session</managed-bean-scope>
+</managed-bean>
+
+<managed-bean>
+    <managed-bean-name>regDetailsBean</managed-bean-name>
+    <managed-bean-class>training.iqgatewaty.backing.RegDetailsBean</managed-bean-class>
+    <managed-bean-scope>session</managed-bean-scope>
+</managed-bean>
+   
+<managed-bean>
+    <managed-bean-name>offenceTypeBean</managed-bean-name>
+    <managed-bean-class>training.iqgatewaty.backing.OffenceTypeBean</managed-bean-class>
+    <managed-bean-scope>session</managed-bean-scope>
+</managed-bean>
+
+
+
+<managed-bean>
+    <managed-bean-name>unclearedOffenceBean</managed-bean-name>
+    <managed-bean-class>training.iqgatewaty.backing.UnclearedOffenceBean</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope> <!-- or view/session as needed -->
+</managed-bean>
+
+ <managed-bean>
+        <managed-bean-name>ownerVehicleBean</managed-bean-name>
+        <managed-bean-class>training.iqgatewaty.backing.OwnerVehicleBean</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    
+    <managed-bean>
+    <managed-bean-name>ownerManagementBean</managed-bean-name>
+        <managed-bean-class>training.iqgatewaty.backing.OwnerManagementBean</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+    <managed-bean-name>vehicleBean</managed-bean-name>
+        <managed-bean-class>training.iqgatewaty.backing.VehicleBean</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    
+ <managed-bean>
+    <managed-bean-name>clearOffenceBean</managed-bean-name>
+    <managed-bean-class>training.iqgatewaty.backing.ClearOffenceBean</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+</managed-bean>
+
+     <managed-bean>
+        <managed-bean-name>addOffenceBean</managed-bean-name>
+        <managed-bean-class>training.iqgatewaty.backing.AddOffenceBean</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    
+    
+    
+    <managed-bean>
+    <managed-bean-name>offenceDetailsBean</managed-bean-name>
+    <managed-bean-class>training.iqgatewaty.backing.OffenceDetailsBean</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+</managed-bean>
+<managed-bean>
+    <managed-bean-name>vehicleDetailsBean</managed-bean-name>
+    <managed-bean-class>training.iqgatewaty.backing.VehicleDetailsBean</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+</managed-bean>
+
+
+<managed-bean>
+        <managed-bean-name>clearOffenceBean1</managed-bean-name>
+        <managed-bean-class>training.iqgateway.backing.ClearOffenceBean1</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+
+
+<managed-bean>
+    <managed-bean-name>transferBean</managed-bean-name>
+    <managed-bean-class>training.iqgatewaty.backing.TransferBean</managed-bean-class>
+    <managed-bean-scope>session</managed-bean-scope>
+</managed-bean>
+
+<managed-bean>
+    <managed-bean-name>transferVehicleBean</managed-bean-name>
+    <managed-bean-class>training.iqgatewaty.backing.TransferVehicleBean</managed-bean-class>
+    <managed-bean-scope>session</managed-bean-scope>
+</managed-bean>
+
+
+
+
+    <!-- Navigation Rules -->
+    
+        
+    <navigation-rule>
+        <from-view-id>/AdminDashboard.jspx</from-view-id>
+        <navigation-case>
+            <from-outcome>addRolePage</from-outcome>
+            <to-view-id>/addRole.jspx</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>updateRolePage</from-outcome>
+            <to-view-id>/roles.jspx</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>deleteRolePage</from-outcome>
+            <to-view-id>/roles.jspx</to-view-id>
+        </navigation-case>
+         <navigation-case>
+            <from-outcome>createUserPage</from-outcome>
+            <to-view-id>/createUser.jspx</to-view-id>
+        </navigation-case>
+         <navigation-case>
+            <from-outcome>deleteUserPage</from-outcome>
+            <to-view-id>/usersOnly.jspx</to-view-id>
+        </navigation-case>
+        
+         <navigation-case>
+            <from-outcome>listAllRoles</from-outcome>
+            <to-view-id>/users.jspx</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>listAllUsers</from-outcome>
+            <to-view-id>/usersOnly.jspx</to-view-id>
+        </navigation-case>
+        
+    </navigation-rule>
+    
+    <navigation-rule>
+     <navigation-case>
+            <from-outcome>logout</from-outcome>
+            <to-view-id>/login.jspx</to-view-id>
+        </navigation-case>
+</navigation-rule>
+
+<navigation-rule>
+        <from-view-id>/clerkDashboard.jspx</from-view-id>
+        <navigation-case>
+            <from-outcome>addOffencePage</from-outcome>
+            <to-view-id>/addOffence.jspx</to-view-id>
+        </navigation-case>
+        
+         <navigation-case>
+            <from-outcome>clearOffencePage</from-outcome>
+            <to-view-id>/clearOffence.jspx</to-view-id>
+        </navigation-case>
+         <navigation-case>
+            <from-outcome>unclearedOffence</from-outcome>
+            <to-view-id>/UnclearedOffenceDetails.jspx</to-view-id>
+        </navigation-case>
+        
+         <navigation-case>
+            <from-outcome>ownerDetails</from-outcome>
+            <to-view-id>/viewOwner-vehicle.jspx</to-view-id>
+        </navigation-case>
+         <navigation-case>
+            <from-outcome>vehicleDetails</from-outcome>
+            <to-view-id>/viewOwner-vehicle.jspx</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>offenceTypes</from-outcome>
+            <to-view-id>/viewOffenceType1.jspx</to-view-id>
+        </navigation-case>
+         <navigation-case>
+            <from-outcome>logout</from-outcome>
+            <to-view-id>/login.jspx</to-view-id>
+        </navigation-case>
+   </navigation-rule>
+   
+   <navigation-rule>
+        <from-view-id>/rtoDashboard.jspx</from-view-id>
+        <navigation-case>
+            <from-outcome>registerowner</from-outcome>
+            <to-view-id>/OwnerRegistration.jspx</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>registervehicle</from-outcome>
+            <to-view-id>/VehicleRegistration.jspx</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>transferOwnership</from-outcome>
+            <to-view-id>/TransferVehicle.jspx</to-view-id>
+        </navigation-case>
+        
+        <navigation-case>
+            <from-outcome>addOffenceType</from-outcome>
+            <to-view-id>/AddOffenceType.jspx</to-view-id>
+        </navigation-case>
+        
+        <navigation-case>
+            <from-outcome>updateOffenceType</from-outcome>
+            <to-view-id>/UpdateDeleteOffenceType.jspx</to-view-id>
+        </navigation-case>
+        
+        <navigation-case>
+            <from-outcome>deleteOffenceType</from-outcome>
+            <to-view-id>/UpdateDeleteOffenceType.jspx</to-view-id>
+        </navigation-case>
+        
+        
+        
+        <navigation-case>
+            <from-outcome>registerOwnerWithVehicle</from-outcome>
+            <to-view-id>/RegistrationDetails.jspx</to-view-id>
+        </navigation-case>
+        
+        <navigation-case>
+            <from-outcome>deleteOwner</from-outcome>
+            <to-view-id>/owner.jspx</to-view-id>
+        </navigation-case>
+        
+        <navigation-case>
+            <from-outcome>deletevehicle</from-outcome>
+            <to-view-id>/vehicleManagement.jspx</to-view-id>
+        </navigation-case>
+        
+        <navigation-case>
+            <from-outcome>logout</from-outcome>
+            <to-view-id>/login.jspx</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+    
+    <navigation-rule>
+        <from-view-id>/copDashboard.jspx</from-view-id>
+        <navigation-case>
+            <from-outcome>addOffencePage</from-outcome>
+            <to-view-id>/addoffence1.jspx</to-view-id>
+        </navigation-case>
+        
+         <navigation-case>
+            <from-outcome>clearOffencePage</from-outcome>
+            <to-view-id>/clearOffence1.jspx</to-view-id>
+        </navigation-case>
+         <navigation-case>
+            <from-outcome>unclearedOffence</from-outcome>
+            <to-view-id>/UnclearedOffenceDetails1.jspx</to-view-id>
+        </navigation-case>
+        
+         <navigation-case>
+            <from-outcome>ownerDetails</from-outcome>
+            <to-view-id>/viewOwner-vehicle1.jspx</to-view-id>
+        </navigation-case>
+         <navigation-case>
+            <from-outcome>vehicleDetails</from-outcome>
+            <to-view-id>/viewOwner-vehicle1.jspx</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>offenceTypes</from-outcome>
+            <to-view-id>/viewOffenceType2.jspx</to-view-id>
+        </navigation-case>
+         <navigation-case>
+            <from-outcome>logout</from-outcome>
+            <to-view-id>/login.jspx</to-view-id>
+        </navigation-case>
+   </navigation-rule>
+  
+  
+ <navigation-rule>
+        <from-view-id>/ownerdashboard.jspx</from-view-id>
+        <navigation-case>
+            <from-outcome>viewOffences</from-outcome>
+            <to-view-id>/viewOffences.jspx</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>viewVehicle</from-outcome>
+            <to-view-id>/viewVehicle.jspx</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+        <navigation-rule>
+        <from-view-id>/TransferVehicle.jspx</from-view-id>
+        <navigation-case>
+            <from-outcome>success</from-outcome>
+            <to-view-id>/transferoffences.jspx</to-view-id>
+        </navigation-case>
+    
+        </navigation-rule>
+
+    <navigation-rule>
+        <from-view-id>/login.jspx</from-view-id>
+        <navigation-case>
+            <from-outcome>adminDashboard</from-outcome>
+            <to-view-id>/AdminDashboard.jspx</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>clerkDashboard</from-outcome>
+            <to-view-id>/clerkDashboard.jspx</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>rtoDashboard</from-outcome>
+            <to-view-id>/rtoDashboard.jspx</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>copDashboard</from-outcome>
+            <to-view-id>/copDashboard.jspx</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>ownerDashboard</from-outcome>
+            <to-view-id>/ownerdashboard.jspx</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>success</from-outcome>
+            <to-view-id>/success.jspx</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+
+    <navigation-rule>
+    <from-view-id>/clerkDashboard.jspx</from-view-id>
+    <navigation-case>
+        <from-outcome>addOffencePage</from-outcome>
+        <to-view-id>/addOffence.jspx</to-view-id>
+        <redirect/>
+    </navigation-case>
+    
+</navigation-rule>
+<navigation-rule>
+    <from-view-id>/addOffence.jspx</from-view-id>
+    <navigation-case>
+        <from-outcome>clerkDashboard</from-outcome>
+        <to-view-id>/clerkDashboard.jspx</to-view-id>
+        <redirect/>
+    </navigation-case>
+</navigation-rule>
+
+<navigation-rule>
+    <from-view-id>/addOffence1.jspx</from-view-id>
+    <navigation-case>
+        <from-outcome>copDashboard</from-outcome>
+        <to-view-id>/copDashboard.jspx</to-view-id>
+        <redirect/>
+    </navigation-case>
+</navigation-rule>
+
+<navigation-rule>
+    <from-view-id>/clearOffence1.jspx</from-view-id>
+    <navigation-case>
+        <from-outcome>copDashboard</from-outcome>
+        <to-view-id>/copDashboard.jspx</to-view-id>
+        <redirect/>
+    </navigation-case>
+</navigation-rule>
+
+
+ <navigation-rule>
+    <from-view-id>/addRole.jspx</from-view-id>
+    <navigation-case>
+        <from-outcome>dashboard</from-outcome>
+        <to-view-id>/AdminDashboard.jspx</to-view-id>
+    </navigation-case>
+</navigation-rule>
+
+
+
+<navigation-rule>
+    <from-view-id>/addOffence.jspx</from-view-id>
+    <navigation-case>
+        <from-outcome>dashboard</from-outcome>
+        <to-view-id>/clerkDashboard.jspx</to-view-id>
+    </navigation-case>
+</navigation-rule>
+
+
+
+<navigation-rule>
+    <from-view-id>/addoffence1.jspx</from-view-id>
+    <navigation-case>
+        <from-outcome>dashboard</from-outcome>
+        <to-view-id>/copDashboard.jspx</to-view-id>
+    </navigation-case>
+</navigation-rule>
+
+<navigation-rule>
+    <from-view-id>/clearOffence1.jspx</from-view-id>
+    <navigation-case>
+        <from-outcome>dashboard</from-outcome>
+        <to-view-id>/copDashboard.jspx</to-view-id>
+    </navigation-case>
+</navigation-rule>
+
+
+
+<navigation-rule>
+  <from-view-id>/createUser.jspx</from-view-id>
+  <navigation-case>
+    <from-outcome>dashboard</from-outcome>
+    <to-view-id>/AdminDashboard.jspx</to-view-id>
+  </navigation-case>
+</navigation-rule>
+
+
+
+<navigation-rule>
+  <from-view-id>/roles.jspx</from-view-id>
+  <navigation-case>
+    <from-outcome>dashboard</from-outcome>
+    <to-view-id>/AdminDashboard.jspx</to-view-id>
+  </navigation-case>
+</navigation-rule>
+
+<navigation-rule>
+  <from-view-id>/users.jspx</from-view-id>
+  <navigation-case>
+    <from-outcome>dashboard</from-outcome>
+    <to-view-id>/AdminDashboard.jspx</to-view-id>
+  </navigation-case>
+</navigation-rule>
+
+
+
+
+
+<navigation-rule>
+  <from-view-id>/usersOnly.jspx</from-view-id> <!-- or your actual page name -->
+  <navigation-case>
+    <from-outcome>dashboard</from-outcome>
+    <to-view-id>/AdminDashboard.jspx</to-view-id>
+  </navigation-case>
+</navigation-rule>
+
+<navigation-rule>
+    <from-view-id>/clearOffence.jspx</from-view-id>
+    <navigation-case>
+        <from-outcome>dashboard</from-outcome>
+        <to-view-id>/clerkDashboard.jspx</to-view-id>
+    </navigation-case>
+</navigation-rule>
+
+<navigation-rule>
+    <from-view-id>/UnclearedOffenceDetails.jspx</from-view-id>
+    <navigation-case>
+        <from-outcome>dashboard</from-outcome>
+        <to-view-id>/clerkDashboard.jspx</to-view-id>
+    </navigation-case>
+</navigation-rule>
+
+<navigation-rule>
+    <from-view-id>/UnclearedOffenceDetails1.jspx</from-view-id>
+    <navigation-case>
+        <from-outcome>dashboard</from-outcome>
+        <to-view-id>/copDashboard.jspx</to-view-id>
+    </navigation-case>
+</navigation-rule>
+
+<navigation-rule>
+    <from-view-id>/viewOwner-vehicle.jspx</from-view-id>
+    <navigation-case>
+        <from-outcome>dashboard</from-outcome>
+        <to-view-id>/clerkDashboard.jspx</to-view-id>
+    </navigation-case>
+</navigation-rule>
+
+<navigation-rule>
+    <from-view-id>/viewOwner-vehicle1.jspx</from-view-id>
+    <navigation-case>
+        <from-outcome>dashboard</from-outcome>
+        <to-view-id>/copDashboard.jspx</to-view-id>
+    </navigation-case>
+</navigation-rule>
+
+<navigation-rule>
+    <from-view-id>UpdateDeleteOffenceType.jspx</from-view-id>
+    <navigation-case>
+        <from-outcome>dashboard</from-outcome>
+        <to-view-id>/rtoDashboard.jspx</to-view-id>
+    </navigation-case>
+</navigation-rule>
+
+
+<navigation-rule>
+    <from-view-id>viewOffenceType1.jspx</from-view-id>
+    <navigation-case>
+        <from-outcome>dashboard</from-outcome>
+        <to-view-id>/clerkDashboard.jspx</to-view-id>
+    </navigation-case>
+</navigation-rule>
+
+<navigation-rule>
+    <from-view-id>viewOffenceType2.jspx</from-view-id>
+    <navigation-case>
+        <from-outcome>dashboard</from-outcome>
+        <to-view-id>/copDashboard.jspx</to-view-id>
+    </navigation-case>
+</navigation-rule>
+
+<navigation-rule>
+    <from-view-id>OwnerRegistration.jspx</from-view-id>
+    <navigation-case>
+        <from-outcome>dashboard</from-outcome>
+        <to-view-id>/rtoDashboard.jspx</to-view-id>
+    </navigation-case>
+</navigation-rule>
+
+
+<navigation-rule>
+    <from-view-id>VehicleRegistration.jspx</from-view-id>
+    <navigation-case>
+        <from-outcome>dashboard</from-outcome>
+        <to-view-id>/rtoDashboard.jspx</to-view-id>
+    </navigation-case>
+</navigation-rule>
+
+<navigation-rule>
+    <from-view-id>AddOffenceType.jspx</from-view-id>
+    <navigation-case>
+        <from-outcome>dashboard</from-outcome>
+        <to-view-id>/rtoDashboard.jspx</to-view-id>
+    </navigation-case>
+</navigation-rule>
+
+<navigation-rule>
+    <from-view-id>RegistrationDetails.jspx</from-view-id>
+    <navigation-case>
+        <from-outcome>dashboard</from-outcome>
+        <to-view-id>/rtoDashboard.jspx</to-view-id>
+    </navigation-case>
+</navigation-rule>
+
+<navigation-rule>
+    <from-view-id>vehicleManagement.jspx</from-view-id>
+    <navigation-case>
+        <from-outcome>dashboard1</from-outcome>
+        <to-view-id>/rtoDashboard.jspx</to-view-id>
+    </navigation-case>
+</navigation-rule>
+
+
+<navigation-rule>
+    <from-view-id>owner.jspx</from-view-id>
+    <navigation-case>
+        <from-outcome>dashboard</from-outcome>
+        <to-view-id>/rtoDashboard.jspx</to-view-id>
+    </navigation-case>
+</navigation-rule>
+
+<navigation-rule>
+    <from-view-id>/viewVehicle.jspx</from-view-id>
+    <navigation-case>
+        <from-outcome>backToDashboard</from-outcome>
+        <to-view-id>/ownerdashboard.jspx</to-view-id>
+    </navigation-case>
+</navigation-rule>
+
+
+<navigation-rule>
+    <from-view-id>/viewOffences.jspx</from-view-id>
+    <navigation-case>
+        <from-outcome>backToDashboard</from-outcome>
+        <to-view-id>/ownerdashboard.jspx</to-view-id>
+    </navigation-case>
+</navigation-rule>
+
+
+<navigation-rule>
+    <from-view-id>/transferoffences.jspx</from-view-id>
+    <navigation-case>
+        <from-outcome>transferVehicle</from-outcome>
+        <to-view-id>/TransferVehicle.jspx</to-view-id>
+    </navigation-case>
+</navigation-rule>
+
+
+<navigation-rule>
+    <from-view-id>/TransferVehicle.jspx</from-view-id>
+    <navigation-case>
+        <from-outcome>dashboard</from-outcome>
+        <to-view-id>/rtoDashboard.jspx</to-view-id>
+    </navigation-case>
+</navigation-rule>
+
+
+ <application>
+        <default-render-kit-id>oracle.adf.rich</default-render-kit-id>
+    </application>
+    
+</faces-config>

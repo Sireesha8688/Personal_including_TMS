@@ -1,0 +1,118 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root 
+    xmlns:jsp="http://java.sun.com/JSP/Page" 
+    version="2.1"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html">
+  <jsp:output omit-xml-declaration="true"
+              doctype-root-element="html"
+              doctype-public="-//W3C//DTD HTML 4.01 Transitional//EN"
+              doctype-system="http://www.w3.org/TR/html4/loose.dtd"/>
+  <jsp:directive.page contentType="text/html;charset=windows-1252"/>
+  <f:view>
+    <html>
+      <head>
+        <title>Pending Offence Details</title>
+        <style>
+          table { border-collapse: collapse; width: 80%; margin: 20px auto; }
+          th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+          th { background-color: #4CAF50; color: white; }
+          tr:nth-child(even) { background-color: #f2f2f2; }
+          h1 { text-align: center; font-family: Arial, sans-serif; color: #4CAF50; margin-top: 30px; }
+          .btn-clear {
+            background-color: #f44336;
+            color: white;
+            border: none;
+            padding: 6px 12px;
+            cursor: pointer;
+            border-radius: 4px;
+          }
+          .btn-clear:hover {
+            background-color: #d32f2f;
+          }
+          .messages {
+            width: 80%;
+            margin: 0 auto 20px auto;
+            text-align: center;
+            font-weight: bold;
+          }
+          .messages .info {
+            color: green;
+          }
+          .messages .error {
+            color: red;
+          }
+          .btn-dashboard {
+            background-color: #FFC107;
+            color: #212529;
+            border: none;
+            padding: 10px 24px;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            display: block;
+            margin: 20px auto;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: background-color 0.2s, transform 0.2s;
+          }
+          .btn-dashboard:hover {
+            background-color: #FFB300;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+          }
+        </style>
+      </head>
+      <body>
+        <h1>Pending Offences</h1>
+
+        <h:form id="offenceForm">
+          <h:messages globalOnly="true" layout="table" styleClass="messages" />
+          <table>
+            <thead>
+              <tr>
+                <th>Offence Detail ID</th>
+                <th>Offence Type</th>
+                <th>Place</th>
+                <th>Time</th>
+                <th>Vehicle Number</th>
+                <th>Status</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <h:dataTable value="#{clearOffenceBean.pendingOffences}" var="offence" border="0" style="width:100%">
+                <h:column>
+                  <h:outputText value="#{offence.offenceDetailId}" />
+                </h:column>
+                <h:column>
+                  <h:outputText value="#{offence.tmOffence.offenceType}" />
+                </h:column>
+                <h:column>
+                  <h:outputText value="#{offence.place}" />
+                </h:column>
+                <h:column>
+                  <h:outputText value="#{offence.time}">
+                    <f:convertDateTime pattern="yyyy-MM-dd HH:mm:ss" />
+                  </h:outputText>
+                </h:column>
+                <h:column>
+                  <h:outputText value="#{offence.tmRegdetails.vehNo}" />
+                </h:column>
+                <h:column>
+                  <h:outputText value="#{offence.offenceStatus}" />
+                </h:column>
+                <h:column>
+                  <h:commandButton value="Clear" styleClass="btn-clear" action="#{clearOffenceBean.clearOffence}">
+                    <f:setPropertyActionListener target="#{clearOffenceBean.selectedOffence}" value="#{offence}" />
+                  </h:commandButton>
+                </h:column>
+              </h:dataTable>
+            </tbody>
+          </table>
+          <h:commandButton value="Go to Dashboard" action="dashboard" immediate="true" styleClass="btn-dashboard"/>
+        </h:form>
+      </body>
+    </html>
+  </f:view>
+</jsp:root>

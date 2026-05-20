@@ -1,0 +1,27 @@
+package cps.entities;
+
+import java.time.Instant;
+import java.util.List;
+
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
+public class QueryDetailsEO {
+	
+	private Integer queryId;
+	
+	private String queryText;
+	
+	private String queryRequest;
+	
+	private Boolean attachmentRequired;
+	
+	private Instant dateRaised;
+	
+	private String queryResponse;
+	
+	private List<DocumentDetailEO> attachment;
+
+}

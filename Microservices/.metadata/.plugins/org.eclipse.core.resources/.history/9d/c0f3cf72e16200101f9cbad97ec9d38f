@@ -1,0 +1,17 @@
+package cps.services;
+
+import org.bson.types.ObjectId;
+
+import com.mongodb.client.result.UpdateResult;
+
+import cps.entities.HospitalEO;
+import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
+
+public interface HospitalServices {
+
+	
+
+	public Mono<HospitalEO> getHospitalById(ObjectId id);
+
+}

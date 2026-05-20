@@ -1,0 +1,158 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html">
+  <jsp:output omit-xml-declaration="true" doctype-root-element="html"
+              doctype-public="-//W3C//DTD HTML 4.01 Transitional//EN"
+              doctype-system="http://www.w3.org/TR/html4/loose.dtd"/>
+  <jsp:directive.page contentType="text/html;charset=windows-1252"/>
+  <f:view>
+    <html>
+      <head>
+        <title>Add Offence Detail</title>
+        <style>
+          body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            color: #212529;
+          }
+          .dashboard-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 2rem;
+          }
+          h2 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 1.5rem;
+          }
+          table {
+            margin: 0 auto;
+            border-collapse: collapse;
+            width: 100%;
+            max-width: 500px;
+          }
+          td {
+            padding: 12px 8px;
+            border-bottom: 1px solid #e0e0e0;
+          }
+          label {
+            font-weight: bold;
+          }
+          .button {
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            cursor: pointer;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: 500;
+            min-width: 180px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: background-color 0.2s, transform 0.2s;
+            display: block;
+            margin: 1rem auto 0 auto;
+          }
+          .button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+          }
+          .button-submit {
+            background-color: #4CAF50;
+          }
+          .button-submit:hover {
+            background-color: #3e8e41;
+          }
+          .dashboard-button {
+            background-color: #FFC107;
+            color: #212529;
+            margin-top: 1rem;
+          }
+          .dashboard-button:hover {
+            background-color: #FFB300;
+          }
+          .messages {
+            width: 90%;
+            margin: 0 auto 1.5rem auto;
+            text-align: center;
+            font-weight: bold;
+            color: green;
+          }
+          .error {
+            color: red;
+          }
+          select, input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+          }
+          @media (max-width: 600px) {
+            .dashboard-wrapper {
+              padding: 1.5rem;
+              width: 90%;
+            }
+            table {
+              width: 100%;
+            }
+          }
+        </style>
+      </head>
+      <body>
+        <div class="dashboard-wrapper">
+          <h1>Add Offence</h1>
+          <h:form>
+            <h:messages globalOnly="true" layout="table" styleClass="messages" />
+
+            <table>
+              <tr>
+                <td><h:outputLabel for="offenceType" value="Offence Type:" /></td>
+                <td>
+                  <h:selectOneMenu id="offenceType" value="#{addOffenceBean.selectedOffenceId}" required="true" style="width:100%">
+                    <f:selectItems value="#{addOffenceBean.offenceSelectItems}" />
+                  </h:selectOneMenu>
+                </td>
+              </tr>
+              <tr>
+                <td><h:outputLabel for="vehicleNo" value="Vehicle Number:" /></td>
+                <td><h:inputText id="vehicleNo" value="#{addOffenceBean.vehicleNo}" required="true" style="width:100%" /></td>
+              </tr>
+              <tr>
+                <td><h:outputLabel for="place" value="Place:" /></td>
+                <td><h:inputText id="place" value="#{addOffenceBean.place}" required="true" style="width:100%" /></td>
+              </tr>
+              <tr>
+                <td><h:outputLabel for="time" value="Time:" /></td>
+                <td>
+                  <h:inputText id="time" value="#{addOffenceBean.time}" required="true" style="width:100%">
+                    <f:convertDateTime pattern="yyyy-MM-dd HH:mm:ss" />
+                  </h:inputText>
+                </td>
+              </tr>
+              <tr>
+                <td>Offence Status:</td>
+                <td><h:outputText value="pending" /></td>
+              </tr>
+            </table>
+
+            <h:commandButton value="Add Offence " action="#{addOffenceBean.addOffenceDetail}" styleClass="button button-submit" />
+            <h:commandButton value="Go to Dashboard" action="dashboard" styleClass="button dashboard-button" immediate="true" />
+
+          </h:form>
+        </div>
+      </body>
+    </html>
+  </f:view>
+</jsp:root>

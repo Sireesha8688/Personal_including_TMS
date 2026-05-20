@@ -1,0 +1,20 @@
+package cps.services;
+
+import org.bson.types.ObjectId;
+
+import com.mongodb.client.result.UpdateResult;
+
+import cps.entities.CustomerEO;
+import cps.entities.HospitalEO;
+import reactor.core.publisher.Mono;
+
+public interface HospitalServices {
+	
+public Mono<CustomerEO> addNewHospital(HospitalEO hospitalEO);
+	
+	public Mono<CustomerEO> getHospitalById(ObjectId id);
+	
+	public Mono<UpdateResult> updateHospital(ObjectId id, HospitalEO hospitalEO);
+	
+	public Mono<CustomerEO> deletehospital(ObjectId id);
+}

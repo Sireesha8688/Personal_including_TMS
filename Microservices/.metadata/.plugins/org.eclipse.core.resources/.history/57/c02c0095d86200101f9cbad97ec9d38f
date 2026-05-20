@@ -1,0 +1,51 @@
+package cps.serviceImpl;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.bson.types.ObjectId;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import cps.entities.ClaimTypesEO;
+import training.iqgateway.repository.ClaimTypesRepository;
+import training.iqgateway.service.ClaimTypesService;
+
+@Service
+public class ClaimTypesServiceImpl implements ClaimTypesService {
+
+    @Autowired
+    private ClaimTypesRepository claimTypesRepository;
+
+    @Override
+    public ClaimTypesEO addClaimType(ClaimTypesEO claimType) {
+        return claimTypesRepository.save(claimType);
+    }
+
+    @Override
+    public List<ClaimTypesEO> getAllClaimTypes() {
+        return claimTypesRepository.findAll();
+    }
+
+    @Override
+    public Optional<ClaimTypesEO> getClaimTypeById(ObjectId id) {
+        return claimTypesRepository.findById(id);
+    }
+
+    @Override
+    public ClaimTypesEO updateClaimType(ObjectId id, ClaimTypesEO claimType) {
+        Optional<ClaimTypesEO> existingClaimType = claimTypesRepository.findById(id);
+        if(existingClaimType.isPresent()) {
+            ClaimTypesEO oldClaimType = existingClaimType.get();
+            oldClaimType.setType(claimType.getType());
+            oldClaimType.setDescription(claimType.getDescription());
+            return claimTypesRepository.save(oldClaimType);
+        }
+        return null;
+    }
+
+    @Override
+    public void deleteClaimType(ObjectId id) {
+        claimTypesRepository.deleteById(id);
+    }
+}

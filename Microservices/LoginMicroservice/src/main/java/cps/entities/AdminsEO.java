@@ -1,0 +1,35 @@
+package cps.entities;
+
+import org.bson.types.ObjectId;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import lombok.Data;
+
+@Data
+@Document(collection = "admins")
+public class AdminsEO {
+
+	@Id
+	private ObjectId _id;
+
+	private String name;
+
+	private String email;
+
+	private String password;
+
+	@JsonProperty("_id")
+	public String get_id_asString() {
+		return _id != null ? _id.toHexString() : null;
+	}
+
+//    public AdminsEO(String name, String email, String password) {
+//        this.name = name;
+//        this.email = email;
+//        this.password = password;
+//    }
+
+}

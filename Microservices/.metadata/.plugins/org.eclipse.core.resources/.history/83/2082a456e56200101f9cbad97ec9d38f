@@ -1,0 +1,11 @@
+package cps.services;
+
+import cps.entities.AdminsEO;
+import cps.entities.LoginEO;
+import reactor.core.publisher.Mono;
+
+public interface AdminService {
+
+	public Mono<LoginEO> getAdminByEmail(String email);
+	
+}

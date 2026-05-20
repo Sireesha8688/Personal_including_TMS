@@ -1,0 +1,76 @@
+package training.iqgateway.entities;
+
+import java.util.Date;
+import jakarta.persistence.*;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
+@Entity
+@Table(name = "TM_REGDETAILS")
+public class TmRegDetails {
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "appno_seq")
+    @SequenceGenerator(name = "appno_seq", sequenceName = "APP_NO_SEQ", allocationSize = 1)
+    @Column(name = "APP_NO")
+    private Long appNo;
+
+    @Column(name = "VEH_NO", nullable = false, unique = true)
+    private String vehNo;
+
+    @ManyToOne
+    @JoinColumn(name = "VEH_ID", nullable = false)
+    @JsonBackReference(value = "vehicle-registrations")
+    private TmVehicleDetails vehicle;
+
+    @ManyToOne
+    @JoinColumn(name = "OWNER_ID", nullable = false)
+    @JsonBackReference(value = "owner-registrations")
+    private TmOwnerDetails owner;
+
+    @Column(name = "DATE_OF_PURCHASE", nullable = false)
+    @Temporal(TemporalType.DATE)
+    private Date dateOfPurchase;
+
+    @Column(name = "DISTRUBUTER_NAME", nullable = false)
+    private String distributerName;
+
+    public TmRegDetails() {}
+
+    public TmRegDetails(String vehNo, TmVehicleDetails vehicle, TmOwnerDetails owner,
+                        Date dateOfPurchase, String distributerName) {
+        this.vehNo = vehNo;
+        this.vehicle = vehicle;
+        this.owner = owner;
+        this.dateOfPurchase = dateOfPurchase;
+        this.distributerName = distributerName;
+    }
+
+    public TmRegDetails(Long appNo, String vehNo, TmVehicleDetails vehicle, TmOwnerDetails owner,
+                        Date dateOfPurchase, String distributerName) {
+        this.appNo = appNo;
+        this.vehNo = vehNo;
+        this.vehicle = vehicle;
+        this.owner = owner;
+        this.dateOfPurchase = dateOfPurchase;
+        this.distributerName = distributerName;
+    }
+
+    public Long getAppNo() { return appNo; }
+    public void setAppNo(Long appNo) { this.appNo = appNo; }
+    public String getVehNo() { return vehNo; }
+    public void setVehNo(String vehNo) { this.vehNo = vehNo; }
+    public TmVehicleDetails getVehicle() { return vehicle; }
+    public void setVehicle(TmVehicleDetails vehicle) { this.vehicle = vehicle; }
+    public TmOwnerDetails getOwner() { return owner; }
+    public void setOwner(TmOwnerDetails owner) { this.owner = owner; }
+    public Date getDateOfPurchase() { return dateOfPurchase; }
+    public void setDateOfPurchase(Date dateOfPurchase) { this.dateOfPurchase = dateOfPurchase; }
+    public String getDistributerName() { return distributerName; }
+    public void setDistributerName(String distributerName) { this.distributerName = distributerName; }
+
+    @Override
+    public String toString() {
+        return "TmRegDetails [appNo=" + appNo + ", vehNo=" + vehNo + ", vehicle=" + vehicle +
+                ", owner=" + owner + ", dateOfPurchase=" + dateOfPurchase +
+                ", distributerName=" + distributerName + "]";
+    }
+}

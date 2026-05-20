@@ -1,0 +1,11 @@
+package cps.services.impl;
+
+import org.springframework.stereotype.Service;
+
+import cps.services.VerifierService;
+
+@Service
+public class VerifierServiceImpl implements VerifierService {
+
+   
+}

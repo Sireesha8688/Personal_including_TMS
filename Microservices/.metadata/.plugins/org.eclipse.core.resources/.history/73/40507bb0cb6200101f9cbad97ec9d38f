@@ -1,0 +1,42 @@
+package cps.services.impl;
+
+import org.bson.types.ObjectId;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.mongodb.core.ReactiveMongoTemplate;
+
+import com.mongodb.client.result.UpdateResult;
+
+import cps.entities.HospitalEO;
+import cps.services.HospitalServices;
+import reactor.core.publisher.Mono;
+
+public class HospitalServicesImpl implements HospitalServices {
+	
+	@Autowired
+	private ReactiveMongoTemplate reactiveMongoTemplate;
+
+	@Override
+	public Mono<HospitalEO> addNewHospital(HospitalEO hospitalEO) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Mono<HospitalEO> getHospitalById(ObjectId id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Mono<UpdateResult> updateHospital(ObjectId id, HospitalEO hospitalEO) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Mono<HospitalEO> deletehospital(ObjectId id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

@@ -1,0 +1,12 @@
+package cps.repository;
+
+import java.util.List;
+
+import org.bson.types.ObjectId;
+import org.springframework.data.mongodb.repository.MongoRepository;
+
+import cps.entities.CustomerClaimEO;
+
+public interface CustomerClaimRepository extends MongoRepository<CustomerClaimEO, ObjectId> {
+    List<CustomerClaimEO> findByVerifierAssignedAndVerifierId(Boolean assigned, String verifierId);
+}

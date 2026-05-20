@@ -1,0 +1,15 @@
+package cps.service;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.bson.types.ObjectId;
+import cps.entities.PolicyEO;
+
+public interface PolicyService {
+    PolicyEO addPolicy(PolicyEO policy);
+    List<PolicyEO> getAllPolicies();
+    Optional<PolicyEO> getPolicyById(ObjectId id);
+    PolicyEO updatePolicy(ObjectId id, PolicyEO policy);
+    void deletePolicy(ObjectId id);
+}

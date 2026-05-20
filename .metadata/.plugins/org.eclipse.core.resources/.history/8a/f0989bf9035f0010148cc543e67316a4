@@ -1,0 +1,46 @@
+package training.iqgateway.service.impl;
+
+import java.util.List;
+
+import training.iqgateway.entities.TmOffenceDetails;
+import training.iqgateway.service.OffenceDetailsService;
+
+public class OffenceDetailsServiceImpl implements OffenceDetailsService {
+
+	@Override
+	public void insert(TmOffenceDetails offenceDetails) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public TmOffenceDetails getByOffenceDetailId(Long offenceDetailId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<TmOffenceDetails> getAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void update(TmOffenceDetails offenceDetails) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void delete(Long offenceDetailId) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public List<TmOffenceDetails> getByVehNo(String vehNo) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

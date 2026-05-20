@@ -1,0 +1,10 @@
+package cps;
+
+import org.bson.types.ObjectId;
+import org.springframework.data.mongodb.repository.MongoRepository;
+
+import cps.entities.CustomerClaimsQueriesEO;
+
+public interface CustomerClaimsQueriesRepository extends MongoRepository<CustomerClaimsQueriesEO, ObjectId> {
+
+}

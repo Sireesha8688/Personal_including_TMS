@@ -1,0 +1,9 @@
+package cps.services;
+
+public interface HospitalServices {
+
+	
+
+	public Mono<HospitalEO> getHospitalById(ObjectId id);
+
+}

@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:c="http://java.sun.com/jsp/jstl/core">
+  <jsp:directive.page contentType="text/html;charset=UTF-8" />
+  <f:view>
+    <html>
+      <head>
+        <title>Vehicle Ownership Transfer</title>
+        <style>
+          /* Your CSS styles */
+        </style>
+      </head>
+      <body>
+        <div class="container">
+          <h1>Transfer Ownership</h1>
+          <h:form id="transferForm">
+
+            <!-- Vehicle Search -->
+            <div class="form-group">
+              <label for="vehicleNumber">Vehicle Number:</label>
+              <h:inputText id="vehicleNumber" value="#{transferBean.vehicleNumber}" />
+              <h:commandButton value="Search" action="#{transferBean.searchVehicle}" styleClass="btn" />
+            </div>
+
+            <h:panelGroup rendered="#{not empty transferBean.vehicleMessage}">
+              <div class="message #{transferBean.vehicleMessageClass}">
+                <h:outputText value="#{transferBean.vehicleMessage}" />
+              </div>
+            </h:panelGroup>
+
+            <!-- Vehicle Details -->
+            <h:panelGroup rendered="#{not empty transferBean.vehicle}">
+              <h2>Vehicle Details</h2>
+              <table>
+                <tr><th>Vehicle Number</th><td><h:outputText value="#{transferBean.vehicle.vehNo}" /></td></tr>
+                <tr><th>Owner Name</th><td><h:outputText value="#{transferBean.vehicle.tmOwnerdetails.fname} #{transferBean.vehicle.tmOwnerdetails.lname}" /></td></tr>
+                <tr><th>Owner ID</th><td><h:outputText value="#{transferBean.vehicle.tmOwnerdetails.ownerId}" /></td></tr>
+                <tr><th>Date of Purchase</th><td><h:outputText value="#{transferBean.vehicle.dateOfPurchase}"><f:convertDateTime pattern="yyyy-MM-dd" /></h:outputText></td></tr>
+              </table>
+
+              <!-- Offences -->
+              <h2>Vehicle Offences</h2>
+              <h:panelGroup rendered="#{not empty transferBean.offences}">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Select</th><th>Offence ID</th><th>Status</th><th>Place</th><th>Time</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <c:forEach items="${transferBean.offences}" var="offence">
+                      <tr>
+                        <td><h:selectBooleanCheckbox value="#{transferBean.offenceSelection[offence.offenceDetailId]}" /></td>
+                        <td>${offence.offenceDetailId}</td>
+                        <td>${offence.offenceStatus}</td>
+                        <td>${offence.place}</td>
+                        <td><h:outputText value="#{offence.time}"><f:convertDateTime pattern="yyyy-MM-dd HH:mm" /></h:outputText></td>
+                      </tr>
+                    </c:forEach>
+                  </tbody>
+                </table>
+                <h:commandButton value="Clear Selected Offences" action="#{transferBean.clearSelectedOffences}" styleClass="btn" />
+              </h:panelGroup>
+            </h:panelGroup>
+
+            <!-- Transfer Section -->
+            <h2>Transfer Vehicle Ownership</h2>
+            <div class="form-group">
+              <label>
+                <h:selectBooleanCheckbox value="#{transferBean.useExistingOwner}" />
+                Use Existing Owner
+              </label>
+              <h:commandButton value="Update" action="#{transferBean.updateCheckbox}" styleClass="btn" />
+            </div>
+
+            <!-- Existing Owner Details -->
+            <h:panelGroup rendered="#{transferBean.useExistingOwner}">
+              <div class="form-group">
+                <label for="existingOwnerId">Owner ID:</label>
+                <h:inputText id="existingOwnerId" value="#{transferBean.existingOwnerId}" />
+                <h:commandButton value="Fetch Owner" action="#{transferBean.fetchExistingOwner}" styleClass="btn" />
+              </div>
+
+              <h:panelGroup rendered="#{not empty transferBean.ownerMessage}">
+                <div class="message #{transferBean.ownerMessageClass}">
+                  <h:outputText value="#{transferBean.ownerMessage}" />
+                </div>
+              </h:panelGroup>
+
+              <h:panelGroup rendered="#{not empty transferBean.existingOwner}">
+                <table>
+                  <tr><th>Owner Name</th><td><h:outputText value="#{transferBean.existingOwner.fname} #{transferBean.existingOwner.lname}" /></td></tr>
+                  <tr><th>Owner ID</th><td><h:outputText value="#{transferBean.existingOwner.ownerId}" /></td></tr>
+                  <tr><th>Mobile</th><td><h:outputText value="#{transferBean.existingOwner.mobileNo}" /></td></tr>
+                  <tr><th>Address</th><td><h:outputText value="#{transferBean.existingOwner.permAddr}" /></td></tr>
+                </table>
+              </h:panelGroup>
+            </h:panelGroup>
+
+            <!-- New Owner Details -->
+            <h:panelGroup rendered="#{not transferBean.useExistingOwner}">
+              <div class="form-group">
+                <label for="newOwnerFname">First Name:</label>
+                <h:inputText id="newOwnerFname" value="#{transferBean.newOwnerFname}" />
+              </div>
+              <div class="form-group">
+                <label for="newOwnerLname">Last Name:</label>
+                <h:inputText id="newOwnerLname" value="#{transferBean.newOwnerLname}" />
+              </div>
+              <div class="form-group">
+                <label for="newOwnerGender">Gender:</label>
+                <h:inputText id="newOwnerGender" value="#{transferBean.newOwnerGender}" />
+              </div>
+              <div class="form-group">
+                <label for="newOwnerMobileNo">Mobile:</label>
+                <h:inputText id="newOwnerMobileNo" value="#{transferBean.newOwnerMobileNo}" />
+              </div>
+              <div class="form-group">
+                <label for="newOwnerLandlineNo">Landline:</label>
+                <h:inputText id="newOwnerLandlineNo" value="#{transferBean.newOwnerLandlineNo}" />
+              </div>
+              <div class="form-group">
+                <label for="newOwnerDateofbirth">Date of Birth (yyyy-MM-dd):</label>
+                <h:inputText id="newOwnerDateofbirth" value="#{transferBean.newOwnerDateofbirth}" >
+                  <f:convertDateTime pattern="yyyy-MM-dd" />
+                </h:inputText>
+              </div>
+              <div class="form-group">
+                <label for="newOwnerAddProofName">Address Proof:</label>
+                <h:inputText id="newOwnerAddProofName" value="#{transferBean.newOwnerAddProofName}" />
+              </div>
+              <div class="form-group">
+                <label for="newOwnerPancardNo">PAN Card:</label>
+                <h:inputText id="newOwnerPancardNo" value="#{transferBean.newOwnerPancardNo}" />
+              </div>
+              <div class="form-group">
+                <label for="newOwnerPermAddr">Permanent Address:</label>
+                <h:inputText id="newOwnerPermAddr" value="#{transferBean.newOwnerPermAddr}" />
+              </div>
+              <div class="form-group">
+                <label for="newOwnerTempAddr">Temporary Address:</label>
+                <h:inputText id="newOwnerTempAddr" value="#{transferBean.newOwnerTempAddr}" />
+              </div>
+              <div class="form-group">
+                <label for="newOwnerPincode">Pincode:</label>
+                <h:inputText id="newOwnerPincode" value="#{transferBean.newOwnerPincode}" />
+              </div>
+              <div class="form-group">
+                <label for="newOwnerOccupation">Occupation:</label>
+                <h:inputText id="newOwnerOccupation" value="#{transferBean.newOwnerOccupation}" />
+              </div>
+            </h:panelGroup>
+
+            <h:commandButton value="Transfer Vehicle" action="#{transferBean.transferVehicle}" styleClass="btn" />
+
+            <h:panelGroup rendered="#{not empty transferBean.transferMessage}">
+              <div class="message #{transferBean.transferMessageClass}">
+                <h:outputText value="#{transferBean.transferMessage}" />
+              </div>
+            </h:panelGroup>
+
+          </h:form>
+        </div>
+      </body>
+    </html>
+  </f:view>
+</jsp:root>

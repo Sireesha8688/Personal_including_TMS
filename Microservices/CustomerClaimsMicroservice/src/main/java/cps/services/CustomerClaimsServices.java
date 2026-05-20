@@ -1,0 +1,24 @@
+package cps.services;
+
+import org.bson.types.ObjectId;
+
+import com.mongodb.client.result.UpdateResult;
+
+import cps.entities.CustomerClaimsEO;
+import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
+
+public interface CustomerClaimsServices {
+	
+	public CustomerClaimsEO addNewCustomerClaim(CustomerClaimsEO customerClaimsEO);
+	
+	public Flux<CustomerClaimsEO> getAll();
+	
+	public Mono<CustomerClaimsEO> getOne(ObjectId id);
+
+	public Mono<UpdateResult> updateCustomerClaim(ObjectId id, CustomerClaimsEO customerClaimsEO);
+	
+	public Flux<CustomerClaimsEO> getAllClaimByInsurerId(String insurerId);
+	
+	public Flux<CustomerClaimsEO> getAllClaimWithNoInsurer();
+}

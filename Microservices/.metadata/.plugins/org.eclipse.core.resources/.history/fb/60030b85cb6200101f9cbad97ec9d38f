@@ -1,0 +1,5 @@
+package cps.services;
+
+public interface HospitalServices {
+
+}

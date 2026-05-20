@@ -1,0 +1,68 @@
+package training.iqgateway.service.impl;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import training.iqgateway.entities.TmOffence;
+import training.iqgateway.entities.TmOffenceDetails;
+import training.iqgateway.entities.TmOwnerDetails;
+import training.iqgateway.entities.TmRegDetails;
+import training.iqgateway.entities.TmVehicleDetails;
+import training.iqgateway.repositories.OffenceDetailsRepository;
+import training.iqgateway.repositories.OwnerDetailsRepository;
+import training.iqgateway.repositories.RegDetailsRepository;
+
+import training.iqgateway.repositories.TmOffenceRepository;
+
+import training.iqgateway.repositories.VehicleDetailsRepository;
+import training.iqgateway.service.COPOperationService;
+
+@Service
+public class COPOperationsServiceImpl implements COPOperationService {
+
+    @Autowired
+    private OffenceDetailsRepository offenceDetailsRepo;
+    @Autowired
+    private TmOffenceRepository offenceRepo;
+    @Autowired
+    private OwnerDetailsRepository ownerRepo;
+    @Autowired
+    private RegDetailsRepository regRepo;
+    @Autowired
+    private VehicleDetailsRepository vehicleRepo;
+
+    @Override
+    public String reportOffence(TmOffenceDetails offence) {
+        offence.setOffenceStatus("PENDING");
+        offenceDetailsRepo.save(offence);
+        return "Offence reported with ID: " + offence.getOffenceDetailId();
+    }
+
+    @Override
+    public List<TmOffenceDetails> fetchUnclearedOffenceDetails() {
+        return offenceDetailsRepo.findByOffenceStatus("PENDING");
+    }
+
+    @Override
+    public TmOwnerDetails fetchOwnerDetails(Long ownerId) {
+        return ownerRepo.findById(ownerId).orElse(null);
+    }
+
+    @Override
+    public TmRegDetails fetchVehicleDetails(String vehNo) {
+        return regRepo.findByVehNo(vehNo);
+    }
+
+    @Override
+    public TmVehicleDetails fetchVehicleDetailsByVehNo(String vehNo) {
+        TmRegDetails reg = regRepo.findByVehNo(vehNo);
+        return reg != null ? reg.getVehicle() : null;
+    }
+
+    @Override
+    public List<TmOffence> fetchOffenceTypes() {
+        return offenceRepo.findAll();
+    }
+}

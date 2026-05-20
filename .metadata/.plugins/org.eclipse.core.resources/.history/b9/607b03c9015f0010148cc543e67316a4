@@ -1,0 +1,69 @@
+package training.iqgateway.services.impl;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import training.iqgateway.entities.TmRegDetails;
+import training.iqgateway.entities.TmOwnerDetails;
+import training.iqgateway.repositories.RegDetailsRepository;
+import training.iqgateway.repositories.OwnerDetailsRepository;
+import training.iqgateway.services.RegDetailsService;
+
+import java.util.List;
+import java.util.Optional;
+
+@Service
+public class RegDetailsServiceImpl implements RegDetailsService {
+
+    private final RegDetailsRepository regDetailsRepository;
+    private final OwnerDetailsRepository ownerDetailsRepository;
+
+    @Autowired
+    public RegDetailsServiceImpl(RegDetailsRepository regDetailsRepository,
+                                 OwnerDetailsRepository ownerDetailsRepository) {
+        this.regDetailsRepository = regDetailsRepository;
+        this.ownerDetailsRepository = ownerDetailsRepository;
+    }
+
+    @Override
+    public void insert(TmRegDetails regdetails) {
+        regDetailsRepository.save(regdetails);
+    }
+
+    @Override
+    public TmRegDetails getByVehNo(String vehNo) {
+        return regDetailsRepository.findByVehNo(vehNo);
+    }
+
+    @Override
+    public List<TmRegDetails> getAll() {
+        return regDetailsRepository.findAll();
+    }
+
+    @Override
+    public void update(TmRegDetails regdetails) {
+        if (regdetails.getAppNo() != null && regDetailsRepository.existsById(regdetails.getAppNo())) {
+            regDetailsRepository.save(regdetails);
+        } else {
+            throw new RuntimeException("Registration not found with appNo: " + regdetails.getAppNo());
+        }
+    }
+
+    @Override
+    public void delete(String vehNo) {
+        regDetailsRepository.deleteByVehNo(vehNo);
+    }
+
+    @Override
+    public void transferOwnership(Long appNo, Long newOwnerId) {
+        Optional<TmRegDetails> regOpt = regDetailsRepository.findById(appNo);
+        Optional<TmOwnerDetails> ownerOpt = ownerDetailsRepository.findById(newOwnerId);
+
+        if (regOpt.isPresent() && ownerOpt.isPresent()) {
+            TmRegDetails regDetails = regOpt.get();
+            regDetails.setOwner(ownerOpt.get());
+            regDetailsRepository.save(regDetails);
+        } else {
+            throw new RuntimeException("Registration or Owner not found for transfer.");
+        }
+    }
+}

@@ -1,0 +1,5 @@
+package training.iqgateway.entities;
+
+public class TmOffenceDetails {
+
+}

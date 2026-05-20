@@ -1,0 +1,9 @@
+package cps.services.impl;
+
+
+
+@Service
+public class InsurerServiceImpl implements InsurerService {
+
+   
+}

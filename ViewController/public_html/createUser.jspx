@@ -1,0 +1,139 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html">
+  <jsp:output omit-xml-declaration="true" doctype-root-element="HTML"
+              doctype-system="http://www.w3.org/TR/html4/loose.dtd"
+              doctype-public="-//W3C//DTD HTML 4.01 Transitional//EN"/>
+  <jsp:directive.page contentType="text/html;charset=windows-1252"/>
+  <f:view>
+    <html>
+      <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=windows-1252"/>
+        <title>Create User</title>
+        <style>
+          body {
+            background-color: #e9ecef; /* Light gray outside the flex */
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            color: #212529;
+          }
+          .dashboard-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 2rem;
+          }
+          h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 1.5rem;
+          }
+          label {
+            display: block;
+            margin: 10px 0 5px;
+            font-weight: bold;
+          }
+          input, select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 1rem;
+          }
+          .button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 500;
+            min-width: 180px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: background-color 0.2s, transform 0.2s;
+            display: block;
+            margin: 1rem auto 0 auto;
+          }
+          .button:hover {
+            background-color: #3e8e41;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+          }
+          .dashboard-btn {
+            background-color: #FFC107;
+            color: #212529;
+            border: none;
+            border-radius: 6px;
+            padding: 10px 24px;
+            font-size: 1rem;
+            font-weight: 500;
+            min-width: 180px;
+            cursor: pointer;
+            display: block;
+            margin: 1rem auto 0 auto;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: background-color 0.2s, transform 0.2s;
+          }
+          .dashboard-btn:hover {
+            background-color: #FFB300;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+          }
+          .success {
+            color: #388e3c;
+            margin: 15px 0;
+            text-align: center;
+            font-weight: bold;
+          }
+          .error {
+            color: #d32f2f;
+            margin: 15px 0;
+            text-align: center;
+            font-weight: bold;
+          }
+          @media (max-width: 600px) {
+            .dashboard-wrapper {
+              padding: 1.5rem;
+              width: 90%;
+            }
+          }
+        </style>
+      </head>
+      <body>
+        <div class="dashboard-wrapper">
+          <h1>Create User</h1>
+          <h:form>
+            <h:messages globalOnly="true" layout="table" styleClass="error"/>
+            <label for="username">Username:</label>
+            <h:inputText id="username" value="#{createUser1.username}" required="true" style="width:100%"/>
+            <label for="password">Password:</label>
+            <h:inputSecret id="password" value="#{createUser1.password}" required="true" style="width:100%"/>
+            <label for="role">Role:</label>
+            <h:selectOneMenu id="role" value="#{createUser1.roleName}" required="true" style="width:100%">
+              <f:selectItem itemLabel="Select Role" itemValue=""/>
+              <f:selectItem itemLabel="CLERK" itemValue="CLERK"/>
+              <f:selectItem itemLabel="RTO" itemValue="RTO"/>
+              <f:selectItem itemLabel="COP" itemValue="COP"/>
+              <f:selectItem itemLabel="ADMIN" itemValue="ADMIN"/>
+              <f:selectItem itemLabel="USER" itemValue="USER"/>
+            </h:selectOneMenu>
+            <h:commandButton value="Create User" action="#{createUser1.createUser}" styleClass="button"/>
+            <h:commandButton value="Go to Dashboard" action="dashboard" styleClass="dashboard-btn" immediate="true"/>
+            <h:outputText value="#{createUser1.message}" styleClass="success"/>
+          </h:form>
+        </div>
+      </body>
+    </html>
+  </f:view>
+</jsp:root>

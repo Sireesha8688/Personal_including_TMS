@@ -1,0 +1,45 @@
+package cps.controller;
+
+import org.bson.types.ObjectId;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+import cps.entities.CustomerEO;
+import cps.entities.HospitalEO;
+import cps.services.impl.CustomerServicesImpl;
+import cps.services.impl.HospitalServicesImpl;
+import reactor.core.publisher.Mono;
+
+@CrossOrigin(origins = "http://localhost:5173")
+@RestController
+@RequestMapping("/api/insurer/manage")
+public class InusrerManageUsersController {
+	
+	@Autowired
+	private CustomerServicesImpl customerServicesImplRef;
+	
+	@Autowired
+	private HospitalServicesImpl hospitalServicesImplRef;
+	
+	@GetMapping("/customer")
+	public Mono<ResponseEntity<CustomerEO>> getCustomerById(@RequestParam(value = "_id", required = true) ObjectId id){
+		return customerServicesImplRef.getCustomerById(id)
+				.map(ResponseEntity::ok)
+		        .defaultIfEmpty(ResponseEntity.notFound().build());
+	}
+	
+	@GetMapping("/hsopital")
+	public Mono<ResponseEntity<HospitalEO>> getHospitalById(ObjectId id){
+		return hospitalServicesImplRef.getHospitalById(id)
+				.map(ResponseEntity::ok)
+		        .defaultIfEmpty(ResponseEntity.notFound().build());
+	}
+	
+	
+
+}

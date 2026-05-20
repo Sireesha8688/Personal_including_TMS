@@ -1,0 +1,25 @@
+package cps.service;
+
+import cps.entities.HospitalClaim;
+import java.util.List;
+import java.util.Map;
+import java.util.Optional;
+
+public interface HospitalClaimService {
+
+    List<HospitalClaim> getAllClaims();
+
+    Optional<HospitalClaim> getClaimById(String id);
+
+    HospitalClaim createClaim(HospitalClaim claim);
+
+    Optional<HospitalClaim> updateClaim(String id, HospitalClaim claimDetails);
+
+    boolean deleteClaim(String id);
+   
+
+    List<HospitalClaim> getClaimsWhereInsurerIdIsNull();
+    Optional<HospitalClaim> partialUpdateClaim(String id, Map<String, Object> updates);
+
+
+}

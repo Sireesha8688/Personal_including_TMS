@@ -1,0 +1,209 @@
+package cps.serviceImpl;
+
+import java.time.Instant;
+import java.util.List;
+import java.util.Map;
+import java.util.Optional;
+import org.springframework.data.mongodb.core.MongoTemplate;
+
+
+import org.bson.types.ObjectId;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.mongodb.core.query.Criteria;
+import org.springframework.data.mongodb.core.query.Query;
+import org.springframework.stereotype.Service;
+
+import cps.entities.HospitalClaim;
+import cps.entities.TreatmentDetails;
+import cps.repository.HospitalClaimRepository;
+import cps.service.HospitalClaimService;
+
+@Service
+public class HospitalClaimServiceImpl implements HospitalClaimService {
+
+    @Autowired
+    private HospitalClaimRepository repo;
+
+    
+    @Autowired
+    private MongoTemplate mongoTemplate;
+
+    @Override
+    public List<HospitalClaim> getAllClaims() {
+        return repo.findAll();
+    }
+
+    @Override
+    public Optional<HospitalClaim> getClaimById(String id) {
+        if (!ObjectId.isValid(id)) {
+            return Optional.empty();
+        }
+        return repo.findById(new ObjectId(id));
+    }
+
+    @Override
+    public HospitalClaim createClaim(HospitalClaim claim) {
+        claim.set_id(null);
+        return repo.save(claim);
+    }
+
+    @Override
+    public Optional<HospitalClaim> updateClaim(String id, HospitalClaim claimDetails) {
+        if (!ObjectId.isValid(id)) {
+            return Optional.empty();
+        }
+
+        Optional<HospitalClaim> optionalClaim = repo.findById(new ObjectId(id));
+        if (optionalClaim.isPresent()) {
+            HospitalClaim existingClaim = optionalClaim.get();
+
+            existingClaim.setCustomerName(claimDetails.getCustomerName());
+            existingClaim.setCustomerAadharNumber(claimDetails.getCustomerAadharNumber());
+            existingClaim.setCustomerId(claimDetails.getCustomerId());
+            existingClaim.setTreatmentOffered(claimDetails.getTreatmentOffered());
+            existingClaim.setClaimTypeId(claimDetails.getClaimTypeId());
+            existingClaim.setEstimatedCostToHospital(claimDetails.getEstimatedCostToHospital());
+            existingClaim.setHospitalStatus(claimDetails.getHospitalStatus());
+            existingClaim.setInsurerId(claimDetails.getInsurerId());
+            existingClaim.setInsurerStatus(claimDetails.getInsurerStatus());
+            existingClaim.setPreAuthorization(claimDetails.getPreAuthorization());
+            existingClaim.setTreatmentDetails(claimDetails.getTreatmentDetails());
+            existingClaim.setVerifierAssigned(claimDetails.getVerifierAssigned());
+            existingClaim.setVerifierId(claimDetails.getVerifierId());
+            existingClaim.setVerifierComments(claimDetails.getVerifierComments());
+            existingClaim.setVerifierStatus(claimDetails.getVerifierStatus());
+            existingClaim.setFinalClaimSettlement(claimDetails.getFinalClaimSettlement());
+            existingClaim.setHospitalReRaiseClaimMessage(claimDetails.getHospitalReRaiseClaimMessage());
+            existingClaim.setCreatedAt(claimDetails.getCreatedAt());
+            existingClaim.setUpdatedAt(claimDetails.getUpdatedAt());
+            existingClaim.setVerifierDocuments(claimDetails.getVerifierDocuments());
+
+            HospitalClaim updatedClaim = repo.save(existingClaim);
+            return Optional.of(updatedClaim);
+        }
+
+        return Optional.empty();
+    }
+
+    @Override
+    public boolean deleteClaim(String id) {
+        if (!ObjectId.isValid(id)) {
+            return false;
+        }
+        if (repo.existsById(new ObjectId(id))) {
+            repo.deleteById(new ObjectId(id));
+            return true;
+        }
+        return false;
+    }
+    
+    @Override
+    public List<HospitalClaim> getClaimsWhereInsurerIdIsNull() {
+        return repo.findByInsurerIdIsNull();
+    }
+    
+    @Override
+    public Optional<HospitalClaim> partialUpdateClaim(String id, Map<String, Object> updates) {
+        if (!ObjectId.isValid(id)) {
+            return Optional.empty();
+        }
+
+        Optional<HospitalClaim> optionalClaim = repo.findById(new ObjectId(id));
+        if (optionalClaim.isEmpty()) {
+            return Optional.empty();
+        }
+
+        HospitalClaim claim = optionalClaim.get();
+
+        
+        if (updates.containsKey("hospitalStatus")) {
+            claim.setHospitalStatus((String) updates.get("hospitalStatus"));
+        }
+
+        
+        if (updates.containsKey("updatedAt")) {
+            Object updatedAtVal = updates.get("updatedAt");
+            if (updatedAtVal instanceof String) {
+                claim.setUpdatedAt(Instant.parse((String) updatedAtVal));
+            }
+        } else {
+            claim.setUpdatedAt(Instant.now());
+        }
+
+        
+        if (updates.containsKey("treatmentDetails")) {
+            Map<String, Object> tdUpdates = (Map<String, Object>) updates.get("treatmentDetails");
+
+            TreatmentDetails td = claim.getTreatmentDetails();
+            if (td == null) {
+                td = new TreatmentDetails();
+            }
+
+            if (tdUpdates.containsKey("isAdmitted")) {
+                td.setIsAdmitted((Boolean) tdUpdates.get("isAdmitted"));
+            }
+            if (tdUpdates.containsKey("dateOfAdmission")) {
+                Object dateObj = tdUpdates.get("dateOfAdmission");
+                if (dateObj instanceof String) {
+                    td.setDateOfAdmission(Instant.parse((String) dateObj));
+                }
+            }
+            if (tdUpdates.containsKey("admissionNotes")) {
+                td.setAdmissionNotes((String) tdUpdates.get("admissionNotes"));
+            }
+            if (tdUpdates.containsKey("isDischarged")) {
+                td.setIsDischarged((Boolean) tdUpdates.get("isDischarged"));
+            }
+            if (tdUpdates.containsKey("dateOfDischarge")) {
+                Object dateObj = tdUpdates.get("dateOfDischarge");
+                if (dateObj instanceof String) {
+                    td.setDateOfDischarge(Instant.parse((String) dateObj));
+                }
+            }
+            if (tdUpdates.containsKey("patientPaidNonMedicalExpenses")) {
+                Object val = tdUpdates.get("patientPaidNonMedicalExpenses");
+                if (val instanceof Number) {
+                    td.setPatientPaidNonMedicalExpenses(((Number) val).intValue());
+                }
+            }
+            if (tdUpdates.containsKey("hospitalFinalBill")) {
+                td.setHospitalFinalBill((String) tdUpdates.get("hospitalFinalBill"));
+            }
+            if (tdUpdates.containsKey("hospitalFinalBillAmount")) {
+                Object val = tdUpdates.get("hospitalFinalBillAmount");
+                if (val instanceof Number) {
+                    td.setHospitalFinalBillAmount(((Number) val).intValue());
+                }
+            }
+            if (tdUpdates.containsKey("dischargeSummaryUrl")) {
+                td.setDischargeSummaryUrl((String) tdUpdates.get("dischargeSummaryUrl"));
+            }
+
+            claim.setTreatmentDetails(td);
+        }
+
+        HospitalClaim savedClaim = repo.save(claim);
+        return Optional.of(savedClaim);
+    }
+
+    @Override
+    
+    public List<HospitalClaim> findClaimsByFilters(String hospitalId, String hospitalStatus, String insurerStatus) {
+        Query query = new Query();
+
+        if (hospitalId != null && !hospitalId.isEmpty()) {
+            query.addCriteria(Criteria.where("hospitalId").is(hospitalId));
+        }
+        if (hospitalStatus != null && !hospitalStatus.isEmpty()) {
+            query.addCriteria(Criteria.where("hospitalStatus").is(hospitalStatus));
+        }
+        if (insurerStatus != null && !insurerStatus.isEmpty()) {
+            query.addCriteria(Criteria.where("insurerStatus").is(insurerStatus));
+        }
+
+        return mongoTemplate.find(query, HospitalClaim.class);
+    
+}
+}
+
+

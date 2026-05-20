@@ -1,0 +1,11 @@
+package training.iqgateway.repositories;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import training.iqgateway.entities.TmOffenceDetails;
+
+import java.util.List;
+
+public interface OffenceDetailsRepository extends JpaRepository<TmOffenceDetails, Long> {
+    List<TmOffenceDetails> findByVehNo(String vehNo);
+    List<TmOffenceDetails> findByOffenceStatus(String status);
+}

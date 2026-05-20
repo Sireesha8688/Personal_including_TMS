@@ -1,0 +1,7 @@
+package cps.services.impl;
+
+import cps.services.CustomerServices;
+
+public class CustomerServicesImpl implements CustomerServices {
+
+}

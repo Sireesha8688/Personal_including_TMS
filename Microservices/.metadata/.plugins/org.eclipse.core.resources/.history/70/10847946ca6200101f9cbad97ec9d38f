@@ -1,0 +1,16 @@
+package cps.services;
+
+import org.bson.types.ObjectId;
+
+import cps.entities.CustomerEO;
+import reactor.core.publisher.Mono;
+
+public interface CustomerServices {
+	
+	public Mono<CustomerEO> addNewCustomer(CustomerEO customerEO);
+	
+	public Mono<CustomerEO> updateCustomer(ObjectId id, CustomerEO customerEO);
+	
+	public Mono<CustomerEO> deleteCustomer(ObjectId id);
+
+}

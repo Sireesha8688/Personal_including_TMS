@@ -1,0 +1,43 @@
+package cps.entities;
+
+import java.util.List;
+
+import org.bson.types.ObjectId;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import lombok.Data;
+
+@Data
+@Document(collection = "policy")
+public class PolicyEO {
+
+    @Id
+    private ObjectId _id;
+
+    private String name;
+
+    private String description;
+
+    // List of Cover IDs as Strings (assuming your covers IDs are Strings like "1", "2")
+    private List<String> covers;
+
+    private Integer baseSumAssured;
+
+    private Integer basePremium;
+
+    private Integer administrativeFee;
+
+    private Double taxRate;
+
+    private Integer premium;
+
+    private Integer sumAssured;
+    
+    @JsonProperty("_id")
+	public String get_id_asString() {
+		return _id != null ? _id.toHexString() : null;
+	}
+}

@@ -1,0 +1,63 @@
+package cps.services.impl;
+
+import java.util.Optional;
+
+import org.bson.types.ObjectId;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.mongodb.core.ReactiveMongoTemplate;
+import org.springframework.data.mongodb.core.query.Criteria;
+import org.springframework.data.mongodb.core.query.Query;
+import org.springframework.stereotype.Service;
+
+import cps.entities.CustomerClaimsEO;
+import cps.repository.CustomerClaimsRepository;
+import cps.services.CustomerClaimsServices;
+
+@Service
+public class CustomerClaimsServicesImpl implements CustomerClaimsServices {
+	
+	@Autowired
+	private ReactiveMongoTemplate reactiveMongoTemplate;
+	
+	private final CustomerClaimsRepository customerClaimsRepositoryRef;
+
+    @Autowired
+    public CustomerClaimsServicesImpl(CustomerClaimsRepository customerClaimsRepositoryRef) {
+        this.customerClaimsRepositoryRef = customerClaimsRepositoryRef;
+    }
+
+	@Override
+	public CustomerClaimsEO addNewCustomerClaim(CustomerClaimsEO customerClaimsEO) {
+		// TODO Auto-generated method stub
+		return customerClaimsRepositoryRef.save(customerClaimsEO);
+	}
+
+	@Override
+	public void updateCustomerStatus(ObjectId id,String customerStatus) {
+		// TODO Auto-generated method stub
+		customerClaimsRepositoryRef.findAndChangeCustomerStatusBy_id(id,customerStatus);
+	}
+
+	@Override
+	public void getAll() {
+		// TODO Auto-generated method stub
+		customerClaimsRepositoryRef.findAll();
+		
+	}
+
+	@Override
+	public Optional<CustomerClaimsEO> getOne(ObjectId id) {
+	    return customerClaimsRepositoryRef.findById(id);
+	}
+
+	@Override
+	public void updateCustomerClaim(ObjectId id, CustomerClaimsEO customerClaimsEO) {
+		// TODO Auto-generated method stub
+		Optional<CustomerClaimsEO> existing = getOne(id);
+		
+		Query query = new Query(Criteria.where("_id").is(id));
+		
+		
+		
+	}
+}

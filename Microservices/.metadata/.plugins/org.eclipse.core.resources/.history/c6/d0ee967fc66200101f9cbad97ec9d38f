@@ -1,0 +1,30 @@
+package cps.entities;
+
+import java.util.List;
+
+import org.bson.types.ObjectId;
+import org.springframework.data.annotation.Id;
+
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
+@Document(collection="customers")
+public class Customer {
+	
+	@Id
+    private ObjectId _id;
+    private String name;
+    private String email;
+    private String password;
+    private String aadharcardNumber;
+    private String date_of_birth;
+    private String gender;
+    private String blood_group;
+    private String mobile_number;
+    private Address address;
+    private BankAccountDetails bank_account_details;
+    private List<PolicyDetail> policies;
+
+}

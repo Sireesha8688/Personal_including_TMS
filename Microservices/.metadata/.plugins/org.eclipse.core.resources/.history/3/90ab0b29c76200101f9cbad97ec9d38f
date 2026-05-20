@@ -1,0 +1,5 @@
+package cps.entities;
+
+public class AddressEO {
+
+}

@@ -1,0 +1,51 @@
+package training.iqgateway.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import training.iqgateway.entities.TmOffence;
+import training.iqgateway.entities.TmOffenceDetails;
+import training.iqgateway.entities.TmOwnerDetails;
+import training.iqgateway.entities.TmRegDetails;
+import training.iqgateway.entities.TmVehicleDetails;
+import training.iqgateway.service.COPOperationService;
+
+@RestController
+@RequestMapping("/cop")
+public class COPOperationController {
+
+    @Autowired
+    private COPOperationService copService;
+
+    @PostMapping("/report-offence")
+    public String reportOffence(@RequestBody TmOffenceDetails offence) {
+        return copService.reportOffence(offence);
+    }
+
+    @GetMapping("/uncleared-offences")
+    public List<TmOffenceDetails> fetchUnclearedOffenceDetails() {
+        return copService.fetchUnclearedOffenceDetails();
+    }
+
+    @GetMapping("/owner/{ownerId}")
+    public TmOwnerDetails fetchOwnerDetails(@PathVariable Long ownerId) {
+        return copService.fetchOwnerDetails(ownerId);
+    }
+
+    @GetMapping("/vehicle-details/{vehNo}")
+    public TmRegDetails fetchVehicleDetails(@PathVariable String vehNo) {
+        return copService.fetchVehicleDetails(vehNo);
+    }
+
+    @GetMapping("/vehicle/{vehNo}")
+    public TmVehicleDetails fetchVehicleDetailsByVehNo(@PathVariable String vehNo) {
+        return copService.fetchVehicleDetailsByVehNo(vehNo);
+    }
+
+    @GetMapping("/offence-types")
+    public List<TmOffence> fetchOffenceTypes() {
+        return copService.fetchOffenceTypes();
+    }
+}

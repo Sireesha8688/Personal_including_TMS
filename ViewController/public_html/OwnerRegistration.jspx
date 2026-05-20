@@ -1,0 +1,215 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html">
+  <jsp:output omit-xml-declaration="true" 
+              doctype-root-element="HTML"
+              doctype-system="http://www.w3.org/TR/html4/loose.dtd"
+              doctype-public="-//W3C//DTD HTML 4.01 Transitional//EN"/>
+  <jsp:directive.page contentType="text/html;charset=windows-1252"/>
+  <f:view>
+    <html>
+      <head>
+        <title>Owner Registration</title>
+        <style>
+          body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            padding: 20px;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+          }
+          .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* center horizontally */
+            width: 100%;
+            max-width: 900px;
+            box-sizing: border-box;
+          }
+          h1 {
+            color: green;
+            text-align: center;
+            margin-bottom: 20px;
+            width: 100%;
+          }
+          form {
+            background: white;
+            padding: 20px 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            width: 100%;
+            box-sizing: border-box;
+          }
+          .form-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px 40px;
+          }
+          .form-group {
+            display: flex;
+            flex-direction: column;
+          }
+          label {
+            font-weight: bold;
+            margin-bottom: 5px;
+          }
+          input, select, textarea {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1rem;
+            box-sizing: border-box;
+            width: 100%;
+            resize: vertical;
+          }
+          textarea {
+            min-height: 70px;
+          }
+          .button-row {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 16px; /* space between buttons */
+          }
+          .btn-submit, .btn-dashboard {
+            min-width: 140px;
+            width: auto;
+            padding: 6px 18px;
+            font-size: 0.95rem;
+            border-radius: 4px;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background 0.2s, color 0.2s, transform 0.2s;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+            display: inline-block;
+            text-align: center;
+          }
+          .btn-submit {
+            background-color: #388e3c;
+            color: #fff;
+          }
+          .btn-submit:hover {
+            background-color: #256029;
+          }
+          .btn-dashboard {
+            background-color: #FFC107;
+            color: #212529;
+          }
+          .btn-dashboard:hover {
+            background-color: #FFB300;
+            color: #212529;
+            transform: translateY(-1px);
+          }
+          .success {
+            color: #388e3c;
+            font-weight: bold;
+            margin-top: 15px;
+            text-align: center;
+          }
+          .error {
+            color: #d32f2f;
+            font-weight: bold;
+            margin-top: 15px;
+            text-align: center;
+          }
+          @media (max-width: 700px) {
+            .form-grid {
+              grid-template-columns: 1fr;
+              gap: 15px 0;
+            }
+            .button-row {
+              flex-direction: column;
+              gap: 10px;
+            }
+            .btn-dashboard {
+              margin-left: 0;
+            }
+          }
+        </style>
+      </head>
+      <body>
+        <div class="container">
+          <h1>Owner Registration</h1>
+          <h:form>
+            <h:messages globalOnly="true" styleClass="error" />
+
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="fname">First Name:</label>
+                <h:inputText id="fname" value="#{ownerRegistrationBean.fname}" required="true" />
+              </div>
+              <div class="form-group">
+                <label for="lname">Last Name:</label>
+                <h:inputText id="lname" value="#{ownerRegistrationBean.lname}" required="true" />
+              </div>
+              <div class="form-group">
+                <label for="dateofbirth">Date of Birth:</label>
+                <h:inputText id="dateofbirth" value="#{ownerRegistrationBean.dateofbirth}" required="true">
+                  <f:convertDateTime pattern="yyyy-MM-dd" />
+                </h:inputText>
+              </div>
+              <div class="form-group">
+                <label for="gender">Gender:</label>
+                <h:selectOneMenu id="gender" value="#{ownerRegistrationBean.gender}" required="true">
+                  <f:selectItem itemLabel="Select Gender" itemValue="" />
+                  <f:selectItem itemLabel="Male" itemValue="M" />
+                  <f:selectItem itemLabel="Female" itemValue="F" />
+                  <f:selectItem itemLabel="Others" itemValue="O" />
+                </h:selectOneMenu>
+              </div>
+              <div class="form-group">
+                <label for="landlineNo">Landline No.:</label>
+                <h:inputText id="landlineNo" value="#{ownerRegistrationBean.landlineNo}" />
+              </div>
+              <div class="form-group">
+                <label for="mobileNo">Mobile No.:</label>
+                <h:inputText id="mobileNo" value="#{ownerRegistrationBean.mobileNo}" required="true" />
+              </div>
+              <div class="form-group">
+                <label for="occupation">Occupation:</label>
+                <h:inputText id="occupation" value="#{ownerRegistrationBean.occupation}" />
+              </div>
+              <div class="form-group">
+                <label for="pancardNo">PAN Card No.:</label>
+                <h:inputText id="pancardNo" value="#{ownerRegistrationBean.pancardNo}" required="true" />
+              </div>
+              <div class="form-group">
+                <label for="permAddr">Permanent Address:</label>
+                <h:inputTextarea id="permAddr" value="#{ownerRegistrationBean.permAddr}" required="true" rows="3" />
+              </div>
+              <div class="form-group">
+                <label for="tempAddr">Temporary Address:</label>
+                <h:inputTextarea id="tempAddr" value="#{ownerRegistrationBean.tempAddr}" rows="3" />
+              </div>
+              <div class="form-group">
+                <label for="pincode">Pincode:</label>
+                <h:inputText id="pincode" value="#{ownerRegistrationBean.pincode}" required="true" />
+              </div>
+              <div class="form-group">
+                <label for="addProofName">Address Proof:</label>
+                <h:selectOneMenu id="addProofName" value="#{ownerRegistrationBean.addProofName}" required="true">
+                  <f:selectItem itemLabel="Select Proof" itemValue="" />
+                  <f:selectItem itemLabel="Aadhar Card" itemValue="Aadhar Card" />
+                  <f:selectItem itemLabel="Voter ID" itemValue="Voter ID" />
+                  <f:selectItem itemLabel="Passport" itemValue="Passport" />
+                </h:selectOneMenu>
+              </div>
+            </div>
+
+            <div class="button-row">
+              <h:commandButton value="Register Owner" action="#{ownerRegistrationBean.registerOwner}" styleClass="btn-submit" />
+              <h:commandButton value="Go to Dashboard" action="dashboard" immediate="true" styleClass="btn-dashboard" />
+            </div>
+
+            <h:outputText value="#{ownerRegistrationBean.message}" styleClass="success" />
+          </h:form>
+        </div>
+      </body>
+    </html>
+  </f:view>
+</jsp:root>

@@ -1,0 +1,45 @@
+package cps.services.impl;
+
+import java.util.Map;
+
+import org.bson.types.ObjectId;
+import org.springframework.data.mongodb.core.query.Criteria;
+import org.springframework.data.mongodb.core.query.Query;
+import org.springframework.data.mongodb.core.query.Update;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.mongodb.client.result.UpdateResult;
+
+import cps.entities.CustomerClaimsEO;
+import cps.entities.CustomerClaimsQueriesEO;
+import cps.services.CustomerClaimsQueriesServices;
+import reactor.core.publisher.Mono;
+
+public class CustomerClaimsQueriesServicesImpl implements CustomerClaimsQueriesServices {
+
+	@Override
+	public Mono<CustomerClaimsQueriesEO> addNewQuery(CustomerClaimsQueriesEO customerClaimsQueriesEO) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Mono<CustomerClaimsQueriesEO> updateQuery(ObjectId id, CustomerClaimsQueriesEO customerClaimsQueriesEO) {
+		Query query = new Query(Criteria.where("_id").is(id));
+		Update update = new Update();
+
+		@SuppressWarnings("unchecked")
+		Map<String, Object> map = new ObjectMapper().convertValue(customerClaimsQueriesEO, Map.class);
+		map.forEach((key, value) -> {
+			if (value != null && !key.equals("_id")) {
+				update.set(key, value);
+			}
+		});
+
+		Mono<UpdateResult> result = reactiveMongoTemplate.update(CustomerClaimsQueriesEO.class).matching(query).apply(update)
+				.upsert();
+
+		return result;
+	}
+
+}

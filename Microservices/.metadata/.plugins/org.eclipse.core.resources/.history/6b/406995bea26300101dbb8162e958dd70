@@ -1,0 +1,133 @@
+package cps.controller;
+
+import org.bson.types.ObjectId;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.mongodb.client.result.UpdateResult;
+
+import cps.entities.CustomerEO;
+import cps.entities.HospitalEO;
+import cps.services.impl.CustomerServicesImpl;
+import cps.services.impl.HospitalServicesImpl;
+import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
+
+
+@RestController
+@RequestMapping("/api/insurer/manage")
+public class InsurerManageUsersController {
+
+    @Autowired
+    private CustomerServicesImpl customerServicesImplRef;
+
+    @Autowired
+    private HospitalServicesImpl hospitalServicesImplRef;
+
+    @GetMapping("/customer")
+    public Mono<ResponseEntity<CustomerEO>> getCustomer(
+            @RequestParam(value = "id", required = false) String id,
+            @RequestParam(value = "aadharCardNumber", required = false) String aadharCardNumber) {
+
+        if (aadharCardNumber != null) {
+            return customerServicesImplRef.getCustomerByAadharNumber(aadharCardNumber)
+                    .map(ResponseEntity::ok)
+                    .defaultIfEmpty(ResponseEntity.notFound().build());
+        } else if (id != null) {
+            ObjectId objectId;
+            try {
+                objectId = new ObjectId(id);
+            } catch (IllegalArgumentException e) {
+                return Mono.just(ResponseEntity.badRequest().build());
+            }
+            return customerServicesImplRef.getCustomerById(objectId)
+                    .map(ResponseEntity::ok)
+                    .defaultIfEmpty(ResponseEntity.notFound().build());
+        }
+        // If neither provided, return bad request
+        return Mono.just(ResponseEntity.badRequest().build());
+    }
+    
+    @GetMapping("/hospital")
+    public Mono<ResponseEntity<HospitalEO>> getHospitalById1(@RequestParam(value = "id", required = true) String id) {
+        ObjectId objectId = new ObjectId(id);
+        return hospitalServicesImplRef.getHospitalById(objectId)
+                .map(ResponseEntity::ok)
+                .defaultIfEmpty(ResponseEntity.notFound().build());
+    }
+
+    @GetMapping("/customers")
+    public Flux<ResponseEntity<CustomerEO>> getAllCustomers() {
+        return customerServicesImplRef.getAllCustomers()
+                .map(ResponseEntity::ok)
+                .defaultIfEmpty(ResponseEntity.notFound().build());
+    }
+
+    @GetMapping("/hospital")
+    public Mono<ResponseEntity<HospitalEO>> getHospitalById(@RequestParam(value = "id", required = true) String id) {
+        ObjectId objectId = new ObjectId(id);
+        return hospitalServicesImplRef.getHospitalById(objectId)
+                .map(ResponseEntity::ok)
+                .defaultIfEmpty(ResponseEntity.notFound().build());
+    }
+
+    @GetMapping("/hospitals")
+    public Flux<ResponseEntity<HospitalEO>> getAllHospitals() {
+        return hospitalServicesImplRef.getAllHospitals()
+                .map(ResponseEntity::ok)
+                .defaultIfEmpty(ResponseEntity.notFound().build());
+    }
+
+    @PostMapping("/customer")
+    public Mono<ResponseEntity<CustomerEO>> addNewCustomer(@RequestBody CustomerEO customerEO) {
+        return customerServicesImplRef.addNewCustomer(customerEO)
+                .map(savedQuery -> ResponseEntity.ok(savedQuery))
+                .defaultIfEmpty(ResponseEntity.badRequest().build());
+    }
+
+    @PostMapping("/hospital")
+    public Mono<ResponseEntity<HospitalEO>> addNewHospital(@RequestBody HospitalEO hospitalEO) {
+        return hospitalServicesImplRef.addNewHospital(hospitalEO)
+                .map(savedQuery -> ResponseEntity.ok(savedQuery))
+                .defaultIfEmpty(ResponseEntity.badRequest().build());
+    }
+
+    @PutMapping("/customer/{id}")
+    public Mono<ResponseEntity<UpdateResult>> updateCustomer(@PathVariable String id,
+            @RequestBody CustomerEO customerEO) {
+        ObjectId objectId = new ObjectId(id);
+        return customerServicesImplRef.updateCustomer(objectId, customerEO)
+                .map(ResponseEntity::ok)
+                .defaultIfEmpty(ResponseEntity.notFound().build());
+    }
+
+    @PutMapping("/hospital/{id}")
+    public Mono<ResponseEntity<UpdateResult>> updateHospital(@PathVariable String id,
+            @RequestBody HospitalEO hospitalEO) {
+        ObjectId objectId = new ObjectId(id);
+        return hospitalServicesImplRef.updateHospital(objectId, hospitalEO)
+                .map(ResponseEntity::ok)
+                .defaultIfEmpty(ResponseEntity.notFound().build());
+    }
+
+    @DeleteMapping("/customer/{id}")
+    public Mono<CustomerEO> deleteCustomer(@PathVariable String id) {
+        ObjectId objectId = new ObjectId(id);
+        return customerServicesImplRef.deleteCustomer(objectId);
+    }
+
+    @DeleteMapping("/hospital/{id}")
+    public Mono<HospitalEO> deleteHospital(@PathVariable String id) {
+        ObjectId objectId = new ObjectId(id);
+        return hospitalServicesImplRef.deletehospital(objectId);
+    }
+}

@@ -1,0 +1,11 @@
+package cps.services;
+
+
+public interface HospitalServices {
+
+	
+
+	public Mono<UpdateResult> updateHospital(ObjectId id, HospitalEO hospitalEO);
+
+	
+}

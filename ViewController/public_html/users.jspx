@@ -1,0 +1,114 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:c="http://java.sun.com/jsp/jstl/core">
+  <jsp:output omit-xml-declaration="true"
+              doctype-root-element="HTML"
+              doctype-system="http://www.w3.org/TR/html4/loose.dtd"
+              doctype-public="-//W3C//DTD HTML 4.01 Transitional//EN"/>
+  <jsp:directive.page contentType="text/html;charset=windows-1252"/>
+  <f:view>
+    <html>
+      <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=windows-1252"/>
+        <title>Unique Roles</title>
+        <style type="text/css">
+          body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #f8f9fa;
+            margin: 0;
+            padding: 20px;
+          }
+          .role-table-container {
+            max-width: 400px;
+            margin: 40px auto 0 auto;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+          }
+          h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+          }
+          .role-table {
+            width: 100%;
+            border-collapse: collapse;
+          }
+          .role-table th {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 12px 15px;
+            text-align: left;
+            font-weight: bold;
+            border-bottom: 3px solid #ddd;
+          }
+          .role-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #e0e0e0;
+          }
+          .role-table tr:hover {
+            background-color: #f5f5f5;
+          }
+          .role-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+          }
+          .no-data {
+            text-align: center;
+            color: #666;
+            font-style: italic;
+            padding: 20px;
+          }
+          .dashboard-btn {
+            background-color: #FFC107;
+            color: #212529;
+            border: none;
+            border-radius: 6px;
+            padding: 10px 24px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            display: block;
+            margin: 20px auto;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: background-color 0.2s, transform 0.2s;
+          }
+          .dashboard-btn:hover {
+            background-color: #FFB300;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+          }
+          .button-container {
+            text-align: center;
+            margin-top: 10px;
+          }
+        </style>
+      </head>
+      <body>
+        <h:form>
+          <div class="role-table-container">
+            <h1>All Roles</h1>
+            <table class="role-table">
+              <tr>
+                <th>Role</th>
+              </tr>
+              <c:forEach items="#{userBean.uniqueRoles}" var="role">
+                <tr>
+                  <td><h:outputText value="#{role}"/></td>
+                </tr>
+              </c:forEach>
+            </table>
+            <h:panelGroup rendered="#{empty userBean.uniqueRoles}">
+              <div class="no-data">No roles found.</div>
+            </h:panelGroup>
+          </div>
+          <!-- Go to Dashboard button below the card -->
+          <div class="button-container">
+            <h:commandButton value="Go to Dashboard" action="dashboard" styleClass="dashboard-btn" immediate="true"/>
+          </div>
+        </h:form>
+      </body>
+    </html>
+  </f:view>
+</jsp:root>

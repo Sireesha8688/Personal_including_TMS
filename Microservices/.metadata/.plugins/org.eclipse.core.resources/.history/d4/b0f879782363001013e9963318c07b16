@@ -1,0 +1,69 @@
+package cps.controller;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import cps.entities.HospitalClaimsQuery;
+import cps.service.HospitalClaimsQueryService;
+
+@RestController
+@RequestMapping("/api/hospitalqueries")
+public class HospitalClaimsQueryController {
+
+    @Autowired
+    private HospitalClaimsQueryService hospitalClaimsQueryService;
+
+    //GET All Queries
+    @GetMapping
+    public List<HospitalClaimsQuery> getAllQueries() {
+        return hospitalClaimsQueryService.getAllQueries();
+    }
+
+    //GET by ID
+    @GetMapping("/{id}")
+    public ResponseEntity<HospitalClaimsQuery> getQueryById(@PathVariable String id) {
+        Optional<HospitalClaimsQuery> queryOpt = hospitalClaimsQueryService.getQueryById(id);
+        return queryOpt.map(ResponseEntity::ok)
+                .orElse(ResponseEntity.notFound().build());
+    }
+
+    //CREATE new Query
+    @PostMapping
+    public ResponseEntity<HospitalClaimsQuery> createQuery(@RequestBody HospitalClaimsQuery hospitalClaimsQuery) {
+        HospitalClaimsQuery created = hospitalClaimsQueryService.createQuery(hospitalClaimsQuery);
+        return ResponseEntity.ok(created);
+    }
+
+    //Update Existing Query
+    @PutMapping("/{id}")
+    public ResponseEntity<HospitalClaimsQuery> updateQuery(@PathVariable String id,
+                                                           @RequestBody HospitalClaimsQuery hospitalClaimsQuery) {
+        Optional<HospitalClaimsQuery> updatedOpt = hospitalClaimsQueryService.updateQuery(id, hospitalClaimsQuery);
+        return updatedOpt.map(ResponseEntity::ok)
+                .orElse(ResponseEntity.notFound().build());
+    }
+
+    //Delete Query
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteQuery(@PathVariable String id) {
+        boolean deleted = hospitalClaimsQueryService.deleteQuery(id);
+        if (deleted) {
+            return ResponseEntity.noContent().build();
+        }
+        return ResponseEntity.notFound().build();
+    }
+    
+    
+    @GetMapping("/claimraised/{claimRaisedId}")
+    public ResponseEntity<List<HospitalClaimsQuery>> getQueriesByClaimRaisedId(@PathVariable String claimRaisedId) {
+        List<HospitalClaimsQuery> queries = hospitalClaimsQueryService.getQueriesByClaimRaisedId(claimRaisedId);
+        if (queries.isEmpty()) {
+            return ResponseEntity.noContent().build();
+        }
+        return ResponseEntity.ok(queries);
+    }
+}

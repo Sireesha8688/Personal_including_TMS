@@ -1,0 +1,55 @@
+package cps.serviceImpl;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.bson.types.ObjectId;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import cps.entities.CoversEO;
+import cps.repository.CoverRepository;
+import cps.service.CoverService;
+
+@Service
+public class CoverServiceImpl implements CoverService {
+
+    @Autowired
+    private CoverRepository coverRepository;
+
+    @Override
+    public CoversEO addCover(CoversEO cover) {
+        return coverRepository.save(cover);
+    }
+
+    @Override
+    public List<CoversEO> getAllCovers() {
+        return coverRepository.findAll();
+    }
+
+    @Override
+    public Optional<CoversEO> getCoverById(ObjectId id) {
+        return coverRepository.findById(id);
+    }
+
+    @Override
+    public CoversEO updateCover(ObjectId id, CoversEO cover) {
+        Optional<CoversEO> existing = coverRepository.findById(id);
+        if (existing.isPresent()) {
+            CoversEO oldCover = existing.get();
+            // update fields
+            oldCover.setCoverName(cover.getCoverName());
+            oldCover.setCoverAmount(cover.getCoverAmount());
+            oldCover.setPremium(cover.getPremium());
+            oldCover.setDescription(cover.getDescription());
+            return coverRepository.save(oldCover);
+        } else {
+            return null;
+        }
+    }
+
+    @Override
+    public void deleteCover(ObjectId id) {
+        coverRepository.deleteById(id);
+    }
+}

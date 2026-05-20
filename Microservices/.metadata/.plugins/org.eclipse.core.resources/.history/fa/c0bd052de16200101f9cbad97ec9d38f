@@ -1,0 +1,49 @@
+package cps.services.impl;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.bson.types.ObjectId;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import cps.entities.AdminsEO;
+import cps..AdminRepository;
+import cps.service.AdminService;
+
+@Service
+public class AdminServiceImpl implements AdminService {
+
+    @Autowired
+    private AdminRepository adminRepository;
+
+    @Override
+    public List<AdminsEO> getAllAdmins() {
+        return adminRepository.findAll();
+    }
+
+    @Override
+    public AdminsEO addAdmin(AdminsEO admin) {
+        // MongoDB will generate _id if null
+        return adminRepository.save(admin);
+    }
+
+    @Override
+    public AdminsEO updateAdmin(ObjectId id, AdminsEO admin) {
+        Optional<AdminsEO> existingOpt = adminRepository.findById(id);
+        if (existingOpt.isPresent()) {
+            AdminsEO existing = existingOpt.get();
+            existing.setName(admin.getName());
+            existing.setEmail(admin.getEmail());
+            existing.setPassword(admin.getPassword());
+            return adminRepository.save(existing);
+        }
+        return null; // or throw custom exception for not found
+    }
+
+
+    @Override
+    public void deleteAdmin(ObjectId id) {
+        adminRepository.deleteById(id);
+    }
+}

@@ -1,0 +1,52 @@
+package cps.serviceImpl;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.bson.types.ObjectId;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import training.iqgateway.entities.InsurersEO;
+import training.iqgateway.repository.InsurerRepository;
+import training.iqgateway.service.InsurerService;
+
+@Service
+public class InsurerServiceImpl implements InsurerService {
+
+    @Autowired
+    private InsurerRepository insurerRepository;
+
+    @Override
+    public InsurersEO addInsurer(InsurersEO insurer) {
+        return insurerRepository.save(insurer);
+    }
+
+    @Override
+    public List<InsurersEO> getAllInsurers() {
+        return insurerRepository.findAll();
+    }
+
+    @Override
+    public Optional<InsurersEO> getInsurerById(ObjectId id) {
+        return insurerRepository.findById(id);
+    }
+
+    @Override
+    public InsurersEO updateInsurer(ObjectId id, InsurersEO insurer) {
+        Optional<InsurersEO> existing = insurerRepository.findById(id);
+        if (existing.isPresent()) {
+            InsurersEO oldInsurer = existing.get();
+            oldInsurer.setEmail(insurer.getEmail());
+            oldInsurer.setName(insurer.getName());
+            oldInsurer.setPassword(insurer.getPassword());
+            return insurerRepository.save(oldInsurer);
+        }
+        return null;
+    }
+
+    @Override
+    public void deleteInsurer(ObjectId id) {
+        insurerRepository.deleteById(id);
+    }
+}
